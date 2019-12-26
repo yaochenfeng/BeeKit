@@ -36,6 +36,7 @@
 		8F01EED523B5024900061BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F01EEDC23B5024900061BEE /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F01EEE023B5024900061BEE /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
+		8F01EF1023B5095900061BEE /* Demo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Demo.plist; path = Demo.xcodeproj/Demo.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +121,7 @@
 		8F01EEF223B5042100061BEE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				8F01EF1023B5095900061BEE /* Demo.plist */,
 				8F01EED423B5024900061BEE /* LaunchScreen.storyboard */,
 				8F01EED223B5024900061BEE /* Assets.xcassets */,
 				8F01EECF23B5024500061BEE /* Main.storyboard */,
