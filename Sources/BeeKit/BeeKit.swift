@@ -1,3 +1,4 @@
 struct BeeKit {
-    var text = "Hello, World!"
 }
+
+@_exported import Foundation

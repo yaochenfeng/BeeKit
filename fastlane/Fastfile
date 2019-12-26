@@ -1,0 +1,56 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :release_candidate do |options|
+    if options[:tag_name]
+      git_tag_name = options[:tag_name]
+    elsif ENV["TRAVIS_TAG"]
+      git_tag_name = ENV['TRAVIS_TAG']
+    else
+      UI.error("provided your tag.")
+      sh("exit 1")
+    end
+
+    if options[:last_tag]
+      last_tag = options[:last_tag]
+    else
+      last_tag = last_git_tag(pattern: "*.?")
+    end
+    history_log = changelog_from_git_commits(
+      between: [last_tag, "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
+      pretty: "- %s %h",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
+      date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
+      match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+      merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
+    )
+    release_note =  ((File.read("CHANGELOG.md") rescue "No changelog provided\n") + "# Detail Commit\n" + history_log)
+    
+    UI.message(release_note)
+
+    github_release = set_github_release(
+      repository_name: ENV["TRAVIS_REPO_SLUG"],
+      api_token: ENV["GITHUB_TOKEN"],
+      name: "RELEASE for #{git_tag_name}",
+      tag_name: git_tag_name,
+      is_prerelease: true,
+      description: release_note,
+      upload_assets: ["BeeKit.framework.zip"]
+    )
+  end
+end

@@ -3,3 +3,10 @@
 /Packages
 /*.xcodeproj
 xcuserdata/
+*.xcworkspace
+Playground.playground
+Carthage
+Demo/Pods
+*.lock
+*.zip
+fastlane
