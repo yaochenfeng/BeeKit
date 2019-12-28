@@ -5,11 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "BeeKit",
+    platforms: [
+            .iOS(.v9),
+    ],
     products: [
         .library(name: "BeeKit", targets: ["BeeKit"]),
     ],
     targets: [
-        .target(name: "BeeKit", path: "Sources/BeeKit/"),
+        .target(name: "BeeKit"),
         .testTarget(name: "BeeKitTests",dependencies: ["BeeKit"]),
     ],
     swiftLanguageVersions: [

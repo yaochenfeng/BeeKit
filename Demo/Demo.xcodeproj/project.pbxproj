@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		8F01EED323B5024900061BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F01EED223B5024900061BEE /* Assets.xcassets */; };
 		8F01EED623B5024900061BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F01EED423B5024900061BEE /* LaunchScreen.storyboard */; };
 		8F01EEE123B5024900061BEE /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F01EEE023B5024900061BEE /* DemoTests.swift */; };
+		8F3A09C523B7359B002ACA50 /* BeeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3A09C423B7359B002ACA50 /* BeeKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3A09C523B7359B002ACA50 /* BeeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,9 @@
 			dependencies = (
 			);
 			name = Demo;
+			packageProductDependencies = (
+				8F3A09C423B7359B002ACA50 /* BeeKit */,
+			);
 			productName = Demo;
 			productReference = 8F01EEC623B5024500061BEE /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +200,9 @@
 				Base,
 			);
 			mainGroup = 8F01EEBD23B5024500061BEE;
+			packageReferences = (
+				8F3A09C323B7359B002ACA50 /* XCRemoteSwiftPackageReference "beekit" */,
+			);
 			productRefGroup = 8F01EEC723B5024500061BEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -497,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F3A09C323B7359B002ACA50 /* XCRemoteSwiftPackageReference "beekit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaochenfeng/beekit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F3A09C423B7359B002ACA50 /* BeeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F3A09C323B7359B002ACA50 /* XCRemoteSwiftPackageReference "beekit" */;
+			productName = BeeKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8F01EEBE23B5024500061BEE /* Project object */;
 }
