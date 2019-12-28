@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "BeeKit", targets: ["BeeKit"]),
     ],
     targets: [
-        .target(name: "BeeKit", path: "Sources"),
+        .target(name: "BeeKit", path: "Sources/BeeKit/"),
         .testTarget(name: "BeeKitTests",dependencies: ["BeeKit"]),
     ],
     swiftLanguageVersions: [
