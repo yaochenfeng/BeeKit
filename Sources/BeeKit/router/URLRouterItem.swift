@@ -5,7 +5,7 @@
 //  Created by yaochenfeng on 2020/1/2.
 //
 
-import Foundation
+import UIKit
 
 class URLRouterItem {
     func handler(_ req: URLActionRequest) -> URLActionResponse {
@@ -29,7 +29,11 @@ class URLRouterItemPage: URLRouterItem {
     }
     override func handler(_ req: URLActionRequest) -> URLActionResponse {
         guard let nvc = pageRouter.initWith(req.url, options: req.options)  else {
-            return URLActionResponse()
+            guard let vcType = pageRouter as? UIViewController.Type  else {
+                return URLActionResponse()
+            }
+            let rvc = vcType.init(nibName: nil, bundle: nil)
+            return URLActionResponse(rvc)
         }
         return URLActionResponse(nvc)
     }

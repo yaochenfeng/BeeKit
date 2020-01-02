@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		OBJ_27 /* BeeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BeeKit.swift */; };
-		OBJ_28 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Constant.swift */; };
+		8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01523BE1BAE00919E50 /* Constant.swift */; };
+		8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01723BE1BAE00919E50 /* String+bee.swift */; };
+		8F2ED02123BE1BAE00919E50 /* BeeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01823BE1BAE00919E50 /* BeeKit.swift */; };
+		8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01923BE1BAE00919E50 /* BeeExt.swift */; };
+		8F2ED02323BE1BAE00919E50 /* URLAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01B23BE1BAE00919E50 /* URLAction.swift */; };
+		8F2ED02423BE1BAE00919E50 /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01C23BE1BAE00919E50 /* URLRouterable.swift */; };
+		8F2ED02523BE1BAE00919E50 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01D23BE1BAE00919E50 /* URLRouter.swift */; };
+		8F2ED02623BE1BAE00919E50 /* URLRouterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01E23BE1BAE00919E50 /* URLRouterItem.swift */; };
 		OBJ_46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* BeeKitTests.swift */; };
 		OBJ_47 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* XCTestManifests.swift */; };
 		OBJ_49 /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BeeKit::BeeKit::Product" /* BeeKit.framework */; };
@@ -25,15 +31,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F2ED01523BE1BAE00919E50 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8F2ED01723BE1BAE00919E50 /* String+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+bee.swift"; sourceTree = "<group>"; };
+		8F2ED01823BE1BAE00919E50 /* BeeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeKit.swift; sourceTree = "<group>"; };
+		8F2ED01923BE1BAE00919E50 /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
+		8F2ED01B23BE1BAE00919E50 /* URLAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLAction.swift; sourceTree = "<group>"; };
+		8F2ED01C23BE1BAE00919E50 /* URLRouterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterable.swift; sourceTree = "<group>"; };
+		8F2ED01D23BE1BAE00919E50 /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
+		8F2ED01E23BE1BAE00919E50 /* URLRouterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterItem.swift; sourceTree = "<group>"; };
 		"BeeKit::BeeKit::Product" /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"BeeKit::BeeKitTests::Product" /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_10 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		OBJ_13 /* BeeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeKitTests.swift; sourceTree = "<group>"; };
 		OBJ_14 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_21 /* BeeKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeeKit.podspec; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* BeeKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F2ED01423BE1BAE00919E50 /* BeeKit */ = {
+			isa = PBXGroup;
+			children = (
+				8F2ED01823BE1BAE00919E50 /* BeeKit.swift */,
+				8F2ED01523BE1BAE00919E50 /* Constant.swift */,
+				8F2ED01923BE1BAE00919E50 /* BeeExt.swift */,
+				8F2ED01623BE1BAE00919E50 /* iOS */,
+				8F2ED01A23BE1BAE00919E50 /* router */,
+			);
+			name = BeeKit;
+			path = Sources/BeeKit;
+			sourceTree = "<group>";
+		};
+		8F2ED01623BE1BAE00919E50 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8F2ED01723BE1BAE00919E50 /* String+bee.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		8F2ED01A23BE1BAE00919E50 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				8F2ED01B23BE1BAE00919E50 /* URLAction.swift */,
+				8F2ED01C23BE1BAE00919E50 /* URLRouterable.swift */,
+				8F2ED01D23BE1BAE00919E50 /* URLRouter.swift */,
+				8F2ED01E23BE1BAE00919E50 /* URLRouterItem.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		OBJ_11 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +126,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -92,25 +136,14 @@
 				OBJ_20 /* README.md */,
 				OBJ_21 /* BeeKit.podspec */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* BeeKit */,
+				8F2ED01423BE1BAE00919E50 /* BeeKit */,
 			);
 			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_8 /* BeeKit */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_9 /* BeeKit.swift */,
-				OBJ_10 /* Constant.swift */,
-			);
-			name = BeeKit;
-			path = Sources/BeeKit;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -165,7 +198,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,8 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_27 /* BeeKit.swift in Sources */,
-				OBJ_28 /* Constant.swift in Sources */,
+				8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */,
+				8F2ED02623BE1BAE00919E50 /* URLRouterItem.swift in Sources */,
+				8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */,
+				8F2ED02323BE1BAE00919E50 /* URLAction.swift in Sources */,
+				8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */,
+				8F2ED02423BE1BAE00919E50 /* URLRouterable.swift in Sources */,
+				8F2ED02523BE1BAE00919E50 /* URLRouter.swift in Sources */,
+				8F2ED02123BE1BAE00919E50 /* BeeKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +351,7 @@
 		OBJ_43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -332,6 +372,7 @@
 		OBJ_44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (

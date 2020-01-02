@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import BeeKit
+
+@_exported import BeeKit
 
 class Page1ViewController: UIViewController {
     
