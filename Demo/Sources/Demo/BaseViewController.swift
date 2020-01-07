@@ -10,7 +10,7 @@ import UIKit
 import BeeKit
 
 class BaseViewController: UIViewController {
-    class func initWithRouter(_ url: URL, options: [String : Any]?) -> Self? {
+    class func initWithRouter(_ url: URL, options: [String : Any]?) -> BaseViewController? {
         return self.init()
     }
     class var canAutoLoad: Bool {
