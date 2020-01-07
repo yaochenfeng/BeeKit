@@ -16,6 +16,8 @@ public final class URLRouter {
     /// 路由项
     private var routerItems = [URLRouterItem]()
     
+    public var openHandler: ((_ source:UIViewController, _ dest:UIViewController, _ options: [String:Any]?) -> Void)?
+    
     private init(){
         autoLoadRouter()
     }
@@ -51,9 +53,14 @@ public final class URLRouter {
             response = item.handler(req)
             break
         }
-        if let dest = response?.viewController, let sourceVC = source {
-            sourceVC.show(dest, sender: nil)
+        guard let dest = response?.viewController, let sourceVC = source else {
+            return
         }
+        guard let handler = openHandler else {
+            sourceVC.show(dest, sender: nil)
+            return
+        }
+        handler(sourceVC,dest, options)
     }
 }
 

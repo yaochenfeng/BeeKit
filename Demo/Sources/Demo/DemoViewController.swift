@@ -16,7 +16,7 @@ class DemoViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == 1,
+        guard indexPath.section != 0,
             let cell = tableView.cellForRow(at: indexPath), let urlStr = cell.detailTextLabel?.text else {
 //            super.tableView(tableView, didSelectRowAt: indexPath)
             return
