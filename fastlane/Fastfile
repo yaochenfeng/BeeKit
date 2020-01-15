@@ -63,4 +63,23 @@ platform :ios do
       pod_push(repo: ENV["POD_PR_REPO"])
     end
   end
+
+  desc "prepare_release munual"
+  desc "####Options"
+  desc " * **`version`** (required): The new version of the framework"
+  lane :prepare_release do |options|
+    if !options[:version]
+      raise "No version specified!".red
+    end
+    ensure_git_status_clean
+    version_bump_podspec(
+      version_number: options[:version]
+    )
+    # commit the branch
+    git_commit(
+      path: ".",
+      message: "Preparing for the #{options[:version]} release"
+    )
+    push_to_git_remote
+  end
 end
