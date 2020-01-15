@@ -26,4 +26,5 @@ deploy:
     tags: true
     all_branches: true
 after_deploy:
+  - rm -rf ~/.cocoapods/repos
   - fastlane github_after_deploy
