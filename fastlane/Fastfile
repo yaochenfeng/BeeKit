@@ -39,18 +39,18 @@ platform :ios do
       match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
     )
     release_note =  ((File.read("CHANGELOG.md") rescue "No changelog provided\n") + "# Detail Commit\n" + history_log)
-
+    is_master = (git_branch == "master")
     github_release = set_github_release(
       repository_name: ENV["TRAVIS_REPO_SLUG"],
       api_token: ENV["GITHUB_TOKEN"],
       name: "V#{git_tag_name}",
       tag_name: git_tag_name,
-      is_prerelease: true,
+      is_prerelease: !is_master,
       description: release_note,
       upload_assets: ["BeeKit.framework.zip"]
     )
   end
-
+  
   desc "github_after_deploy"
   lane :github_after_deploy do |options|
     if ENV["TRAVIS_TAG"]
@@ -80,9 +80,5 @@ platform :ios do
       path: ".",
       message: "Preparing for the #{options[:version]} release"
     )
-    add_git_tag(
-      tag: "#{options[:version]}"
-    )
-    push_to_git_remote
   end
 end

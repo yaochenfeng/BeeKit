@@ -4,7 +4,6 @@ env:
   global:
     - FRAMEWORK_NAME=BeeKit
     - SCAN_SCHEME=BeeKit
-    - IS_SOURCE_ALL=1
 before_install:
   - brew outdated carthage || brew upgrade carthage
 # before_script:
@@ -22,7 +21,7 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: fastlane release_candidate
+  script: IS_SOURCE_ALL=1 fastlane release_candidate
   on:
     tags: true
     all_branches: true

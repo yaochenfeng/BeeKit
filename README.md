@@ -12,7 +12,7 @@ A Kit for iOS developer.
    <a href="http://cocoapods.org/pods/BeeKit">
       <img src="https://img.shields.io/cocoapods/v/BeeKit.svg?style=flat" alt="Version">
    </a>
-   <a href="http://cocoapods.org/pods/BeeKitKit">
+   <a href="http://cocoapods.org/pods/BeeKit">
       <img src="https://img.shields.io/cocoapods/p/BeeKit.svg?style=flat" alt="Platform">
    </a>
    <a href="https://github.com/Carthage/Carthage">
