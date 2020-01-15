@@ -23,8 +23,7 @@ platform :ios do
     elsif ENV["TRAVIS_TAG"]
       git_tag_name = ENV['TRAVIS_TAG']
     else
-      UI.error("provided your tag.")
-      sh("exit 1")
+      raise "provided your tag.!".red
     end
 
     if options[:last_tag]
@@ -52,5 +51,35 @@ platform :ios do
       description: release_note,
       upload_assets: ["BeeKit.framework.zip"]
     )
+  end
+
+  desc "github_after_deploy"
+  lane :github_after_deploy do |options|
+    if ENV["TRAVIS_TAG"]
+      version_bump_podspec(version_number: ENV["TRAVIS_TAG"])
+      pod_push
+    end
+    if ENV["POD_PR_REPO"]
+      pod_push(repo: ENV["POD_PR_REPO"])
+    end
+  end
+
+  desc "prepare_release munual"
+  desc "####Options"
+  desc " * **`version`** (required): The new version of the framework"
+  lane :prepare_release do |options|
+    if !options[:version]
+      raise "No version specified!".red
+    end
+    ensure_git_status_clean
+    version_bump_podspec(
+      version_number: options[:version]
+    )
+    # commit the branch
+    git_commit(
+      path: ".",
+      message: "Preparing for the #{options[:version]} release"
+    )
+    push_to_git_remote
   end
 end

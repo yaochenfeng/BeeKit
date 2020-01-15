@@ -4,6 +4,7 @@ env:
   global:
     - FRAMEWORK_NAME=BeeKit
     - SCAN_SCHEME=BeeKit
+    - IS_SOURCE_ALL=1
 before_install:
   - brew outdated carthage || brew upgrade carthage
 # before_script:
@@ -12,6 +13,7 @@ before_install:
   #- carthage bootstrap
 script:
   - fastlane run run_tests
+  - fastlane run pod_lib_lint
 before_deploy:
   - brew outdated carthage || brew upgrade carthage
   - carthage build --no-skip-current
@@ -23,3 +25,5 @@ deploy:
   on:
     tags: true
     all_branches: true
+after_deploy:
+  - fastlane github_after_deploy
