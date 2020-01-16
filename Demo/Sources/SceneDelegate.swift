@@ -68,8 +68,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         let url = URLContexts.first?.url
-        if URLRouter.shared.canOpen(with: url?.absoluteString) {
-            URLRouter.shared.open(url?.absoluteString, source: AppDelegate.topViewController(), options: nil)
+        if URLRouter.shared.canOpen(with: url) {
+            URLRouter.shared.open(url, source: AppDelegate.topViewController(), options: nil)
         }
     }
 

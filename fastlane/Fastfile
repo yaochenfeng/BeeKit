@@ -30,13 +30,14 @@ platform :ios do
       last_tag = options[:last_tag]
     else
       last_tag = last_git_tag(pattern: "*.?")
+      last_tag = last_tag ? last_tag : "master"
     end
-    last_tag = last_tag ? last_tag : "master"
+    match_tag = (git_tag_name == last_tag)
     history_log = changelog_from_git_commits(
       between: [last_tag, "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
       pretty: "- %s %h",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
       date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
-      match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+      match_lightweight_tag: match_tag,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
     )
     release_note =  ((File.read("CHANGELOG.md") rescue "No changelog provided\n") + "# Detail Commit\n" + history_log)
     is_master = (git_branch == "master")

@@ -16,5 +16,16 @@ public extension BeeExt where Base == URL {
     var hostPath: String {
         return "\(base.host ?? "")\(base.path)"
     }
+    var queryDict: [String: String] {
+        
+        guard let component = URLComponents.init(string: self.base.absoluteString), let queryItemList = component.queryItems else {
+            return [:]
+        }
+        var para : [String : String] = [:]
+        for item in queryItemList {
+            para[item.name] = item.value
+        }
+        return para
+    }
 }
 

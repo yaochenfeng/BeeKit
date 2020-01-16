@@ -11,8 +11,8 @@ import UIKit
 class Page2ViewController: BaseViewController {
     override class func initWithRouter(_ url: URL, options: [String : Any]?) -> BaseViewController? {
         let rvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "page2")
-        for item in  (URLComponents(string: url.absoluteString)?.queryItems ?? []) where item.name == "title" {
-            rvc.navigationItem.title = "title: \(item.value ?? "")" + Constant.version
+        for item in  url.bee.queryDict where item.key == "title" {
+            rvc.navigationItem.title = "title: \(item.value)" + Constant.version
         }
         return rvc as? BaseViewController
     }
