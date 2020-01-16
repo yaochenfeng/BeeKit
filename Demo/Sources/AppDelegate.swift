@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import BeeKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -16,23 +16,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-
-
-}
-
-// MARK: UISceneSession Lifecycle
-@available(iOS 13.0, *)
-extension AppDelegate {
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        var convertOption : [String : Any] = [:]
+        for key in options.keys {
+            let value = options[key]
+            convertOption[key.rawValue] = value
+        }
+        if URLRouter.shared.canOpen(with: url) {
+            URLRouter.shared.open(url, source: AppDelegate.topViewController(), options: convertOption)
+        }
+        return true
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            if nav.visibleViewController is UIAlertController {
+                return topViewController(nav.topViewController)
+            }
+            return topViewController(nav.visibleViewController)
+        }
+
+        if let tab = base as? UITabBarController {
+            guard let selected = tab.selectedViewController else { return base }
+            return topViewController(selected)
+        }
+        if let presented = base?.presentedViewController {
+            if presented is UIAlertController {
+                return base
+            }
+            return topViewController(presented)
+        }
+        return base
     }
+
 }
 

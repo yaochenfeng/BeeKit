@@ -21,7 +21,7 @@ class DemoViewController: UITableViewController {
 //            super.tableView(tableView, didSelectRowAt: indexPath)
             return
         }
-        URLRouter.shared.open(urlStr, source: self, options: nil)
+        URLRouter.shared.open(URL(string: urlStr.bee.encodeUrlQuery), source: self, options: nil)
         
     }
 }

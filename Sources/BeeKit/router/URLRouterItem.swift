@@ -22,15 +22,12 @@ class URLRouterItemPage: URLRouterItem {
         self.pageRouter = handler
     }
     override func canHandler(_ req: URLActionRequest) -> Bool {
-        return req.url.bee.schemeHostPath == pageRouter.bee_routeString
+        let can = req.url.bee.schemeHostPath == pageRouter.bee_routeString
+        return can
     }
     override func handler(_ req: URLActionRequest) -> URLActionResponse {
         guard let nvc = pageRouter.initWith(req.url, options: req.options)  else {
-            guard let vcType = pageRouter as? UIViewController.Type  else {
-                return URLActionResponse()
-            }
-            let rvc = vcType.init(nibName: nil, bundle: nil)
-            return URLActionResponse(rvc)
+            return URLActionResponse()
         }
         return URLActionResponse(nvc)
     }

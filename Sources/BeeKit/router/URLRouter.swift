@@ -23,37 +23,35 @@ public final class URLRouter {
     }
     /// 是否能处理路由
     /// - Parameters:
-    ///   - str: url str
+    ///   - url: router url
     ///   - source: 从哪个页面收到的路由
     ///   - options: 额外参数
-    public func canOpen(with str:String?,
+    public func canOpen(with url:URL?,
                  source: UIViewController? = nil,
                  options:[String:Any]? = nil) -> Bool {
-        guard let urlStr = str?.bee.encodeUrlQuery,
-            let url = URL(string: urlStr) else {
+        guard let reqURL = url else {
             return false
         }
-        let req = URLActionRequest(url,source: source, params: options)
+        let req = URLActionRequest(reqURL,source: source, params: options)
         for item in routerItems where item.canHandler(req) {
             return true
         }
         return false
     }
     
-    public func open(_ string: String?,
+    public func open(_ url: URL?,
               source: UIViewController? = nil,
               options:[String:Any]? = nil) {
-        guard let urlStr = string?.bee.encodeUrlQuery,
-            let url = URL(string: urlStr) else {
+        guard let reqURL = url else {
             return
         }
-        let req = URLActionRequest(url,source: source, params: options)
+        let req = URLActionRequest(reqURL,source: source, params: options)
         var response: URLActionResponse?
         for item in routerItems where item.canHandler(req) {
             response = item.handler(req)
             break
         }
-        guard let dest = response?.viewController, let sourceVC = source else {
+        guard let dest = response?.obj as? UIViewController, let sourceVC = source else {
             return
         }
         guard let handler = openHandler else {

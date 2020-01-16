@@ -16,7 +16,7 @@ public protocol URLRouterable: AutoConfigable {
 
 public extension URLRouterable where Self: UIViewController {
     static var bee_routeString: String {
-        return "bee://nativePage/\(self)"
+        return "beelink://nativePage/\(self)"
     }
     static func initWith(_ url: URL, options:[String:Any]?) ->UIViewController? {
         let rvc = self.init(nibName: nil, bundle: Bundle(for: self.classForCoder()))

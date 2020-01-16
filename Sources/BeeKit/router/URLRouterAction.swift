@@ -19,10 +19,14 @@ class URLActionRequest {
             options = params
     }
 }
+
+
 class URLActionResponse {
-    private(set) var viewController: UIViewController?
+    
+    /// object for url action response
+    private(set) var obj: AnyObject?
     convenience init(_ vc: UIViewController?) {
         self.init()
-        viewController = vc
+        obj = vc
     }
 }
