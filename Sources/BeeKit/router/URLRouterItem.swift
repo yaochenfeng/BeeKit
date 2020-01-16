@@ -14,9 +14,6 @@ class URLRouterItem {
     func canHandler(_ req: URLActionRequest) -> Bool {
         return false
     }
-    func schemeHostPath(_ url: URL) -> String {
-        return "\(url.scheme ?? "http")://\(url.host ?? "")\(url.path)"
-    }
 }
 
 class URLRouterItemPage: URLRouterItem {
@@ -25,7 +22,7 @@ class URLRouterItemPage: URLRouterItem {
         self.pageRouter = handler
     }
     override func canHandler(_ req: URLActionRequest) -> Bool {
-        return schemeHostPath(req.url) == pageRouter.bee_routeString
+        return req.url.bee.schemeHostPath == pageRouter.bee_routeString
     }
     override func handler(_ req: URLActionRequest) -> URLActionResponse {
         guard let nvc = pageRouter.initWith(req.url, options: req.options)  else {

@@ -9,7 +9,7 @@ import Foundation
 
 extension String: BeeExtProtocol {}
 
-extension BeeExt where Base == String {
+public extension BeeExt where Base == String {
     var encodeUrlQuery: String {
         return self.base.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? ""
     }
