@@ -76,6 +76,9 @@ platform :ios do
     version_bump_podspec(
       version_number: options[:version]
     )
+    increment_version_number(
+      version_number: options[:version] # Set a specific version number
+    )
     # commit the branch
     git_commit(
       path: ".",
