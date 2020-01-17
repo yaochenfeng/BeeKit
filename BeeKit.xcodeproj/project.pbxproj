@@ -94,8 +94,8 @@
 		8F2ED03223C4837C00919E50 /* router */ = {
 			isa = PBXGroup;
 			children = (
-				8F2ED03323C4837C00919E50 /* URLRouterable.swift */,
 				8F2ED03423C4837C00919E50 /* URLRouter.swift */,
+				8F2ED03323C4837C00919E50 /* URLRouterable.swift */,
 				8F2ED03523C4837C00919E50 /* URLRouterAction.swift */,
 				8F2ED03623C4837C00919E50 /* URLRouterItem.swift */,
 			);

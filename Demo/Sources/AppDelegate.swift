@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import BeeKit
+@_exported import BeeKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

@@ -10,25 +10,36 @@ import UIKit
 public final class URLRouter {
     public static let shared: URLRouter = {
         let shared = URLRouter()
+        /// 自动加注册所有路由
+        shared.autoLoadRouter()
         // 可以做一些其他的配置
         return shared
     }()
-    /// 路由项
-    private var routerItems = [URLRouterItem]()
     
+    /// 路由项
+    private var routerItems = [URLRouterItem](){
+        didSet {
+            if oldValue != routerItems {
+                sortRouters()
+            }
+        }
+    }
+    /// 处理显示UIViewController
+    /// - Parameters:
+    ///   - source: 从哪个页面来
+    ///   - dest: 目标页面
+    ///   - options: 额外参数
     public var openHandler: ((_ source:UIViewController, _ dest:UIViewController, _ options: [String:Any]?) -> Void)?
     
-    private init(){
-        autoLoadRouter()
-    }
+    private init(){}
     /// 是否能处理路由
     /// - Parameters:
     ///   - url: router url
     ///   - source: 从哪个页面收到的路由
     ///   - options: 额外参数
     public func canOpen(with url:URL?,
-                 source: UIViewController? = nil,
-                 options:[String:Any]? = nil) -> Bool {
+                        source: UIViewController? = nil,
+                        options:[String:Any]? = nil) -> Bool {
         guard let reqURL = url else {
             return false
         }
@@ -40,8 +51,8 @@ public final class URLRouter {
     }
     
     public func open(_ url: URL?,
-              source: UIViewController? = nil,
-              options:[String:Any]? = nil) {
+                     source: UIViewController? = nil,
+                     options:[String:Any]? = nil) {
         guard let reqURL = url else {
             return
         }
@@ -64,7 +75,7 @@ public final class URLRouter {
 
 extension URLRouter {
     /// 自动加注册所有路由
-   fileprivate func autoLoadRouter() {
+    fileprivate func autoLoadRouter() {
         var count: UInt32 = 0
         guard let classList = objc_copyClassList(&count) else {
             return
@@ -74,8 +85,18 @@ extension URLRouter {
             if let pro = cls as? URLRouterable.Type {
                 routerItems.append(URLRouterItemPage(handler: pro))
             }
-            
+            if let pro = cls as? URLRouterSchemeAble.Type {
+                routerItems.append(URLRouterItemScheme(pro))
+            }
         }
+    }
+    
+    /// 路由排序
+    fileprivate func sortRouters() {
+        routerItems = routerItems.sorted(by: { (item1, item2) -> Bool in
+            //优先级进行从小到大的排序
+            return item2.priority > item1.priority
+        })
     }
 }
 
