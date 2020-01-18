@@ -31,25 +31,13 @@ class WebViewController: UIViewController {
 }
 
 extension WebViewController: URLRouterSchemeAble {
-    static var bee_schemeString: String = "http"
-    static func initWith(_ url: URL, options: [String : Any]?) -> UIViewController? {
-        let web = WebViewController()
-        web.loadURL = url
-        web.navigationItem.title = "scheme: \(bee_schemeString)"
-        return web
-    }
-}
-
-class httpsRouter: NSObject {
     
-}
-
-extension httpsRouter: URLRouterSchemeAble {
-    static var bee_schemeString: String = "https"
-    static func initWith(_ url: URL, options: [String : Any]?) -> UIViewController? {
+    static var bee_scheme: String = "http,https"
+    
+    static func initWith(scheme url: URL, options: [String : Any]?) -> UIViewController? {
         let web = WebViewController()
         web.loadURL = url
-        web.navigationItem.title = "scheme: \(bee_schemeString)"
+        web.navigationItem.title = "scheme: \(url.scheme ?? "def")"
         return web
     }
 }

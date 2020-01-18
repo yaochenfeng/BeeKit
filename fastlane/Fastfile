@@ -39,11 +39,9 @@ platform :ios do
       match_lightweight_tag: true,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
     )
     release_note =  ((File.read("CHANGELOG.md") rescue "No changelog provided\n") + "# Detail Commit\n" + history_log)
-    is_master = (git_branch == "master")
     github_release = set_github_release(
       repository_name: ENV["TRAVIS_REPO_SLUG"],
-      api_token: ENV["GITHUB_TOKEN"],
-      name: "V#{git_tag_name}",
+      name: "#{git_tag_name}",
       tag_name: git_tag_name,
       is_prerelease: true,
       description: release_note,

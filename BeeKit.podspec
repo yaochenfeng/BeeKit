@@ -11,12 +11,12 @@ Pod::Spec.new do |s|
   }
   s.author                    = { "yaochenfeng" => "282696845@qq.com" }
   s.ios.deployment_target     = "8.0"
-  if ENV['IS_SOURCE_ALL'] || ENV['IS_SOURCE_'+s.name.to_s]
-    s.source                    = { :git => "https://github.com/yaochenfeng/BeeKit.git", :tag => s.version.to_s }
-    s.source_files              = "Sources/BeeKit/**/*"
-  else
+  if ENV['USE_BINARY_ALL'] || ENV['USE_BINARY_'+s.name.to_s]
     s.source                    = { :http => "https://github.com/yaochenfeng/BeeKit/releases/download/#{s.version}/BeeKit.framework.zip" }
     s.vendored_frameworks = 'Carthage/Build/iOS/*.framework'
+  else
+    s.source                    = { :git => "https://github.com/yaochenfeng/BeeKit.git", :tag => s.version.to_s }
+    s.source_files              = "Sources/BeeKit/**/*"
   end
   s.frameworks                = "Foundation"
   s.swift_versions = ['5.0']

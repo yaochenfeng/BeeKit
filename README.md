@@ -23,6 +23,12 @@ A Kit for iOS developer.
    </a>
 </p>
 
+Task
+====
+
+- [x] Add Carthage、CocoaPods、Swift Package Manager support
+- [x] Add Router for Controller
+- [ ] Create documentation
 
 ## Installation
 ### [CocoaPods](http://cocoapods.org) 
@@ -38,12 +44,6 @@ end
 ```
 Replace YOUR_TARGET_NAME and then run a `pod install` inside your terminal, or from CocoaPods.app.
 
-#### Optional Sources
-```bash
-$ pod cache clean BeeKit
-$ IS_SOURCE_BeeKit=1 pod install
-```
-
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 Add this to `Cartfile`
@@ -53,3 +53,15 @@ github "yaochenfeng/BeeKit"
 ```
 
 Run `carthage update` to build the framework and drag the built `BeeKit.framework` into your Xcode project.
+
+#### Carthage as a Static Library
+
+Carthage defaults to building BeeKit as a Dynamic Library. 
+
+If you wish to build BeeKit as a Static Library using Carthage you may use the script below to manually modify the framework type before building with Carthage:
+
+```bash
+carthage update RxSwift --platform iOS --no-build
+sed -i -e 's/MACH_O_TYPE = mh_dylib/MACH_O_TYPE = staticlib/g' Carthage/Checkouts/BeeKit/BeeKit.xcodeproj/project.pbxproj
+carthage build BeeKit --platform iOS
+```

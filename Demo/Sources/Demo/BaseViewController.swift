@@ -19,14 +19,8 @@ class BaseViewController: UIViewController {
     
 }
 
-extension BaseViewController: AutoConfigable {
-    static var bee_autoLoad: Bool {
-        return false
-    }
-}
-
 extension BaseViewController: URLRouterable {
-    static func initWith(_ url: URL, options:[String:Any]?) ->UIViewController?{
+    static func initWith(_ url: URL, options: [String : Any]?) -> UIViewController? {
         let rvc = self.initWithRouter(url, options: options)
         for item in  (URLComponents(string: url.absoluteString)?.queryItems ?? []) where item.name == "title" {
             rvc?.navigationItem.title = "title: \(item.value ?? "")"

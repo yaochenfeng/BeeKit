@@ -7,24 +7,21 @@
 
 import UIKit
 
-public protocol AutoConfigable {}
-
-
-public protocol URLRouterable: AutoConfigable {
-    static var bee_routeString: String { get }
+public protocol URLRouterable: NSObject {
+    static var bee_router: String { get }
     static func initWith(_ url: URL, options:[String:Any]?) ->UIViewController?
 }
 
-public protocol URLRouterSchemeAble: NSObject, AutoConfigable {
-    static var bee_schemeString: String { get }
-    static func initWith(_ url: URL, options:[String:Any]?) ->UIViewController?
+public protocol URLRouterSchemeAble: NSObject {
+    static var bee_scheme: String { get }
+    static func initWith(scheme url: URL, options:[String:Any]?) ->UIViewController?
 }
 
 public extension URLRouterable where Self: UIViewController {
-    static var bee_routeString: String {
+    static var bee_router: String {
         return "beelink://nativePage/\(self)"
     }
-    static func initWith(_ url: URL, options:[String:Any]?) ->UIViewController? {
+    static func initWithRouter(_ url: URL, options:[String:Any]?) ->UIViewController? {
         let rvc = self.init(nibName: nil, bundle: Bundle(for: self.classForCoder()))
         return rvc
     }

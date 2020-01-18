@@ -21,10 +21,9 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: IS_SOURCE_ALL=1 fastlane release_candidate
+  script: fastlane release_candidate
   on:
     tags: true
     all_branches: true
 after_deploy:
-  - rm -rf ~/.cocoapods/repos
   - fastlane github_after_deploy
