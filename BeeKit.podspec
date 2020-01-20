@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "BeeKit"
-  s.version                   = "0.0.3"
+  s.version                   = "0.0.4"
   s.summary                   = "Bee"
   s.homepage                  = "https://github.com/yaochenfeng/BeeKit"
   s.license = {
