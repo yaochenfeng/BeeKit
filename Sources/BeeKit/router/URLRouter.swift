@@ -83,7 +83,7 @@ extension URLRouter {
         for index in 0..<numericCast(count) {
             let cls: AnyClass = classList[index]
             if let pro = cls as? URLRouterable.Type {
-                routerItems.append(URLRouterItemPage(handler: pro))
+                routerItems.append(URLRouterItemSchemeAndHostPath(handler: pro))
             }
             if let pro = cls as? URLRouterSchemeAble.Type {
                 routerItems.append(URLRouterItemScheme(pro))
