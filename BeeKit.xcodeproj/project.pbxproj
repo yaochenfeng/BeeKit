@@ -53,9 +53,6 @@
 		"BeeKit::BeeKitTests::Product" /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_13 /* BeeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeKitTests.swift; sourceTree = "<group>"; };
 		OBJ_14 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		OBJ_21 /* BeeKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeeKit.podspec; sourceTree = "<group>"; };
-		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,12 +141,9 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				OBJ_20 /* README.md */,
-				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_11 /* Tests */,
 				OBJ_15 /* Products */,
-				OBJ_21 /* BeeKit.podspec */,
 			);
 			sourceTree = "<group>";
 		};
