@@ -47,9 +47,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5X3-Zy-kQ1" kind="relationship" relationship="viewControllers" id="F95-EK-8KE"/>
-                        <segue destination="i1P-tP-X7W" kind="relationship" relationship="viewControllers" id="7As-0W-t86"/>
-                        <segue destination="Fmr-iT-kbS" kind="relationship" relationship="viewControllers" id="L8v-mV-UZ6"/>
+                        <segue destination="jAa-xg-VoJ" kind="relationship" relationship="viewControllers" id="1gX-7P-nuk"/>
+                        <segue destination="i1P-tP-X7W" kind="relationship" relationship="viewControllers" id="J5v-QL-jBs"/>
+                        <segue destination="Fmr-iT-kbS" kind="relationship" relationship="viewControllers" id="iDD-NB-euF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEO-u0-YLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -119,25 +119,18 @@
             </objects>
             <point key="canvasLocation" x="25" y="-125"/>
         </scene>
-        <!--router-->
-        <scene sceneID="knC-Zc-x1d">
+        <!--Router-->
+        <scene sceneID="iDT-Y5-Yr7">
             <objects>
-                <viewController title="router" id="5X3-Zy-kQ1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vc7-jS-EX5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="9HG-vy-QOq"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="router" image="book" catalog="system" id="8MC-aR-wm2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hI4-Kd-FoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Router" id="jAa-xg-VoJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="66g-k3-iHp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKa-JD-3mm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="-773"/>
+            <point key="canvasLocation" x="-796" y="-909"/>
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="64" height="50"/>
         <image name="briefcase" catalog="system" width="64" height="50"/>
         <image name="pencil.circle" catalog="system" width="64" height="60"/>
     </resources>
