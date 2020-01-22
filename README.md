@@ -33,6 +33,15 @@ Task
 
 ## Usage
 ### Router
+get object for url
+```swift
+URLRouter.shared.objectFor(type: UIViewController.Type, url: <#T##URL?#>)
+```
+show controller for url
+```swift
+URLRouter.shared.open(<#T##url: URL?##URL?#>, source: UIViewController.bee.topVisibleViewController(), options: <#T##[String : Any]?#>)
+```
+
 URLRouterable
 ```swift
 extension WebViewController: URLRouterable {
