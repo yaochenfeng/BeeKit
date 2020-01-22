@@ -7,6 +7,7 @@
 //
 
 import UIKit
+@_exported import BeeKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        var convertOption : [String : Any] = [:]
+        for key in options.keys {
+            let value = options[key]
+            convertOption[key.rawValue] = value
+        }
 
+        if URLRouter.shared.canOpen(with: url, source: UIViewController.bee.topVisibleViewController(), options: convertOption) {
+            URLRouter.shared.open(url, source: UIViewController.bee.topVisibleViewController(), options: convertOption)
+        }
+        return true
+    }
 
 }
 

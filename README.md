@@ -30,6 +30,32 @@ Task
 - [x] Add Router for Controller
 - [ ] Create documentation
 
+
+## Usage
+### Router
+URLRouterable
+```swift
+extension WebViewController: URLRouterable {
+    /** optional
+    var bee_router: String = "beelink://nativePage/webview"
+    */
+    static func initWith(_ url: URL, options: [String : Any]?) -> UIViewController? {
+        return WebViewController(url)
+    }
+}
+```
+
+URLRouterSchemeAble
+```swift
+extension WebViewController: URLRouterable {
+    static var bee_scheme: String = "http,https"
+    
+    static func initWith(scheme url: URL, options: [String : Any]?) -> UIViewController? {
+        return WebViewController(url)
+    }
+}
+```
+
 ## Installation
 ### [CocoaPods](http://cocoapods.org) 
 

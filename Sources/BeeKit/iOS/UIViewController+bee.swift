@@ -10,9 +10,6 @@ import UIKit
 public extension BeeExt where Base: UIViewController {
     
     /// 当前可视视图控制器
-    static var topVisual: UIViewController? {
-        return self.topVisibleViewController()
-    }
     static func topVisibleViewController(_ root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = root as? UINavigationController {
             if nav.visibleViewController is UIAlertController {
