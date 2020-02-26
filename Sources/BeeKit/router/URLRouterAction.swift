@@ -7,7 +7,7 @@
 
 import UIKit
 
-class URLActionRequest {
+public class URLActionRequest {
     private(set) var url: URL
     var sourceController: UIViewController?
     var options: [String: Any]?
@@ -21,7 +21,7 @@ class URLActionRequest {
 }
 
 
-class URLActionResponse {
+public class URLActionResponse {
     
     /// object for url action response
     private(set) var obj: AnyObject?

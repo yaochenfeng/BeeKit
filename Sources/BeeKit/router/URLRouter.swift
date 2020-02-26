@@ -24,6 +24,8 @@ public final class URLRouter {
             }
         }
     }
+    private var requestMiddlewares = [URLRouterMiddleRequest]()
+    private var responseMiddlewares = [URLRouterMiddleResponse]()
     /// 处理显示UIViewController
     /// - Parameters:
     ///   - source: 从哪个页面来
@@ -59,6 +61,12 @@ extension URLRouter {
             return item2.priority > item1.priority
         })
     }
+    public func add(_ mid: URLRouterMiddleRequest){
+        requestMiddlewares.append(mid)
+    }
+    public func add(_ mid: URLRouterMiddleResponse){
+        responseMiddlewares.append(mid)
+    }
 }
 
 extension URLRouter {
@@ -77,16 +85,36 @@ extension URLRouter {
             return nil
         }
         let req = URLActionRequest(reqURL,source: source, params: options)
-        var response: URLActionResponse?
-        for item in routerItems where item.canHandler(req) {
-            response = item.handler(req)
-            break
-        }
+        let response = process(req)
         guard let obj = response?.obj as? T else {
             return nil
         }
         return obj
     }
+    
+    private func process(_ req:URLActionRequest) -> URLActionResponse? {
+        var response = preprocess(req)
+        if response == nil {
+            for item in routerItems where item.canHandler(req) {
+                response = item.handler(req)
+                break
+            }
+        }
+        for mid in responseMiddlewares {
+            response = mid.processResponse(response: response, request: req)
+        }
+        return response
+    }
+    private func preprocess(_ req:URLActionRequest) -> URLActionResponse? {
+        for mid in requestMiddlewares {
+            guard let response = mid.processRequest(request: req) else {
+                return nil
+            }
+            return response
+        }
+        return nil
+    }
+    
 }
 
 extension URLRouter {
