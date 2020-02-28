@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3A1998240CD9FA004910DD /* BeeKitConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A1997240CD9FA004910DD /* BeeKitConfig.plist */; };
 		8F44651D23D6F2730029A0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44651C23D6F2730029A0D4 /* AppDelegate.swift */; };
 		8F44651F23D6F2730029A0D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44651E23D6F2730029A0D4 /* SceneDelegate.swift */; };
 		8F44652423D6F2730029A0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F44652223D6F2730029A0D4 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F3A1997240CD9FA004910DD /* BeeKitConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BeeKitConfig.plist; sourceTree = "<group>"; };
 		8F44651923D6F2730029A0D4 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F44651C23D6F2730029A0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F44651E23D6F2730029A0D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				8F44654023D6F6290029A0D4 /* Base */,
 				8F44655023D708460029A0D4 /* Router */,
 				8F44652A23D6F2770029A0D4 /* Info.plist */,
+				8F3A1997240CD9FA004910DD /* BeeKitConfig.plist */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				8F44652923D6F2770029A0D4 /* LaunchScreen.storyboard in Resources */,
 				8F44655423D708FB0029A0D4 /* Router.storyboard in Resources */,
 				8F44652623D6F2770029A0D4 /* Assets.xcassets in Resources */,
+				8F3A1998240CD9FA004910DD /* BeeKitConfig.plist in Resources */,
 				8F44652423D6F2730029A0D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
