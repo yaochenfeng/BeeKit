@@ -1,29 +1,12 @@
 //
 //  SceneDelegate.swift
-//  Demo
+//  Example
 //
-//  Created by 姚晨峰 on 2019/12/26.
-//  Copyright © 2019 姚晨峰. All rights reserved.
+//  Created by yaochenfeng on 2020/1/21.
+//  Copyright © 2020 Example. All rights reserved.
 //
 
 import UIKit
-import BeeKit
-
-// MARK: UISceneSession Lifecycle
-@available(iOS 13.0, *)
-extension AppDelegate {
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-}
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -65,13 +48,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        let url = URLContexts.first?.url
-        if URLRouter.shared.canOpen(with: url) {
-            URLRouter.shared.open(url, source: AppDelegate.topViewController(), options: nil)
+        if URLRouter.shared.canOpen(with: URLContexts.first?.url, source: UIViewController.bee.topVisibleViewController(), options: nil) {
+            URLRouter.shared.open(URLContexts.first?.url, source: UIViewController.bee.topVisibleViewController(), options: nil)
         }
     }
+
 
 }
 

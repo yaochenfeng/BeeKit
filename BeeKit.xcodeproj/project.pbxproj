@@ -16,6 +16,11 @@
 		8F2ED03923C4837C00919E50 /* URLRouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03523C4837C00919E50 /* URLRouterAction.swift */; };
 		8F2ED03A23C4837C00919E50 /* URLRouterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03623C4837C00919E50 /* URLRouterItem.swift */; };
 		8F4F2C1623D0393100FC0022 /* URL+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F2C1523D0393100FC0022 /* URL+bee.swift */; };
+		8F61A150240685F60075BE0C /* URLRouterMiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F61A14F240685F60075BE0C /* URLRouterMiddle.swift */; };
+		8FDB7DBA23D5ACB3003C4EF8 /* URLRouterItemSchemePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DB923D5ACB3003C4EF8 /* URLRouterItemSchemePath.swift */; };
+		8FDB7DBC23D5AD9F003C4EF8 /* URLRouterItemScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBB23D5AD9F003C4EF8 /* URLRouterItemScheme.swift */; };
+		8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */; };
+		8FDB7DC023D6E054003C4EF8 /* UIView+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */; };
 		OBJ_46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* BeeKitTests.swift */; };
 		OBJ_47 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* XCTestManifests.swift */; };
 		OBJ_49 /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BeeKit::BeeKit::Product" /* BeeKit.framework */; };
@@ -41,13 +46,15 @@
 		8F2ED03523C4837C00919E50 /* URLRouterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterAction.swift; sourceTree = "<group>"; };
 		8F2ED03623C4837C00919E50 /* URLRouterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterItem.swift; sourceTree = "<group>"; };
 		8F4F2C1523D0393100FC0022 /* URL+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+bee.swift"; sourceTree = "<group>"; };
+		8F61A14F240685F60075BE0C /* URLRouterMiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouterMiddle.swift; sourceTree = "<group>"; };
+		8FDB7DB923D5ACB3003C4EF8 /* URLRouterItemSchemePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouterItemSchemePath.swift; sourceTree = "<group>"; };
+		8FDB7DBB23D5AD9F003C4EF8 /* URLRouterItemScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouterItemScheme.swift; sourceTree = "<group>"; };
+		8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+bee.swift"; sourceTree = "<group>"; };
+		8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+bee.swift"; sourceTree = "<group>"; };
 		"BeeKit::BeeKit::Product" /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"BeeKit::BeeKitTests::Product" /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_13 /* BeeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeKitTests.swift; sourceTree = "<group>"; };
 		OBJ_14 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		OBJ_21 /* BeeKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BeeKit.podspec; sourceTree = "<group>"; };
-		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,8 @@
 			children = (
 				8F2ED01723BE1BAE00919E50 /* String+bee.swift */,
 				8F4F2C1523D0393100FC0022 /* URL+bee.swift */,
+				8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */,
+				8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -98,6 +107,9 @@
 				8F2ED03323C4837C00919E50 /* URLRouterable.swift */,
 				8F2ED03523C4837C00919E50 /* URLRouterAction.swift */,
 				8F2ED03623C4837C00919E50 /* URLRouterItem.swift */,
+				8FDB7DBB23D5AD9F003C4EF8 /* URLRouterItemScheme.swift */,
+				8FDB7DB923D5ACB3003C4EF8 /* URLRouterItemSchemePath.swift */,
+				8F61A14F240685F60075BE0C /* URLRouterMiddle.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -132,12 +144,9 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_11 /* Tests */,
 				OBJ_15 /* Products */,
-				OBJ_20 /* README.md */,
-				OBJ_21 /* BeeKit.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,8 +231,13 @@
 				8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */,
 				8F2ED03923C4837C00919E50 /* URLRouterAction.swift in Sources */,
 				8F4F2C1623D0393100FC0022 /* URL+bee.swift in Sources */,
+				8FDB7DBC23D5AD9F003C4EF8 /* URLRouterItemScheme.swift in Sources */,
+				8FDB7DBA23D5ACB3003C4EF8 /* URLRouterItemSchemePath.swift in Sources */,
 				8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */,
+				8FDB7DC023D6E054003C4EF8 /* UIView+bee.swift in Sources */,
+				8F61A150240685F60075BE0C /* URLRouterMiddle.swift in Sources */,
 				8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */,
+				8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */,
 				8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */,
 				8F2ED02123BE1BAE00919E50 /* BeeKit.swift in Sources */,
 			);
