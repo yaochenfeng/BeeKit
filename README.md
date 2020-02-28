@@ -48,8 +48,8 @@ extension WebViewController: URLRouterable {
     /** optional
     var bee_router: String = "beelink://nativePage/webview"
     */
-    static func initWith(_ url: URL, options: [String : Any]?) -> UIViewController? {
-        return WebViewController(url)
+    static func initWith(_ request: URLActionRequest) -> UIViewController? {
+        return WebViewController(request.url)
     }
 }
 ```
@@ -59,8 +59,8 @@ URLRouterSchemeAble
 extension WebViewController: URLRouterable {
     static var bee_scheme: String = "http,https"
     
-    static func initWith(scheme url: URL, options: [String : Any]?) -> UIViewController? {
-        return WebViewController(url)
+    static func initWith(scheme request: URLActionRequest) -> UIViewController? {
+        return WebViewController(request.url)
     }
 }
 ```
