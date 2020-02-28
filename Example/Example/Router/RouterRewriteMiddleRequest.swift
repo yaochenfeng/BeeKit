@@ -12,7 +12,8 @@ import BeeKit
 class RouterRewriteMiddleRequest: NSObject,URLRouterMiddleRequest {
     override init() {
         super.init()
-        self.config["beelink://nativePage/switchtab"] = "beelink://nativePage/switchtab2?index=2"
+//        self.config["beelink://nativePage/switchtab"] = "beelink://nativePage/switchtab?index=2"
+//        self.config["beelink://nativePage/switchtab"] = "https://www.baidu.com"
     }
     var config:[String: String] = [String: String]()
     func processRequest(request: URLActionRequest) -> URLActionResponse? {

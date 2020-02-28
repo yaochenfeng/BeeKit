@@ -93,16 +93,23 @@ extension URLRouter {
     }
     
     private func process(_ req:URLActionRequest) -> URLActionResponse? {
+        // 处理前置路由中间件
         var response = preprocess(req)
+        // 处理转发路由
+        let rewrite = response?.redirectURL
+        if req.isRedirect, let _ = response?.redirectURL {
+            response = nil
+        } else if let rewriteURL = rewrite {
+            return process(req.forward(rewriteURL))
+        }
+        
         if response == nil {
             for item in routerItems where item.canHandler(req) {
                 response = item.handler(req)
                 break
             }
         }
-        if let rewrite = response?.redirectURL {//转发到新地址
-            return process(req.forward(rewrite))
-        }
+        // 处理结果路由中间件
         for mid in responseMiddlewares {
             response = mid.processResponse(response: response, request: req)
         }

@@ -19,7 +19,7 @@ class URLRouterItemSchemeAndHostPath: URLRouterItem {
         return can
     }
     override func handler(_ req: URLActionRequest) -> URLActionResponse {
-        guard let nvc = handler.initWith(req.url, options: req.options)  else {
+        guard let nvc = handler.initWith(req)  else {
             return URLActionResponse()
         }
         return URLActionResponse(nvc)

@@ -9,12 +9,12 @@ import UIKit
 
 public protocol URLRouterable: NSObject {
     static var bee_router: String { get }
-    static func initWith(_ url: URL, options:[String:Any]?) ->UIViewController?
+    static func initWith(_ request:URLActionRequest) ->UIViewController?
 }
 
 public protocol URLRouterSchemeAble: NSObject {
     static var bee_scheme: String { get }
-    static func initWith(scheme url: URL, options:[String:Any]?) ->UIViewController?
+    static func initWith(scheme request:URLActionRequest) ->UIViewController?
 }
 
 public extension URLRouterable where Self: UIViewController {

@@ -11,7 +11,7 @@ import UIKit
 class WebviewHandler: NSObject, URLRouterSchemeAble {
     static var bee_scheme: String = "http,https"
     
-    static func initWith(scheme url: URL, options: [String : Any]?) -> UIViewController? {
-        return WebViewController(url)
+    static func initWith(scheme request: URLActionRequest) -> UIViewController? {
+        return WebViewController(request.url)
     }
 }

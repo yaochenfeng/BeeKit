@@ -12,8 +12,9 @@ class TabbarHandler: NSObject, URLRouterable {
     
     public static var bee_router: String = "beelink://nativePage/switchtab"
     
-    public static func initWith(_ url: URL, options: [String : Any]?) -> UIViewController? {
+    static func initWith(_ request: URLActionRequest) -> UIViewController? {
         //
+        let url = request.url
         guard let tabbar = UIViewController.bee.topVisibleViewController()?.tabBarController else {
             return nil
         }
