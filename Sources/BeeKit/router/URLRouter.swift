@@ -100,6 +100,9 @@ extension URLRouter {
                 break
             }
         }
+        if let rewrite = response?.redirectURL {//转发到新地址
+            return process(req.forward(rewrite))
+        }
         for mid in responseMiddlewares {
             response = mid.processResponse(response: response, request: req)
         }

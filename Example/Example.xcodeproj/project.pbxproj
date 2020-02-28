@@ -15,6 +15,7 @@
 		8F44654323D6F6570029A0D4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44654223D6F6570029A0D4 /* TabBarController.swift */; };
 		8F44654523D6F6700029A0D4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F44654423D6F6700029A0D4 /* NavigationController.swift */; };
 		8F44655423D708FB0029A0D4 /* Router.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F44655323D708FB0029A0D4 /* Router.storyboard */; };
+		8F61A152240912780075BE0C /* RouterRewriteMiddleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F61A151240912780075BE0C /* RouterRewriteMiddleRequest.swift */; };
 		8F6E39AE23D7E25700A56386 /* RouterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E39AD23D7E25700A56386 /* RouterTableViewController.swift */; };
 		8F6E39B223D7E5A700A56386 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E39B123D7E5A700A56386 /* WebViewController.swift */; };
 		8F6E39B423D7E5CD00A56386 /* WebviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E39B323D7E5CD00A56386 /* WebviewHandler.swift */; };
@@ -57,6 +58,7 @@
 		8F44654223D6F6570029A0D4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8F44654423D6F6700029A0D4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		8F44655323D708FB0029A0D4 /* Router.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Router.storyboard; sourceTree = "<group>"; };
+		8F61A151240912780075BE0C /* RouterRewriteMiddleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRewriteMiddleRequest.swift; sourceTree = "<group>"; };
 		8F6E39AD23D7E25700A56386 /* RouterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTableViewController.swift; sourceTree = "<group>"; };
 		8F6E39B123D7E5A700A56386 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8F6E39B323D7E5CD00A56386 /* WebviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewHandler.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				8F44655323D708FB0029A0D4 /* Router.storyboard */,
 				8F6E39AD23D7E25700A56386 /* RouterTableViewController.swift */,
+				8F61A151240912780075BE0C /* RouterRewriteMiddleRequest.swift */,
 				8F6E39B723D7E8F100A56386 /* tabbar */,
 				8F6E39B023D7E54A00A56386 /* web */,
 			);
@@ -256,6 +259,7 @@
 				8F44654523D6F6700029A0D4 /* NavigationController.swift in Sources */,
 				8F44651D23D6F2730029A0D4 /* AppDelegate.swift in Sources */,
 				8F44651F23D6F2730029A0D4 /* SceneDelegate.swift in Sources */,
+				8F61A152240912780075BE0C /* RouterRewriteMiddleRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
