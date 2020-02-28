@@ -16,7 +16,7 @@ open class URLActionRequest {
     public var isRedirect: Bool {
         return originURL != nil
     }
-    init(_ u: URL,
+    public init(_ u: URL,
          source: UIViewController? = nil,
          params:[String:Any]? = nil) {
             url = u
@@ -26,7 +26,7 @@ open class URLActionRequest {
     
     /// 转发
     /// - Parameter redirect: url
-    func forward(_ redirect: URL) -> Self{
+    public func forward(_ redirect: URL) -> Self{
         let origin = url
         url = redirect
         originURL = origin
