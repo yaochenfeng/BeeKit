@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01523BE1BAE00919E50 /* Constant.swift */; };
 		8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01723BE1BAE00919E50 /* String+bee.swift */; };
-		8F2ED02123BE1BAE00919E50 /* BeeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01823BE1BAE00919E50 /* BeeKit.swift */; };
 		8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01923BE1BAE00919E50 /* BeeExt.swift */; };
 		8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03323C4837C00919E50 /* URLRouterable.swift */; };
 		8F2ED03823C4837C00919E50 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03423C4837C00919E50 /* URLRouter.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		8F2ED01523BE1BAE00919E50 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8F2ED01723BE1BAE00919E50 /* String+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+bee.swift"; sourceTree = "<group>"; };
-		8F2ED01823BE1BAE00919E50 /* BeeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeKit.swift; sourceTree = "<group>"; };
 		8F2ED01923BE1BAE00919E50 /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
 		8F2ED03323C4837C00919E50 /* URLRouterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterable.swift; sourceTree = "<group>"; };
 		8F2ED03423C4837C00919E50 /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			children = (
 				8F3A199A240CDC27004910DD /* UIKit */,
 				8F61A1542409283B0075BE0C /* objc */,
-				8F2ED01823BE1BAE00919E50 /* BeeKit.swift */,
 				8F2ED01523BE1BAE00919E50 /* Constant.swift */,
 				8F2ED01923BE1BAE00919E50 /* BeeExt.swift */,
 				8F2ED03223C4837C00919E50 /* router */,
@@ -283,7 +280,6 @@
 				8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */,
 				8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */,
 				8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */,
-				8F2ED02123BE1BAE00919E50 /* BeeKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
