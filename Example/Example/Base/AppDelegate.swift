@@ -15,8 +15,6 @@ class AppDelegate: BeeAppDelegate {
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let res = super.application(application, didFinishLaunchingWithOptions: launchOptions)
-//        self.add(FlutterAppDelegate(), name: "flutter")
-//        self.responds(to: #selector(applicationWillResignActive(_:)))
         print(res)
         // Override point for customization after application launch.
         URLRouter.shared.add(RouterRewriteMiddleRequest())
@@ -36,12 +34,10 @@ class AppDelegate: BeeAppDelegate {
         }
         return true
     }
-    @objc
-    override func applicationDidBecomeActive(_ application: UIApplication) {
-        let res =  super.applicationDidBecomeActive(application)
-        print(res)
-    }
     
+    override func applicationDidBecomeActive(_ application: UIApplication) {
+        super.applicationDidBecomeActive(application)
+    }
 
 }
 
