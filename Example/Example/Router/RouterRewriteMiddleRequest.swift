@@ -27,6 +27,6 @@ class RouterRewriteMiddleRequest: NSObject,URLRouterMiddleRequest {
         guard let url = urlComponents?.url else {
             return nil
         }
-        return URLActionResponse(url)
+        return URLActionResponse(url: url)
     }
 }

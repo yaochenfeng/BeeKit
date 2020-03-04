@@ -27,7 +27,7 @@ class URLRouterItem {
         guard let nvc = handler.initWith(req: req)  else {
             return URLActionResponse()
         }
-        return URLActionResponse(nvc)
+        return URLActionResponse(obj:nvc)
     }
     func canHandler(_ req: URLActionRequest) -> Bool {
         return false

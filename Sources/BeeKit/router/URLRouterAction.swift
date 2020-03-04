@@ -41,11 +41,11 @@ open class URLActionResponse {
     public private(set) var obj: AnyObject?
     public private(set) var redirectURL: URL?
     
-    public convenience init(_ vc: AnyObject?) {
+    public convenience init(obj: AnyObject?) {
         self.init()
-        obj = vc
+        self.obj = obj
     }
-    public convenience init(_ url: URL) {
+    public convenience init(url: URL) {
         self.init()
         redirectURL = url
     }
