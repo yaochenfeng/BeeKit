@@ -40,21 +40,6 @@ extension URLRouterItem: Equatable {
     }
 }
 
-class URLRouterItemScheme: URLRouterItem {
-    
-    var schemes: [String] = []
-    init(_ handler: URLRouterable.Type, schemes:[String]) {
-        self.schemes = schemes
-        super.init(handler)
-        self.priority = .scheme
-    }
-    override func canHandler(_ req: URLActionRequest) -> Bool {
-        guard let scheme = req.url.scheme else {
-            return false
-        }
-        return schemes.contains(scheme)
-    }
-}
 
 /// 精准匹配
 /// scheme hostpath handler item
@@ -71,13 +56,32 @@ class URLRouterItemSchemeAndHostPath: URLRouterItem {
     }
 }
 
+
+/// scheme handler
+class URLRouterItemScheme: URLRouterItem {
+    
+    var schemes: [String] = []
+    init(_ handler: URLRouterable.Type, schemes:[String]) {
+        self.schemes = schemes
+        super.init(handler)
+        self.priority = .scheme
+    }
+    override func canHandler(_ req: URLActionRequest) -> Bool {
+        guard let scheme = req.url.scheme else {
+            return false
+        }
+        return schemes.contains(scheme)
+    }
+}
+
+
 /// custom handle item
 class URLRouterItemCustom: URLRouterItem {
     var routerItem: URLRouterableCustom.Type
     init(_ handler: URLRouterableCustom.Type) {
         self.routerItem = handler
         super.init(handler)
-        self.priority = handler.bee_priority
+        self.priority = .custom
     }
     override func canHandler(_ req: URLActionRequest) -> Bool {
         return routerItem.canHandler(req)

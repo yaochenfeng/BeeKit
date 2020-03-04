@@ -26,7 +26,6 @@ public protocol URLRouterableScheme: URLRouterable {
 /// custom
 public protocol URLRouterableCustom: URLRouterable {
     static func canHandler(_ req: URLActionRequest) -> Bool
-    static var bee_priority: URLRouterPriority { get }
 }
 
 public extension URLRouterableCustom where Self: NSObject {
