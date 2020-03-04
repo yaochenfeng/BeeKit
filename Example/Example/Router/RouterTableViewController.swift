@@ -31,7 +31,7 @@ class RouterTableViewController: UITableViewController {
     }
 }
 
-extension RouterTableViewController: URLRouterable {
+extension RouterTableViewController: URLRouterableExact {
     public static var bee_router: String = "beelink://nativePage/routerdemo"
     
     static func initWith(req request: URLActionRequest) -> UIViewController? {

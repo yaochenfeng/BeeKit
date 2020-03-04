@@ -59,10 +59,10 @@ extension URLRouter {
     }
     public func registerRouter(_ cls: AnyClass){
         if let pro = cls as? URLRouterableExact.Type {
-            routerItems.append(URLRouterItemSchemeAndHostPath(pro))
+            routerItems.append(URLRouterItemSchemeAndHostPath(pro, router: pro.bee_router))
         }
         if let pro = cls as? URLRouterableScheme.Type {
-            routerItems.append(URLRouterItemScheme(pro))
+            routerItems.append(URLRouterItemScheme(pro, schemes: pro.bee_scheme.components(separatedBy: ",")))
         }
         if let pro = cls as? URLRouterableCustom.Type {
             routerItems.append(URLRouterItemCustom(pro))
