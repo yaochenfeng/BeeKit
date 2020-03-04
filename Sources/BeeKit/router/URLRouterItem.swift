@@ -7,10 +7,18 @@
 
 import UIKit
 
+public enum URLRouterItemPriority: Int {
+    case base = 1
+    case schemeHostPath = 10
+    case custom = 20
+    case scheme = 30
+}
+
+
 class URLRouterItem {
     /// 优先级
     //进行从小到大的排序,小的在前面
-    var priority = 5
+    var priority:URLRouterItemPriority = URLRouterItemPriority.custom
     func handler(_ req: URLActionRequest) -> URLActionResponse {
         return URLActionResponse()
     }

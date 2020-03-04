@@ -17,13 +17,7 @@ public final class URLRouter {
     }()
     
     /// 路由项
-    private var routerItems = [URLRouterItem](){
-        didSet {
-            if oldValue != routerItems {
-                sortRouters()
-            }
-        }
-    }
+    private var routerItems = [URLRouterItem]()
     private var requestMiddlewares = [URLRouterMiddleRequest]()
     private var responseMiddlewares = [URLRouterMiddleResponse]()
     /// 处理显示UIViewController
@@ -45,20 +39,16 @@ extension URLRouter {
         }
         for index in 0..<numericCast(count) {
             let cls: AnyClass = classList[index]
-            if let pro = cls as? URLRouterable.Type {
-                routerItems.append(URLRouterItemSchemeAndHostPath(handler: pro))
-            }
-            if let pro = cls as? URLRouterSchemeAble.Type {
-                routerItems.append(URLRouterItemScheme(pro))
-            }
+            registerRouter(cls)
         }
+        sortRouters()
     }
     
     /// 路由排序
-    fileprivate func sortRouters() {
+    public func sortRouters() {
         routerItems = routerItems.sorted(by: { (item1, item2) -> Bool in
             //优先级进行从小到大的排序
-            return item2.priority > item1.priority
+            return item2.priority.rawValue > item1.priority.rawValue
         })
     }
     public func add(_ mid: URLRouterMiddleRequest){
@@ -66,6 +56,17 @@ extension URLRouter {
     }
     public func add(_ mid: URLRouterMiddleResponse){
         responseMiddlewares.append(mid)
+    }
+    public func registerRouter(_ cls: AnyClass){
+        if let pro = cls as? URLRouterableExact.Type {
+            routerItems.append(URLRouterItemSchemeAndHostPath(pro))
+        }
+        if let pro = cls as? URLRouterableScheme.Type {
+            routerItems.append(URLRouterItemScheme(pro))
+        }
+        if let pro = cls as? URLRouterableCustom.Type {
+            routerItems.append(URLRouterItemCustom(pro))
+        }
     }
 }
 
