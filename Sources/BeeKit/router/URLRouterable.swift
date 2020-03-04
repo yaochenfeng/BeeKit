@@ -8,21 +8,34 @@
 import UIKit
 
 public protocol URLRouterable: NSObject {
+    static func initWith(req request:URLActionRequest) -> UIViewController?
+}
+
+/// scheme://host/path
+public protocol URLRouterableExact: URLRouterable {
     static var bee_router: String { get }
-    static func initWith(_ request:URLActionRequest) ->UIViewController?
 }
-
-public protocol URLRouterSchemeAble: NSObject {
+/// hostpath 
+public protocol URLRouterableRegex: URLRouterable {
+    static var bee_regex: String { get }
+}
+/// scheme://
+public protocol URLRouterableScheme: URLRouterable {
     static var bee_scheme: String { get }
-    static func initWith(scheme request:URLActionRequest) ->UIViewController?
+}
+/// custom
+public protocol URLRouterableCustom: URLRouterable {
+    static func canHandler(_ req: URLActionRequest) -> Bool
 }
 
-public extension URLRouterable where Self: UIViewController {
-    static var bee_router: String {
-        return "beelink://nativePage/\(self)"
+public extension URLRouterableCustom where Self: NSObject {
+    static var bee_priority: URLRouterPriority {
+        return .custom
     }
-    static func initWithRouter(_ url: URL, options:[String:Any]?) ->UIViewController? {
-        let rvc = self.init(nibName: nil, bundle: Bundle(for: self.classForCoder()))
-        return rvc
+}
+
+public extension URLRouterableExact where Self: UIViewController {
+    static var bee_router: String {
+        return "beelink://nativepage/\(self)"
     }
 }

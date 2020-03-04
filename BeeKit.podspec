@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "BeeKit"
-  s.version                   = "0.0.6"
+  s.version                   = "0.0.8"
   s.summary                   = "Bee"
   s.homepage                  = "https://github.com/yaochenfeng/BeeKit"
   s.license = {
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   else
     s.source                    = { :git => "https://github.com/yaochenfeng/BeeKit.git", :tag => s.version.to_s }
     s.source_files              = "Sources/BeeKit/**/*.{h,m,swift}"
-    s.public_header_files = 'Sources/BeeKit/**/Bee*.{h,m,swift}'
+    s.public_header_files = 'Sources/BeeKit/**/Bee*.h'
   end
   s.frameworks                = "Foundation"
   s.swift_versions = ['5.0']

@@ -41,7 +41,7 @@ open class URLActionResponse {
     public private(set) var obj: AnyObject?
     public private(set) var redirectURL: URL?
     
-    public convenience init(_ vc: UIViewController?) {
+    public convenience init(_ vc: AnyObject?) {
         self.init()
         obj = vc
     }

@@ -36,8 +36,7 @@ class WebViewController: UIViewController {
 
 }
 
-extension WebViewController: UIApplicationDelegate {
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        print("applicationDidBecomeActive")
-    }
+
+class TaobaoWeb: WebViewController {
+    
 }
