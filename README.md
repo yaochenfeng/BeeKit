@@ -44,11 +44,11 @@ URLRouter.shared.open(<#T##url: URL?##URL?#>, source: UIViewController.bee.topVi
 
 URLRouterable
 ```swift
-extension WebViewController: URLRouterable {
+extension WebViewController: URLRouterableExact {
     /** optional
     var bee_router: String = "beelink://nativePage/webview"
     */
-    static func initWith(_ request: URLActionRequest) -> UIViewController? {
+    static func initWith(req request: URLActionRequest) -> UIViewController? {
         return WebViewController(request.url)
     }
 }
@@ -56,10 +56,10 @@ extension WebViewController: URLRouterable {
 
 URLRouterSchemeAble
 ```swift
-extension WebViewController: URLRouterable {
+extension WebViewController: URLRouterableScheme {
     static var bee_scheme: String = "http,https"
     
-    static func initWith(scheme request: URLActionRequest) -> UIViewController? {
+    static func initWith(req request: URLActionRequest) -> UIViewController? {
         return WebViewController(request.url)
     }
 }
