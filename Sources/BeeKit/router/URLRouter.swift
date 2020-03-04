@@ -61,6 +61,9 @@ extension URLRouter {
         if let pro = cls as? URLRouterableExact.Type {
             routerItems.append(URLRouterItemSchemeAndHostPath(pro, router: pro.bee_router))
         }
+        if let pro = cls as? URLRouterableRegex.Type {
+            routerItems.append(URLRouterItemHostPathRegex(pro, pattern: pro.bee_regex))
+        }
         if let pro = cls as? URLRouterableScheme.Type {
             routerItems.append(URLRouterItemScheme(pro, schemes: pro.bee_scheme.components(separatedBy: ",")))
         }

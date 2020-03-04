@@ -11,26 +11,23 @@ import UIKit
 class WebviewHandler: NSObject, URLRouterableScheme {
     static var bee_scheme: String = "http,https"
 }
-//extension WebviewHandler: URLRouterableCustom {
 
-//
-//}
-
-extension WebviewHandler: URLRouterableExact {
-        static func initWith(req request: URLActionRequest) -> UIViewController? {
-            if request.url.scheme?.contains("http") ?? false {
-                return WebViewController(request.url)
-            } else {
-                let newStr = request.url.absoluteString.replacingOccurrences(of: request.url.scheme ?? "", with: "https")
-                return WebViewController(newStr)
-            }
-    
+extension WebviewHandler: URLRouterable {
+    static func initWith(req request: URLActionRequest) -> UIViewController? {
+        if request.url.scheme?.contains("http") ?? false {
+            return WebViewController(request.url)
+        } else {
+            let newStr = request.url.absoluteString.replacingOccurrences(of: request.url.scheme ?? "", with: "https")
+            return WebViewController(newStr)
         }
-        static func canHandler(_ req: URLActionRequest) -> Bool {
-            if req.url.host?.contains("m.ctrip.com") ?? false {
-                return true
-            }
-            return false
-        }
-    static var bee_router = "beelink://m.ctrip.com/webapp/vacations/tour/vacations"
+    }
 }
+
+extension WebviewHandler: URLRouterableRegex {
+    static var bee_regex: String = "([A-Za-z]+).ctrip.com/"
+}
+
+
+//extension WebviewHandler: URLRouterableExact {
+//    static var bee_router = "beelink://m.ctrip.com/webapp/vacations/tour/vacations"
+//}

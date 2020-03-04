@@ -8,8 +8,8 @@
 import UIKit
 
 public enum URLRouterPriority: Int {
-    case base = 1
     case schemeHostPath = 10
+    case regex = 15
     case custom = 20
     case scheme = 30
 }
@@ -53,6 +53,23 @@ class URLRouterItemSchemeAndHostPath: URLRouterItem {
     override func canHandler(_ req: URLActionRequest) -> Bool {
         let can = req.url.bee.schemeHostPath == self.bee_router
         return can
+    }
+}
+
+class URLRouterItemHostPathRegex: URLRouterItem {
+    var pattern:String
+    init(_ handler: URLRouterable.Type, pattern:String) {
+        self.pattern = pattern
+        super.init(handler)
+        self.priority = .regex
+    }
+    override func canHandler(_ req: URLActionRequest) -> Bool {
+        
+        let hostPath = req.url.bee.hostPath
+        guard let range = hostPath.range(of: pattern, options: .regularExpression, range: nil, locale: nil) else {
+            return false
+        }
+        return true
     }
 }
 
