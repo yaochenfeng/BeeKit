@@ -66,7 +66,7 @@ class URLRouterItemHostPathRegex: URLRouterItem {
     override func canHandler(_ req: URLActionRequest) -> Bool {
         
         let hostPath = req.url.bee.hostPath
-        guard let range = hostPath.range(of: pattern, options: .regularExpression, range: nil, locale: nil) else {
+        guard let _ = hostPath.range(of: pattern, options: .regularExpression, range: nil, locale: nil) else {
             return false
         }
         return true
