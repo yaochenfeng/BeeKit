@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01523BE1BAE00919E50 /* Constant.swift */; };
 		8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01723BE1BAE00919E50 /* String+bee.swift */; };
 		8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01923BE1BAE00919E50 /* BeeExt.swift */; };
 		8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03323C4837C00919E50 /* URLRouterable.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8F2ED01523BE1BAE00919E50 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8F2ED01723BE1BAE00919E50 /* String+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+bee.swift"; sourceTree = "<group>"; };
 		8F2ED01923BE1BAE00919E50 /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
 		8F2ED03323C4837C00919E50 /* URLRouterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterable.swift; sourceTree = "<group>"; };
@@ -79,26 +77,14 @@
 		8F2ED01423BE1BAE00919E50 /* BeeKit */ = {
 			isa = PBXGroup;
 			children = (
+				8F2ED01923BE1BAE00919E50 /* BeeExt.swift */,
+				8FAA1AE32424B2B400E54BDF /* Fundation */,
 				8F3A199A240CDC27004910DD /* UIKit */,
 				8F61A1542409283B0075BE0C /* objc */,
-				8F2ED01523BE1BAE00919E50 /* Constant.swift */,
-				8F2ED01923BE1BAE00919E50 /* BeeExt.swift */,
 				8F2ED03223C4837C00919E50 /* router */,
-				8F2ED01623BE1BAE00919E50 /* iOS */,
 			);
 			name = BeeKit;
 			path = Sources/BeeKit;
-			sourceTree = "<group>";
-		};
-		8F2ED01623BE1BAE00919E50 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8F2ED01723BE1BAE00919E50 /* String+bee.swift */,
-				8F4F2C1523D0393100FC0022 /* URL+bee.swift */,
-				8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */,
-				8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		8F2ED03223C4837C00919E50 /* router */ = {
@@ -116,6 +102,8 @@
 		8F3A199A240CDC27004910DD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */,
+				8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -128,6 +116,15 @@
 				8F61A156240928650075BE0C /* BeeAppDelegate.m */,
 			);
 			path = objc;
+			sourceTree = "<group>";
+		};
+		8FAA1AE32424B2B400E54BDF /* Fundation */ = {
+			isa = PBXGroup;
+			children = (
+				8F2ED01723BE1BAE00919E50 /* String+bee.swift */,
+				8F4F2C1523D0393100FC0022 /* URL+bee.swift */,
+			);
+			path = Fundation;
 			sourceTree = "<group>";
 		};
 		OBJ_11 /* Tests */ = {
@@ -269,7 +266,6 @@
 				8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */,
 				8FDB7DC023D6E054003C4EF8 /* UIView+bee.swift in Sources */,
 				8F61A150240685F60075BE0C /* URLRouterMiddle.swift in Sources */,
-				8F2ED01F23BE1BAE00919E50 /* Constant.swift in Sources */,
 				8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */,
 				8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */,
 			);

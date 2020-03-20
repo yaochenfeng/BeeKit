@@ -13,7 +13,7 @@ before_install:
 script:
   - fastlane run run_tests
   - carthage build --no-skip-current
-  - carthage archive $FRAMEWORK_NAME
+  - pod lib lint
 before_deploy:
   - brew outdated carthage || brew upgrade carthage
   - carthage build --no-skip-current

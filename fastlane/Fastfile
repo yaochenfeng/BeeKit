@@ -25,15 +25,9 @@ platform :ios do
     else
       raise "provided your tag.!".red
     end
-
-    if options[:last_tag]
-      last_tag = options[:last_tag]
-    else
-      last_tag = last_git_tag(pattern: "*.?")
-      last_tag = last_tag ? last_tag : "master"
-    end
+    recent_tag = lastsecond_git_tag(last_tag_name:git_tag_name)
     history_log = changelog_from_git_commits(
-      between: [last_tag, "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
+      between: [recent_tag,'HEAD'],  # Optional, lets you specify a revision/tag range between which to collect commit info
       pretty: "- %s %h",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
       date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
       match_lightweight_tag: true,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
