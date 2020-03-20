@@ -57,7 +57,10 @@ extension URLRouter {
     public func add(_ mid: URLRouterMiddleResponse){
         responseMiddlewares.append(mid)
     }
+    
+    /// register  only swift class for URLRouter
     public func registerRouter(_ cls: AnyClass){
+        guard NSStringFromClass(cls).contains(".") else { return }
         if let pro = cls as? URLRouterableExact.Type {
             routerItems.append(URLRouterItemSchemeAndHostPath(pro, router: pro.bee_router))
         }
