@@ -34,13 +34,16 @@ extension URLRouter {
     /// 自动加注册所有路由
     fileprivate func autoLoadRouter() {
         var count: UInt32 = 0
-        guard let classList = objc_copyClassList(&count) else {
+        guard let classListPointer = objc_copyClassList(&count) else {
             return
         }
-        for index in 0..<numericCast(count) {
-            let cls: AnyClass = classList[index]
+        let classList = UnsafeBufferPointer(start: classListPointer, count: Int(count)).map { obj -> AnyObject.Type in
+            return obj
+        }
+        for cls in classList {
             registerRouter(cls)
         }
+        
         sortRouters()
     }
     
