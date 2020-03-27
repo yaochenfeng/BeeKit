@@ -77,9 +77,9 @@ class URLRouterItemHostPathRegex: URLRouterItem {
 /// scheme handler
 class URLRouterItemScheme: URLRouterItem {
     
-    var schemes: [String] = []
-    init(_ handler: URLRouterable.Type, schemes:[String]) {
-        self.schemes = schemes
+    var scheme: String
+    init(_ handler: URLRouterable.Type, scheme:String) {
+        self.scheme = scheme
         super.init(handler)
         self.priority = .scheme
     }
@@ -87,7 +87,7 @@ class URLRouterItemScheme: URLRouterItem {
         guard let scheme = req.url.scheme else {
             return false
         }
-        return schemes.contains(scheme)
+        return self.scheme == scheme
     }
 }
 

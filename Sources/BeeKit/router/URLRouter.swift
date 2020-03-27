@@ -11,7 +11,12 @@ public final class URLRouter {
     public static let shared: URLRouter = {
         let shared = URLRouter()
         /// 自动加注册所有路由
-        shared.autoLoadRouter()
+        Bee.messure("autoLoadRouter") {
+            shared.autoLoadRouter()
+        }
+        Bee.messure("sortRouters") {
+            shared.sortRouters()
+        }
         // 可以做一些其他的配置
         return shared
     }()
@@ -34,14 +39,15 @@ extension URLRouter {
     /// 自动加注册所有路由
     fileprivate func autoLoadRouter() {
         var count: UInt32 = 0
-        guard let classList = objc_copyClassList(&count) else {
+        guard let classListPointer = objc_copyClassList(&count) else {
             return
         }
-        for index in 0..<numericCast(count) {
-            let cls: AnyClass = classList[index]
+        let classList = UnsafeBufferPointer(start: classListPointer, count: Int(count)).map { obj -> AnyObject.Type in
+            return obj
+        }
+        for cls in classList {
             registerRouter(cls)
         }
-        sortRouters()
     }
     
     /// 路由排序
@@ -63,16 +69,32 @@ extension URLRouter {
         guard NSStringFromClass(cls).contains(".") else { return }
         if let pro = cls as? URLRouterableExact.Type {
             routerItems.append(URLRouterItemSchemeAndHostPath(pro, router: pro.bee_router))
+            register(exact: pro.bee_router, handler: pro)
         }
         if let pro = cls as? URLRouterableRegex.Type {
-            routerItems.append(URLRouterItemHostPathRegex(pro, pattern: pro.bee_regex))
+            register(regex: pro.bee_regex, handler: pro)
         }
         if let pro = cls as? URLRouterableScheme.Type {
-            routerItems.append(URLRouterItemScheme(pro, schemes: pro.bee_scheme.components(separatedBy: ",")))
+            let schemes = pro.bee_scheme.components(separatedBy: ",")
+            for scheme in schemes {
+                register(scheme: scheme, handler: pro)
+            }
         }
         if let pro = cls as? URLRouterableCustom.Type {
-            routerItems.append(URLRouterItemCustom(pro))
+            register(custom: pro)
         }
+    }
+    public func register(exact: String, handler: URLRouterable.Type){
+        routerItems.append(URLRouterItemSchemeAndHostPath(handler, router: exact))
+    }
+    public func register(regex: String, handler: URLRouterable.Type){
+        routerItems.append(URLRouterItemHostPathRegex(handler, pattern: regex))
+    }
+    public func register(scheme: String, handler: URLRouterable.Type){
+        routerItems.append(URLRouterItemScheme(handler, scheme: scheme))
+    }
+    public func register(custom: URLRouterableCustom.Type){
+        routerItems.append(URLRouterItemCustom(custom))
     }
 }
 

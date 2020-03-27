@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1CA9CF242E2CF8006D7A35 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CA9CE242E2CF8006D7A35 /* Bee.swift */; };
 		8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01723BE1BAE00919E50 /* String+bee.swift */; };
 		8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01923BE1BAE00919E50 /* BeeExt.swift */; };
 		8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03323C4837C00919E50 /* URLRouterable.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F1CA9CE242E2CF8006D7A35 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		8F2ED01723BE1BAE00919E50 /* String+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+bee.swift"; sourceTree = "<group>"; };
 		8F2ED01923BE1BAE00919E50 /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
 		8F2ED03323C4837C00919E50 /* URLRouterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterable.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		8F2ED01423BE1BAE00919E50 /* BeeKit */ = {
 			isa = PBXGroup;
 			children = (
+				8F1CA9CE242E2CF8006D7A35 /* Bee.swift */,
 				8F2ED01923BE1BAE00919E50 /* BeeExt.swift */,
 				8FAA1AE32424B2B400E54BDF /* Fundation */,
 				8F3A199A240CDC27004910DD /* UIKit */,
@@ -261,6 +264,7 @@
 				8F2ED03A23C4837C00919E50 /* URLRouterItem.swift in Sources */,
 				8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */,
 				8F2ED03923C4837C00919E50 /* URLRouterAction.swift in Sources */,
+				8F1CA9CF242E2CF8006D7A35 /* Bee.swift in Sources */,
 				8F61A157240928650075BE0C /* BeeAppDelegate.m in Sources */,
 				8F4F2C1623D0393100FC0022 /* URL+bee.swift in Sources */,
 				8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */,
