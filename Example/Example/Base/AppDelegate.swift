@@ -39,4 +39,19 @@ class AppDelegate: BeeAppDelegate {
     }
 
 }
+class FlutterAppDelegate: NSObject,UIApplicationDelegate{
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        return true
+    }
+}
+
+class FlutterAppDelegate2: NSObject,UIApplicationDelegate{
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        return false
+    }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
+}

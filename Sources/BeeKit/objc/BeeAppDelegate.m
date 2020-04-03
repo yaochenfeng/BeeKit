@@ -116,14 +116,24 @@ static id _instance;
     return response;
 }
 - (void)proxyForwardInvocation:(NSInvocation *)anInvocation {
-    
+    const char *returnType =  anInvocation.methodSignature.methodReturnType;
+    BOOL isBool = false;
+    if( !strcmp(returnType, @encode(BOOL)) ) {
+        isBool = true;
+    }
+    BOOL retValue = false;
     [self.delegateMap enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id<UIApplicationDelegate> _Nonnull obj, BOOL * _Nonnull stop) {
         if ( ! [obj respondsToSelector:anInvocation.selector]) {
             return;
         }
         [anInvocation invokeWithTarget:obj];
+        if (!retValue && isBool) {
+            [anInvocation getReturnValue:(void *)&retValue];
+        }
     }];
-    // todo return value
+    if (retValue) {
+        [anInvocation setReturnValue:&retValue];
+    }
 }
 
 -(void)doesNotRecognizeSelector:(SEL)aSelector{

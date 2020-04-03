@@ -19,4 +19,11 @@ public extension BeeExt where Base: UIView {
         }
         return nil;
     }
+    var safeAreaInsets: UIEdgeInsets {
+        if #available(iOS 11.0, *) {
+            return base.safeAreaInsets
+        } else {
+            return .zero
+        }
+    }
 }

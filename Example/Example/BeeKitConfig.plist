@@ -12,6 +12,14 @@
 			<key>name</key>
 			<string>flutter</string>
 		</dict>
+		<dict>
+			<key>framework</key>
+			<string>Example</string>
+			<key>class</key>
+			<string>FlutterAppDelegate2</string>
+			<key>name</key>
+			<string>flutter2</string>
+		</dict>
 	</array>
 </dict>
 </plist>

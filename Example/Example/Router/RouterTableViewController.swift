@@ -27,7 +27,6 @@ class RouterTableViewController: UITableViewController {
                     return
                 }
                 URLRouter.shared.open(urlStr.bee.encodeURL, options: nil)
-
     }
 }
 
