@@ -14,9 +14,7 @@ public final class URLRouter {
         Bee.messure("autoLoadRouter") {
             shared.autoLoadRouter()
         }
-        Bee.messure("sortRouters") {
-            shared.sortRouters()
-        }
+        shared.sortRouters()
         // 可以做一些其他的配置
         return shared
     }()
@@ -163,7 +161,7 @@ extension URLRouter {
     ///   - source: 从哪个页面收到的路由
     ///   - options: 额外参数
     public func canOpen(with url:URL?,
-                        source: UIViewController? = UIViewController.bee.topVisibleViewController(),
+                        source: UIViewController? = UIViewController.bee.topVisible(),
                         options:[String:Any]? = nil) -> Bool {
         guard let reqURL = url else {
             return false
@@ -176,7 +174,7 @@ extension URLRouter {
     }
     
     public func open(_ url: URL?,
-                     source: UIViewController? = UIViewController.bee.topVisibleViewController(),
+                     source: UIViewController? = UIViewController.bee.topVisible(),
                      options:[String:Any]? = nil) {
         guard let dest = self.objectFor(type: UIViewController.self, url: url,source: source, options: options),
             let sourceVC = source else {

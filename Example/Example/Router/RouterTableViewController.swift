@@ -26,7 +26,7 @@ class RouterTableViewController: UITableViewController {
         //            super.tableView(tableView, didSelectRowAt: indexPath)
                     return
                 }
-                URLRouter.shared.open(urlStr.bee.encodeURL, source: self, options: nil)
+                URLRouter.shared.open(urlStr.bee.encodeURL, options: nil)
 
     }
 }

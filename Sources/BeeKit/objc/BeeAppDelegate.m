@@ -88,6 +88,9 @@ static id _instance;
     }
     self.delegateMap[name] = delegate;
 }
+- (nullable id<UIApplicationDelegate>)delegateForName:(NSString*) name{
+    return self.delegateMap[name];
+}
 
 
 - (BOOL)respondsToSelector:(SEL)aSelector

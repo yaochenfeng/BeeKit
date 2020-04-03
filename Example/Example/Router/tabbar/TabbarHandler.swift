@@ -15,7 +15,7 @@ class TabbarHandler: NSObject, URLRouterableExact {
     static func initWith(req request: URLActionRequest) -> UIViewController? {
         //
         let url = request.url
-        guard let tabbar = UIViewController.bee.topVisibleViewController()?.tabBarController else {
+        guard let tabbar = UIViewController.bee.topVisible()?.tabBarController else {
             return nil
         }
         guard let str = url.bee.queryDict["index"], let index = Int(str) else {
