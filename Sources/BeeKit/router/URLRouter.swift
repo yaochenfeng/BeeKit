@@ -106,8 +106,8 @@ extension URLRouter {
     ///   - options: options
     public func objectFor<T>(type: T.Type,
                              url: URL?,
-                             source: UIViewController? = nil,
-                             options:[String:Any]? = nil) -> T? {
+                             options:[String:Any]? = nil,
+                             source: UIViewController? = nil) -> T? {
         guard let reqURL = url else {
             return nil
         }
@@ -161,8 +161,8 @@ extension URLRouter {
     ///   - source: 从哪个页面收到的路由
     ///   - options: 额外参数
     public func canOpen(with url:URL?,
-                        source: UIViewController? = UIViewController.bee.topVisible(),
-                        options:[String:Any]? = nil) -> Bool {
+                        options:[String:Any]? = nil,
+                        source: UIViewController? = UIViewController.bee.topVisible()) -> Bool {
         guard let reqURL = url else {
             return false
         }
@@ -174,9 +174,9 @@ extension URLRouter {
     }
     
     public func open(_ url: URL?,
-                     source: UIViewController? = UIViewController.bee.topVisible(),
-                     options:[String:Any]? = nil) {
-        guard let dest = self.objectFor(type: UIViewController.self, url: url,source: source, options: options),
+                     options:[String:Any]? = nil,
+                     source: UIViewController? = UIViewController.bee.topVisible()) {
+        guard let dest = self.objectFor(type: UIViewController.self, url: url,options: options, source: source),
             let sourceVC = source else {
                 return
         }
