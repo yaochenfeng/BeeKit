@@ -43,8 +43,10 @@ extension URLRouter {
         let classList = UnsafeBufferPointer(start: classListPointer, count: Int(count)).map { obj -> AnyObject.Type in
             return obj
         }
-        for cls in classList {
-            registerRouter(cls)
+        for cls in classList {/// register  only swift class for URLRouter
+            if NSStringFromClass(cls).contains("."){
+               registerRouter(cls)
+            }
         }
     }
     
@@ -61,10 +63,7 @@ extension URLRouter {
     public func add(_ mid: URLRouterMiddleResponse){
         responseMiddlewares.append(mid)
     }
-    
-    /// register  only swift class for URLRouter
     public func registerRouter(_ cls: AnyClass){
-        guard NSStringFromClass(cls).contains(".") else { return }
         if let pro = cls as? URLRouterableExact.Type {
             routerItems.append(URLRouterItemSchemeAndHostPath(pro, router: pro.bee_router))
             register(exact: pro.bee_router, handler: pro)
