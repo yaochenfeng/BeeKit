@@ -128,7 +128,6 @@ extension URLRouter {
         } else if let rewriteURL = rewrite {
             return process(req.forward(rewriteURL))
         }
-        
         if response == nil {
             for item in routerItems where item.canHandler(req) {
                 response = item.handler(req)
@@ -143,10 +142,9 @@ extension URLRouter {
     }
     private func preprocess(_ req:URLActionRequest) -> URLActionResponse? {
         for mid in requestMiddlewares {
-            guard let response = mid.processRequest(request: req) else {
-                return nil
+            if let response = mid.processRequest(request: req) {
+                return response
             }
-            return response
         }
         return nil
     }
