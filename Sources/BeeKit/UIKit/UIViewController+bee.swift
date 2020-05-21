@@ -33,4 +33,28 @@ public extension BeeExt where Base: UIViewController {
         }
         return root
     }
+    static func topNavigation(_ root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UINavigationController? {
+        if let nav = root as? UINavigationController {
+            return nav
+        }
+        if let tab = root as? UITabBarController {
+            guard let selected = tab.selectedViewController else { return root?.navigationController }
+            return topNavigation(selected)
+        }
+        if let presented = root?.presentedViewController {
+            return topNavigation(presented)
+        }
+        return root?.navigationController
+    }
+    
+    func replaceOrShow(_ vc:UIViewController, animated: Bool){
+        if let nav = base.navigationController {
+            nav.bee.replaceOrPush(old: base, new: vc, animated: animated)
+        } else {
+            if base.presentingViewController == vc {
+                base.dismiss(animated: false, completion: nil)
+            }
+            base.present(vc, animated: animated, completion: nil)
+        }
+    }
 }

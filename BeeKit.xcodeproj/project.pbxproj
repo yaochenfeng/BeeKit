@@ -20,6 +20,9 @@
 		8F61A157240928650075BE0C /* BeeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F61A156240928650075BE0C /* BeeAppDelegate.m */; };
 		8F61A159240928980075BE0C /* BeeAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F61A155240928650075BE0C /* BeeAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F61A15E24092A430075BE0C /* BeeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F61A15D24092A220075BE0C /* BeeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F71B5F224764EB100C9B1CC /* UINavigationController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F71B5F124764EB100C9B1CC /* UINavigationController+bee.swift */; };
+		8F71B5F42476560900C9B1CC /* UIImage+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F71B5F32476560900C9B1CC /* UIImage+bee.swift */; };
+		8F71B5F72476587F00C9B1CC /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F71B5F52476587300C9B1CC /* UIImageTests.swift */; };
 		8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */; };
 		8FDB7DC023D6E054003C4EF8 /* UIView+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */; };
 		OBJ_46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* BeeKitTests.swift */; };
@@ -51,6 +54,9 @@
 		8F61A155240928650075BE0C /* BeeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeeAppDelegate.h; sourceTree = "<group>"; };
 		8F61A156240928650075BE0C /* BeeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeeAppDelegate.m; sourceTree = "<group>"; };
 		8F61A15D24092A220075BE0C /* BeeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeeKit.h; sourceTree = "<group>"; };
+		8F71B5F124764EB100C9B1CC /* UINavigationController+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+bee.swift"; sourceTree = "<group>"; };
+		8F71B5F32476560900C9B1CC /* UIImage+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+bee.swift"; sourceTree = "<group>"; };
+		8F71B5F52476587300C9B1CC /* UIImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
 		8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+bee.swift"; sourceTree = "<group>"; };
 		8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+bee.swift"; sourceTree = "<group>"; };
 		"BeeKit::BeeKit::Product" /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +116,8 @@
 				8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */,
 				8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */,
 				8F392864244435A200CFCFAB /* UIColor+bee.swift */,
+				8F71B5F124764EB100C9B1CC /* UINavigationController+bee.swift */,
+				8F71B5F32476560900C9B1CC /* UIImage+bee.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 			children = (
 				OBJ_13 /* BeeKitTests.swift */,
 				OBJ_14 /* XCTestManifests.swift */,
+				8F71B5F52476587300C9B1CC /* UIImageTests.swift */,
 			);
 			name = BeeKitTests;
 			path = Tests/BeeKitTests;
@@ -233,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 9999;
-				LastUpgradeCheck = 9999;
+				LastUpgradeCheck = 1140;
 				TargetAttributes = {
 					"BeeKit::BeeKit" = {
 						LastSwiftMigration = 1130;
@@ -246,6 +255,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = OBJ_5;
 			productRefGroup = OBJ_15 /* Products */;
@@ -263,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				8F71B5F42476560900C9B1CC /* UIImage+bee.swift in Sources */,
 				8F2ED03823C4837C00919E50 /* URLRouter.swift in Sources */,
 				8F2ED03A23C4837C00919E50 /* URLRouterItem.swift in Sources */,
 				8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */,
@@ -275,6 +286,7 @@
 				8F61A150240685F60075BE0C /* URLRouterMiddle.swift in Sources */,
 				8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */,
 				8F392865244435A200CFCFAB /* UIColor+bee.swift in Sources */,
+				8F71B5F224764EB100C9B1CC /* UINavigationController+bee.swift in Sources */,
 				8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +297,7 @@
 			files = (
 				OBJ_46 /* BeeKitTests.swift in Sources */,
 				OBJ_47 /* XCTestManifests.swift in Sources */,
+				8F71B5F72476587F00C9B1CC /* UIImageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,17 +375,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
@@ -389,15 +428,40 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,7 +478,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -435,7 +498,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",

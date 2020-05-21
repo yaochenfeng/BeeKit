@@ -13,17 +13,15 @@ public extension BeeExt where Base: UIColor {
                        blue: CGFloat(arc4random_uniform(255))/CGFloat(255.0),
                        alpha: 1)
     }
-    static func initWith(hex: String) -> UIColor {
+    static func initWith(hex: String, alpha:CGFloat = 1.0) -> UIColor {
         let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
-        var alpha: CGFloat = 1.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
+        var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
         switch colorString.count {
         case 3://RGB
-            alpha = 1.0
             red = colorComponent(fromString: colorString, range: 0..<1)
             green = colorComponent(fromString: colorString, range: 1..<2)
             blue = colorComponent(fromString: colorString, range: 2..<3)
         case 6: /// RRGGBB
-            alpha = 1.0
             red = colorComponent(fromString: colorString, range: 0..<2)
             green = colorComponent(fromString: colorString, range: 2..<4)
             blue = colorComponent(fromString: colorString, range: 4..<6)
