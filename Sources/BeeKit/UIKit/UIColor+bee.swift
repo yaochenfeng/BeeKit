@@ -7,12 +7,14 @@
 
 import Foundation
 public extension BeeExt where Base: UIColor {
+    /// 随机颜色
     static var random: UIColor {
         return UIColor(red: CGFloat(arc4random_uniform(255))/CGFloat(255.0),
                        green: CGFloat(arc4random_uniform(255))/CGFloat(255.0),
                        blue: CGFloat(arc4random_uniform(255))/CGFloat(255.0),
                        alpha: 1)
     }
+    /// 根据hex创建颜色
     static func initWith(hex: String, alpha:CGFloat = 1.0) -> UIColor {
         let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
         var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0

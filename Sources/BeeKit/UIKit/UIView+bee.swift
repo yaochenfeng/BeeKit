@@ -8,11 +8,13 @@
 import UIKit
 
 public extension BeeExt where Base: UIView {
+    
+    /// 对应的控制器
     var controller: UIViewController? {
         var nextView : UIResponder = self.base
         while nextView.next != nil {
-            if nextView.next!.isKind(of: UIViewController.self) == true {
-                return nextView.next as? UIViewController
+            if let vc = nextView.next as? UIViewController {
+                return vc
             } else {
                 nextView = nextView.next!
             }

@@ -14,6 +14,8 @@ public extension BeeExt where Base: UIViewController {
     static func topVisibleViewController(_ root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         return topVisible(root)
     }
+    
+    /// 当前显示的控制器
     static func topVisible(_ root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = root as? UINavigationController {
             if nav.visibleViewController is UIAlertController {
@@ -33,6 +35,8 @@ public extension BeeExt where Base: UIViewController {
         }
         return root
     }
+    
+    /// 当前显示的导航栏
     static func topNavigation(_ root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UINavigationController? {
         if let nav = root as? UINavigationController {
             return nav
@@ -47,6 +51,7 @@ public extension BeeExt where Base: UIViewController {
         return root?.navigationController
     }
     
+    /// 替换或者显示vc
     func replaceOrShow(_ vc:UIViewController, animated: Bool){
         if let nav = base.navigationController {
             nav.bee.replaceOrPush(old: base, new: vc, animated: animated)

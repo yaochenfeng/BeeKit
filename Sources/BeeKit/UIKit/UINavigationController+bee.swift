@@ -17,6 +17,8 @@ public extension BeeExt where Base: UINavigationController {
             base.pushViewController(new, animated: animated)
         }
     }
+    
+    /// 移除最后一个控制器(只有一个时不移除) 然后 显示新的控制器
     func removeLastAndPush(new: UIViewController, animated: Bool) {
         var vcs = base.viewControllers
         if vcs.count == 1 {

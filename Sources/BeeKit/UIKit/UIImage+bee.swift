@@ -13,8 +13,11 @@ public extension BeeExt where Base: UIImage {
     ///   - color: 图片颜色
     ///   - size: 大小
     ///   - cornerRadius: 圆角
-    ///   - corners: 那个角需要圆角
-    static func initWith(color: UIColor, size: CGSize, cornerRadius: CGFloat = 0, corners: UIRectCorner = .allCorners) -> UIImage? {
+    ///   - corners: 需要圆角的边
+    static func initWith(color: UIColor,
+                         size: CGSize,
+                         cornerRadius: CGFloat = 0,
+                         corners: UIRectCorner = .allCorners) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         defer {
             UIGraphicsEndImageContext()

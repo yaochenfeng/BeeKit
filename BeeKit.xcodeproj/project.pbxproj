@@ -113,11 +113,11 @@
 		8F3A199A240CDC27004910DD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8F392864244435A200CFCFAB /* UIColor+bee.swift */,
+				8F71B5F32476560900C9B1CC /* UIImage+bee.swift */,
 				8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */,
 				8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */,
-				8F392864244435A200CFCFAB /* UIColor+bee.swift */,
 				8F71B5F124764EB100C9B1CC /* UINavigationController+bee.swift */,
-				8F71B5F32476560900C9B1CC /* UIImage+bee.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
