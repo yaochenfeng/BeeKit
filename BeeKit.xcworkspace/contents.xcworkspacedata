@@ -4,13 +4,12 @@
    <FileRef
       location = "group:README.md">
    </FileRef>
-   <Group
-      location = "container:"
-      name = "Configs">
-      <FileRef
-         location = "group:BeeKit.podspec">
-      </FileRef>
-   </Group>
+   <FileRef
+      location = "group:BeeKit.podspec">
+   </FileRef>
+   <FileRef
+      location = "container:BeeKit.playground">
+   </FileRef>
    <FileRef
       location = "group:BeeKit.xcodeproj">
    </FileRef>
