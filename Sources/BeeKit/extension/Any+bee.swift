@@ -1,11 +1,9 @@
 //
-//  NSObject+bee.swift
+//  Any+bee.swift
 //  BeeKit
 //
 //  Created by yaochenfeng on 2020/6/13.
 //
-
-import UIKit
 
 public extension BeeExt where Base: Any {
     func then(_ block: (Base) throws -> Void) rethrows -> Base {

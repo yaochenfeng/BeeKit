@@ -9,10 +9,10 @@ import Foundation
 
 /// Tools for
 public struct Bee {
-    public static func messure(_ name:String, _ function:()->()){
-        let start = CACurrentMediaTime()
-        function()
-        let end = CACurrentMediaTime()
-        debugPrint("\(name) execute：\( (end - start) * 1000 ) ms")
+    public static func messure(_ name:String, _ block:()->()){
+        let start = Date()
+        block()
+        let end = Date().timeIntervalSince(start)
+        debugPrint("\(name) execute：\( end * 1000 ) ms")
     }
 }

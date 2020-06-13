@@ -5,7 +5,8 @@
 //  Created by yaochenfeng on 2020/4/13.
 //
 
-import Foundation
+import UIKit
+
 public extension BeeExt where Base: UIColor {
     /// 随机颜色
     static var random: UIColor {
