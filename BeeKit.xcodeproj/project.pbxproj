@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76A24951169008056BB /* BeeKitTests.swift */; };
 		8F9AB73F2495054A008056BB /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9AB73524950549008056BB /* BeeKit.framework */; };
 		8F9AB75324950C74008056BB /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75124950C74008056BB /* BeeExt.swift */; };
 		8F9AB75424950C74008056BB /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75224950C74008056BB /* Bee.swift */; };
@@ -19,7 +20,6 @@
 		8F9AB76724951071008056BB /* UIViewController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76224951071008056BB /* UIViewController+bee.swift */; };
 		8F9AB76824951071008056BB /* UINavigationController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76324951071008056BB /* UINavigationController+bee.swift */; };
 		8F9AB76924951071008056BB /* UIColor+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76424951071008056BB /* UIColor+bee.swift */; };
-		8F9AB76C24951170008056BB /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76A24951169008056BB /* BeeKitTests.swift */; };
 		8F9AB77324951365008056BB /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76E24951365008056BB /* URLRouterable.swift */; };
 		8F9AB77424951365008056BB /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76F24951365008056BB /* URLRouter.swift */; };
 		8F9AB77524951365008056BB /* URLRouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77024951365008056BB /* URLRouterAction.swift */; };
@@ -310,7 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F9AB76C24951170008056BB /* BeeKitTests.swift in Sources */,
+				8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
