@@ -7,8 +7,6 @@
 
 import Foundation
 
-extension URL: BeeExtProtocol {}
-
 public extension BeeExt where Base == URL {
     var schemeHostPath: String {
         return "\(base.scheme ?? "http")://\(base.host ?? "")\(base.path)"

@@ -36,4 +36,11 @@ public struct BeeExt<Base> {
     }
 }
 
+extension CGRect: BeeExtProtocol {}
+extension Array: BeeExtProtocol {}
+extension Dictionary: BeeExtProtocol {}
+extension Set: BeeExtProtocol {}
+extension String: BeeExtProtocol {}
+extension URL: BeeExtProtocol {}
+
 extension NSObject: BeeExtProtocol {}

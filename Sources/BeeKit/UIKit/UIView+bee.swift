@@ -28,4 +28,10 @@ public extension BeeExt where Base: UIView {
             return .zero
         }
     }
+    /// 添加子视图数组
+    func addSubViews(_ views: [UIView]) {
+        for view in views {
+            base.addSubview(view)
+        }
+    }
 }
