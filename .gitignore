@@ -9,6 +9,7 @@
 # Carthage/Checkouts
 
 Carthage/Build
+*.zip
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -103,4 +104,9 @@ DerivedData/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+# Swift Package Manager
+Packages/
+Package.pins
+Package.resolved
+.swiftpm
 # End of https://www.toptal.com/developers/gitignore/api/macos,xcode,carthage,cocoapods,fastlane
