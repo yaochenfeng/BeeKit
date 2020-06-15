@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76A24951169008056BB /* BeeKitTests.swift */; };
+		8F7E56A52495400600B2DE46 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E56A42495400600B2DE46 /* Constant.swift */; };
 		8F9AB73F2495054A008056BB /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9AB73524950549008056BB /* BeeKit.framework */; };
 		8F9AB75324950C74008056BB /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75124950C74008056BB /* BeeExt.swift */; };
 		8F9AB75424950C74008056BB /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75224950C74008056BB /* Bee.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F7E56A42495400600B2DE46 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8F9AB73524950549008056BB /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9AB73E2495054A008056BB /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9AB75124950C74008056BB /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				8F9AB75224950C74008056BB /* Bee.swift */,
 				8F9AB75124950C74008056BB /* BeeExt.swift */,
+				8F7E56A42495400600B2DE46 /* Constant.swift */,
 				8F9AB77A24951771008056BB /* objc */,
 				8F9AB76D24951365008056BB /* router */,
 				8F9AB75924950FE1008056BB /* extension */,
@@ -297,6 +300,7 @@
 				8F9AB77324951365008056BB /* URLRouterable.swift in Sources */,
 				8F9AB77424951365008056BB /* URLRouter.swift in Sources */,
 				8F9AB75324950C74008056BB /* BeeExt.swift in Sources */,
+				8F7E56A52495400600B2DE46 /* Constant.swift in Sources */,
 				8F9AB76624951071008056BB /* UIView+bee.swift in Sources */,
 				8F9AB75D24951029008056BB /* String+bee.swift in Sources */,
 				8F9AB75E24951029008056BB /* Any+bee.swift in Sources */,
