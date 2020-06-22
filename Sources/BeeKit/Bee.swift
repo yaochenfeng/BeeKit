@@ -7,12 +7,12 @@
 
 import Foundation
 
-/// Tools for
+/// Tools for BeeKit
 public struct Bee {
     public static func messure(_ name:String, _ block:()->()){
-        let start = Date()
+        let start = CFAbsoluteTimeGetCurrent()
         block()
-        let end = Date().timeIntervalSince(start)
-        debugPrint("\(name) execute：\( end * 1000 ) ms")
+        let diff = CFAbsoluteTimeGetCurrent() - start
+        debugPrint("\(name) execute：\(diff) seconds")
     }
 }
