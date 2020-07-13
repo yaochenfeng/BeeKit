@@ -30,6 +30,7 @@
 		8F9AB77E24951771008056BB /* BeeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F9AB77B24951771008056BB /* BeeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F9AB77F24951771008056BB /* BeeAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F9AB77C24951771008056BB /* BeeAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F9AB78024951771008056BB /* BeeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77D24951771008056BB /* BeeAppDelegate.m */; };
+		8FA1FCF624B4A3E200A70785 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA1FCF524B4A3E200A70785 /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		8F9AB77B24951771008056BB /* BeeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeKit.h; sourceTree = "<group>"; };
 		8F9AB77C24951771008056BB /* BeeAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeAppDelegate.h; sourceTree = "<group>"; };
 		8F9AB77D24951771008056BB /* BeeAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeAppDelegate.m; sourceTree = "<group>"; };
+		8FA1FCF524B4A3E200A70785 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				8F9AB75224950C74008056BB /* Bee.swift */,
 				8F6BE07724A0B01700122154 /* BeeConstant.swift */,
 				8F9AB75124950C74008056BB /* BeeExt.swift */,
+				8FA1FCF424B4A24000A70785 /* util */,
 				8F9AB77A24951771008056BB /* objc */,
 				8F9AB76D24951365008056BB /* router */,
 				8F9AB75924950FE1008056BB /* extension */,
@@ -181,6 +184,14 @@
 				8F9AB77D24951771008056BB /* BeeAppDelegate.m */,
 			);
 			path = objc;
+			sourceTree = "<group>";
+		};
+		8FA1FCF424B4A24000A70785 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				8FA1FCF524B4A3E200A70785 /* UserDefault.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 				8F9AB75D24951029008056BB /* String+bee.swift in Sources */,
 				8F9AB75E24951029008056BB /* Any+bee.swift in Sources */,
 				8F9AB75F24951029008056BB /* URL+bee.swift in Sources */,
+				8FA1FCF624B4A3E200A70785 /* UserDefault.swift in Sources */,
 				8F9AB77624951366008056BB /* URLRouterItem.swift in Sources */,
 				8F9AB77724951366008056BB /* URLRouterMiddle.swift in Sources */,
 			);

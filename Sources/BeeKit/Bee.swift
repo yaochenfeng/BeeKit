@@ -13,6 +13,6 @@ public struct Bee {
         let start = CFAbsoluteTimeGetCurrent()
         block()
         let diff = CFAbsoluteTimeGetCurrent() - start
-        debugPrint("\(name) execute：\(diff) seconds")
+        debugPrint("\(name)代码执行时长：\(diff * 1000) 毫秒")
     }
 }

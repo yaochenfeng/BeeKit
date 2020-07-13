@@ -8,6 +8,23 @@
 import UIKit
 
 public extension BeeExt where Base: UIView {
+    /// 根据视图生成的图片
+    var snapshot: UIImage? {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: base.bounds)
+            return renderer.image { rendererContext in
+                base.layer.render(in: rendererContext.cgContext)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(base.bounds.size, base.isOpaque, UIScreen.main.scale)
+            defer { UIGraphicsEndImageContext() }
+            guard let currentContext = UIGraphicsGetCurrentContext() else {
+                return nil
+            }
+            base.layer.render(in: currentContext)
+            return UIGraphicsGetImageFromCurrentImageContext()
+        }
+    }
     
     /// 对应的控制器
     var controller: UIViewController? {

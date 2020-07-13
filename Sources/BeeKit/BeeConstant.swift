@@ -8,8 +8,11 @@
 
 import Foundation
 
+/// 应用常用常量
 public struct BeeContant {
+    /// APP版本号
     static let version: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "unkown"
+    /// APP bundleId
     static let bundleIdentifier:String = Bundle.main.bundleIdentifier ?? "unkown"
 
 }
