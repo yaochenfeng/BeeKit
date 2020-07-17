@@ -9,9 +9,9 @@ import Foundation
 
 /// 拓展
 public protocol BeeExtProtocol {
-    associatedtype ExtendType
-    static var bee: BeeExt<ExtendType>.Type {get set }
-    var bee: BeeExt<ExtendType> { get set }
+    associatedtype E
+    static var bee: BeeExt<E>.Type {get set }
+    var bee: BeeExt<E> { get set }
 }
 
 extension BeeExtProtocol {
@@ -35,5 +35,11 @@ public struct BeeExt<Base> {
         self.base = base
     }
 }
+
+extension Array: BeeExtProtocol {}
+extension Dictionary: BeeExtProtocol {}
+extension Set: BeeExtProtocol {}
+extension String: BeeExtProtocol {}
+extension URL: BeeExtProtocol {}
 
 extension NSObject: BeeExtProtocol {}

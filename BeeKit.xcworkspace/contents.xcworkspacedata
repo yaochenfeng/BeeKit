@@ -5,20 +5,12 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:Package.swift"
-      assignedFileDataType = "public.swift-source">
+      location = "group:BeeKit.podspec">
    </FileRef>
    <FileRef
-      location = "group:Example/Example.xcodeproj">
+      location = "container:BeeKit.playground">
    </FileRef>
    <FileRef
       location = "group:BeeKit.xcodeproj">
    </FileRef>
-   <Group
-      location = "container:"
-      name = "configs">
-      <FileRef
-         location = "group:BeeKit.podspec">
-      </FileRef>
-   </Group>
 </Workspace>

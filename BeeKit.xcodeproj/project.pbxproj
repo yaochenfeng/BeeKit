@@ -3,199 +3,220 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F1CA9CF242E2CF8006D7A35 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CA9CE242E2CF8006D7A35 /* Bee.swift */; };
-		8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01723BE1BAE00919E50 /* String+bee.swift */; };
-		8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED01923BE1BAE00919E50 /* BeeExt.swift */; };
-		8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03323C4837C00919E50 /* URLRouterable.swift */; };
-		8F2ED03823C4837C00919E50 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03423C4837C00919E50 /* URLRouter.swift */; };
-		8F2ED03923C4837C00919E50 /* URLRouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03523C4837C00919E50 /* URLRouterAction.swift */; };
-		8F2ED03A23C4837C00919E50 /* URLRouterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2ED03623C4837C00919E50 /* URLRouterItem.swift */; };
-		8F4F2C1623D0393100FC0022 /* URL+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F2C1523D0393100FC0022 /* URL+bee.swift */; };
-		8F61A150240685F60075BE0C /* URLRouterMiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F61A14F240685F60075BE0C /* URLRouterMiddle.swift */; };
-		8F61A157240928650075BE0C /* BeeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F61A156240928650075BE0C /* BeeAppDelegate.m */; };
-		8F61A159240928980075BE0C /* BeeAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F61A155240928650075BE0C /* BeeAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F61A15E24092A430075BE0C /* BeeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F61A15D24092A220075BE0C /* BeeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */; };
-		8FDB7DC023D6E054003C4EF8 /* UIView+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */; };
-		OBJ_46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* BeeKitTests.swift */; };
-		OBJ_47 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* XCTestManifests.swift */; };
-		OBJ_49 /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BeeKit::BeeKit::Product" /* BeeKit.framework */; };
+		8F6BE07624A09A9000122154 /* FileManager+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BE07524A09A9000122154 /* FileManager+bee.swift */; };
+		8F6BE07824A0B01700122154 /* BeeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BE07724A0B01700122154 /* BeeConstant.swift */; };
+		8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76A24951169008056BB /* BeeKitTests.swift */; };
+		8F9AB73F2495054A008056BB /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9AB73524950549008056BB /* BeeKit.framework */; };
+		8F9AB75324950C74008056BB /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75124950C74008056BB /* BeeExt.swift */; };
+		8F9AB75424950C74008056BB /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75224950C74008056BB /* Bee.swift */; };
+		8F9AB75724950D88008056BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9AB75624950D88008056BB /* UIKit.framework */; };
+		8F9AB75D24951029008056BB /* String+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75A24951029008056BB /* String+bee.swift */; };
+		8F9AB75E24951029008056BB /* Any+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75B24951029008056BB /* Any+bee.swift */; };
+		8F9AB75F24951029008056BB /* URL+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75C24951029008056BB /* URL+bee.swift */; };
+		8F9AB76524951071008056BB /* UIImage+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76024951071008056BB /* UIImage+bee.swift */; };
+		8F9AB76624951071008056BB /* UIView+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76124951071008056BB /* UIView+bee.swift */; };
+		8F9AB76724951071008056BB /* UIViewController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76224951071008056BB /* UIViewController+bee.swift */; };
+		8F9AB76824951071008056BB /* UINavigationController+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76324951071008056BB /* UINavigationController+bee.swift */; };
+		8F9AB76924951071008056BB /* UIColor+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76424951071008056BB /* UIColor+bee.swift */; };
+		8F9AB77324951365008056BB /* URLRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76E24951365008056BB /* URLRouterable.swift */; };
+		8F9AB77424951365008056BB /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76F24951365008056BB /* URLRouter.swift */; };
+		8F9AB77524951365008056BB /* URLRouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77024951365008056BB /* URLRouterAction.swift */; };
+		8F9AB77624951366008056BB /* URLRouterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77124951365008056BB /* URLRouterItem.swift */; };
+		8F9AB77724951366008056BB /* URLRouterMiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77224951365008056BB /* URLRouterMiddle.swift */; };
+		8F9AB77E24951771008056BB /* BeeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F9AB77B24951771008056BB /* BeeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F9AB77F24951771008056BB /* BeeAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F9AB77C24951771008056BB /* BeeAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F9AB78024951771008056BB /* BeeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77D24951771008056BB /* BeeAppDelegate.m */; };
+		8FA1FCF624B4A3E200A70785 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA1FCF524B4A3E200A70785 /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8F3A09C123B73452002ACA50 /* PBXContainerItemProxy */ = {
+		8F9AB7402495054A008056BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
+			containerPortal = 8F9AB72C24950549008056BB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "BeeKit::BeeKit";
+			remoteGlobalIDString = 8F9AB73424950549008056BB;
 			remoteInfo = BeeKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8F1CA9CE242E2CF8006D7A35 /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
-		8F2ED01723BE1BAE00919E50 /* String+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+bee.swift"; sourceTree = "<group>"; };
-		8F2ED01923BE1BAE00919E50 /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
-		8F2ED03323C4837C00919E50 /* URLRouterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterable.swift; sourceTree = "<group>"; };
-		8F2ED03423C4837C00919E50 /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
-		8F2ED03523C4837C00919E50 /* URLRouterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterAction.swift; sourceTree = "<group>"; };
-		8F2ED03623C4837C00919E50 /* URLRouterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterItem.swift; sourceTree = "<group>"; };
-		8F4F2C1523D0393100FC0022 /* URL+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+bee.swift"; sourceTree = "<group>"; };
-		8F61A14F240685F60075BE0C /* URLRouterMiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRouterMiddle.swift; sourceTree = "<group>"; };
-		8F61A155240928650075BE0C /* BeeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeeAppDelegate.h; sourceTree = "<group>"; };
-		8F61A156240928650075BE0C /* BeeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeeAppDelegate.m; sourceTree = "<group>"; };
-		8F61A15D24092A220075BE0C /* BeeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeeKit.h; sourceTree = "<group>"; };
-		8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+bee.swift"; sourceTree = "<group>"; };
-		8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+bee.swift"; sourceTree = "<group>"; };
-		"BeeKit::BeeKit::Product" /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"BeeKit::BeeKitTests::Product" /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_13 /* BeeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeKitTests.swift; sourceTree = "<group>"; };
-		OBJ_14 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		8F6BE07524A09A9000122154 /* FileManager+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+bee.swift"; sourceTree = "<group>"; };
+		8F6BE07724A0B01700122154 /* BeeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeConstant.swift; sourceTree = "<group>"; };
+		8F9AB73524950549008056BB /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F9AB73E2495054A008056BB /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F9AB75124950C74008056BB /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
+		8F9AB75224950C74008056BB /* Bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		8F9AB75624950D88008056BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8F9AB75A24951029008056BB /* String+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+bee.swift"; sourceTree = "<group>"; };
+		8F9AB75B24951029008056BB /* Any+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Any+bee.swift"; sourceTree = "<group>"; };
+		8F9AB75C24951029008056BB /* URL+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+bee.swift"; sourceTree = "<group>"; };
+		8F9AB76024951071008056BB /* UIImage+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+bee.swift"; sourceTree = "<group>"; };
+		8F9AB76124951071008056BB /* UIView+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+bee.swift"; sourceTree = "<group>"; };
+		8F9AB76224951071008056BB /* UIViewController+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+bee.swift"; sourceTree = "<group>"; };
+		8F9AB76324951071008056BB /* UINavigationController+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+bee.swift"; sourceTree = "<group>"; };
+		8F9AB76424951071008056BB /* UIColor+bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+bee.swift"; sourceTree = "<group>"; };
+		8F9AB76A24951169008056BB /* BeeKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeKitTests.swift; sourceTree = "<group>"; };
+		8F9AB76E24951365008056BB /* URLRouterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterable.swift; sourceTree = "<group>"; };
+		8F9AB76F24951365008056BB /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
+		8F9AB77024951365008056BB /* URLRouterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterAction.swift; sourceTree = "<group>"; };
+		8F9AB77124951365008056BB /* URLRouterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterItem.swift; sourceTree = "<group>"; };
+		8F9AB77224951365008056BB /* URLRouterMiddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouterMiddle.swift; sourceTree = "<group>"; };
+		8F9AB77B24951771008056BB /* BeeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeKit.h; sourceTree = "<group>"; };
+		8F9AB77C24951771008056BB /* BeeAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeAppDelegate.h; sourceTree = "<group>"; };
+		8F9AB77D24951771008056BB /* BeeAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeAppDelegate.m; sourceTree = "<group>"; };
+		8FA1FCF524B4A3E200A70785 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_29 /* Frameworks */ = {
+		8F9AB73224950549008056BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
+			buildActionMask = 2147483647;
 			files = (
+				8F9AB75724950D88008056BB /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_48 /* Frameworks */ = {
+		8F9AB73B2495054A008056BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
+			buildActionMask = 2147483647;
 			files = (
-				OBJ_49 /* BeeKit.framework in Frameworks */,
+				8F9AB73F2495054A008056BB /* BeeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F2ED01423BE1BAE00919E50 /* BeeKit */ = {
+		8F9AB72B24950549008056BB = {
 			isa = PBXGroup;
 			children = (
-				8F1CA9CE242E2CF8006D7A35 /* Bee.swift */,
-				8F2ED01923BE1BAE00919E50 /* BeeExt.swift */,
-				8FAA1AE32424B2B400E54BDF /* Fundation */,
-				8F3A199A240CDC27004910DD /* UIKit */,
-				8F61A1542409283B0075BE0C /* objc */,
-				8F2ED03223C4837C00919E50 /* router */,
+				8F9AB74F24950C74008056BB /* Sources */,
+				8F9AB73624950549008056BB /* Products */,
+				8F9AB75524950D88008056BB /* Frameworks */,
 			);
-			name = BeeKit;
-			path = Sources/BeeKit;
 			sourceTree = "<group>";
 		};
-		8F2ED03223C4837C00919E50 /* router */ = {
+		8F9AB73624950549008056BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F2ED03423C4837C00919E50 /* URLRouter.swift */,
-				8F2ED03323C4837C00919E50 /* URLRouterable.swift */,
-				8F2ED03523C4837C00919E50 /* URLRouterAction.swift */,
-				8F2ED03623C4837C00919E50 /* URLRouterItem.swift */,
-				8F61A14F240685F60075BE0C /* URLRouterMiddle.swift */,
+				8F9AB73524950549008056BB /* BeeKit.framework */,
+				8F9AB73E2495054A008056BB /* BeeKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F9AB74F24950C74008056BB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8F9AB75024950C74008056BB /* BeeKit */,
+				8F9AB75824950F9F008056BB /* BeeKitTests */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8F9AB75024950C74008056BB /* BeeKit */ = {
+			isa = PBXGroup;
+			children = (
+				8F9AB75224950C74008056BB /* Bee.swift */,
+				8F6BE07724A0B01700122154 /* BeeConstant.swift */,
+				8F9AB75124950C74008056BB /* BeeExt.swift */,
+				8FA1FCF424B4A24000A70785 /* util */,
+				8F9AB77A24951771008056BB /* objc */,
+				8F9AB76D24951365008056BB /* router */,
+				8F9AB75924950FE1008056BB /* extension */,
+			);
+			path = BeeKit;
+			sourceTree = "<group>";
+		};
+		8F9AB75524950D88008056BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F9AB75624950D88008056BB /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F9AB75824950F9F008056BB /* BeeKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F9AB76A24951169008056BB /* BeeKitTests.swift */,
+			);
+			path = BeeKitTests;
+			sourceTree = "<group>";
+		};
+		8F9AB75924950FE1008056BB /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				8F9AB75B24951029008056BB /* Any+bee.swift */,
+				8F9AB75A24951029008056BB /* String+bee.swift */,
+				8F9AB75C24951029008056BB /* URL+bee.swift */,
+				8F9AB76424951071008056BB /* UIColor+bee.swift */,
+				8F9AB76024951071008056BB /* UIImage+bee.swift */,
+				8F6BE07524A09A9000122154 /* FileManager+bee.swift */,
+				8F9AB76124951071008056BB /* UIView+bee.swift */,
+				8F9AB76224951071008056BB /* UIViewController+bee.swift */,
+				8F9AB76324951071008056BB /* UINavigationController+bee.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		8F9AB76D24951365008056BB /* router */ = {
+			isa = PBXGroup;
+			children = (
+				8F9AB76E24951365008056BB /* URLRouterable.swift */,
+				8F9AB76F24951365008056BB /* URLRouter.swift */,
+				8F9AB77024951365008056BB /* URLRouterAction.swift */,
+				8F9AB77124951365008056BB /* URLRouterItem.swift */,
+				8F9AB77224951365008056BB /* URLRouterMiddle.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
 		};
-		8F3A199A240CDC27004910DD /* UIKit */ = {
+		8F9AB77A24951771008056BB /* objc */ = {
 			isa = PBXGroup;
 			children = (
-				8FDB7DBF23D6E054003C4EF8 /* UIView+bee.swift */,
-				8FDB7DBD23D6DD9C003C4EF8 /* UIViewController+bee.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		8F61A1542409283B0075BE0C /* objc */ = {
-			isa = PBXGroup;
-			children = (
-				8F61A15D24092A220075BE0C /* BeeKit.h */,
-				8F61A155240928650075BE0C /* BeeAppDelegate.h */,
-				8F61A156240928650075BE0C /* BeeAppDelegate.m */,
+				8F9AB77B24951771008056BB /* BeeKit.h */,
+				8F9AB77C24951771008056BB /* BeeAppDelegate.h */,
+				8F9AB77D24951771008056BB /* BeeAppDelegate.m */,
 			);
 			path = objc;
 			sourceTree = "<group>";
 		};
-		8FAA1AE32424B2B400E54BDF /* Fundation */ = {
+		8FA1FCF424B4A24000A70785 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				8F2ED01723BE1BAE00919E50 /* String+bee.swift */,
-				8F4F2C1523D0393100FC0022 /* URL+bee.swift */,
+				8FA1FCF524B4A3E200A70785 /* UserDefault.swift */,
 			);
-			path = Fundation;
+			path = util;
 			sourceTree = "<group>";
-		};
-		OBJ_11 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_12 /* BeeKitTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_12 /* BeeKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_13 /* BeeKitTests.swift */,
-				OBJ_14 /* XCTestManifests.swift */,
-			);
-			name = BeeKitTests;
-			path = Tests/BeeKitTests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_15 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				"BeeKit::BeeKit::Product" /* BeeKit.framework */,
-				"BeeKit::BeeKitTests::Product" /* BeeKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		OBJ_5 = {
-			isa = PBXGroup;
-			children = (
-				OBJ_7 /* Sources */,
-				OBJ_11 /* Tests */,
-				OBJ_15 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		OBJ_7 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				8F2ED01423BE1BAE00919E50 /* BeeKit */,
-			);
-			name = Sources;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8F61A158240928900075BE0C /* Headers */ = {
+		8F9AB73024950549008056BB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F61A15E24092A430075BE0C /* BeeKit.h in Headers */,
-				8F61A159240928980075BE0C /* BeeAppDelegate.h in Headers */,
+				8F9AB77E24951771008056BB /* BeeKit.h in Headers */,
+				8F9AB77F24951771008056BB /* BeeAppDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		"BeeKit::BeeKit" /* BeeKit */ = {
+		8F9AB73424950549008056BB /* BeeKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "BeeKit" */;
+			buildConfigurationList = 8F9AB7492495054A008056BB /* Build configuration list for PBXNativeTarget "BeeKit" */;
 			buildPhases = (
-				8F61A158240928900075BE0C /* Headers */,
-				OBJ_26 /* Sources */,
-				OBJ_29 /* Frameworks */,
+				8F9AB73024950549008056BB /* Headers */,
+				8F9AB73124950549008056BB /* Sources */,
+				8F9AB73224950549008056BB /* Frameworks */,
+				8F9AB73324950549008056BB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -203,281 +224,368 @@
 			);
 			name = BeeKit;
 			productName = BeeKit;
-			productReference = "BeeKit::BeeKit::Product" /* BeeKit.framework */;
+			productReference = 8F9AB73524950549008056BB /* BeeKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"BeeKit::BeeKitTests" /* BeeKitTests */ = {
+		8F9AB73D2495054A008056BB /* BeeKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_42 /* Build configuration list for PBXNativeTarget "BeeKitTests" */;
+			buildConfigurationList = 8F9AB74C2495054A008056BB /* Build configuration list for PBXNativeTarget "BeeKitTests" */;
 			buildPhases = (
-				OBJ_45 /* Sources */,
-				OBJ_48 /* Frameworks */,
+				8F9AB73A2495054A008056BB /* Sources */,
+				8F9AB73B2495054A008056BB /* Frameworks */,
+				8F9AB73C2495054A008056BB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_50 /* PBXTargetDependency */,
+				8F9AB7412495054A008056BB /* PBXTargetDependency */,
 			);
 			name = BeeKitTests;
 			productName = BeeKitTests;
-			productReference = "BeeKit::BeeKitTests::Product" /* BeeKitTests.xctest */;
+			productReference = 8F9AB73E2495054A008056BB /* BeeKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		OBJ_1 /* Project object */ = {
+		8F9AB72C24950549008056BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 9999;
-				LastUpgradeCheck = 9999;
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = yaochenfeng;
 				TargetAttributes = {
-					"BeeKit::BeeKit" = {
-						LastSwiftMigration = 1130;
+					8F9AB73424950549008056BB = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					8F9AB73D2495054A008056BB = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "BeeKit" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 8F9AB72F24950549008056BB /* Build configuration list for PBXProject "BeeKit" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_15 /* Products */;
+			mainGroup = 8F9AB72B24950549008056BB;
+			productRefGroup = 8F9AB73624950549008056BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"BeeKit::BeeKit" /* BeeKit */,
-				"BeeKit::BeeKitTests" /* BeeKitTests */,
+				8F9AB73424950549008056BB /* BeeKit */,
+				8F9AB73D2495054A008056BB /* BeeKitTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		OBJ_26 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
+/* Begin PBXResourcesBuildPhase section */
+		8F9AB73324950549008056BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
-				8F2ED03823C4837C00919E50 /* URLRouter.swift in Sources */,
-				8F2ED03A23C4837C00919E50 /* URLRouterItem.swift in Sources */,
-				8F2ED02223BE1BAE00919E50 /* BeeExt.swift in Sources */,
-				8F2ED03923C4837C00919E50 /* URLRouterAction.swift in Sources */,
-				8F1CA9CF242E2CF8006D7A35 /* Bee.swift in Sources */,
-				8F61A157240928650075BE0C /* BeeAppDelegate.m in Sources */,
-				8F4F2C1623D0393100FC0022 /* URL+bee.swift in Sources */,
-				8F2ED03723C4837C00919E50 /* URLRouterable.swift in Sources */,
-				8FDB7DC023D6E054003C4EF8 /* UIView+bee.swift in Sources */,
-				8F61A150240685F60075BE0C /* URLRouterMiddle.swift in Sources */,
-				8FDB7DBE23D6DD9C003C4EF8 /* UIViewController+bee.swift in Sources */,
-				8F2ED02023BE1BAE00919E50 /* String+bee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
+		8F9AB73C2495054A008056BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
-				OBJ_46 /* BeeKitTests.swift in Sources */,
-				OBJ_47 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F9AB73124950549008056BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F9AB76524951071008056BB /* UIImage+bee.swift in Sources */,
+				8F9AB76724951071008056BB /* UIViewController+bee.swift in Sources */,
+				8F9AB76924951071008056BB /* UIColor+bee.swift in Sources */,
+				8F9AB78024951771008056BB /* BeeAppDelegate.m in Sources */,
+				8F9AB76824951071008056BB /* UINavigationController+bee.swift in Sources */,
+				8F9AB77524951365008056BB /* URLRouterAction.swift in Sources */,
+				8F6BE07824A0B01700122154 /* BeeConstant.swift in Sources */,
+				8F9AB75424950C74008056BB /* Bee.swift in Sources */,
+				8F9AB77324951365008056BB /* URLRouterable.swift in Sources */,
+				8F9AB77424951365008056BB /* URLRouter.swift in Sources */,
+				8F6BE07624A09A9000122154 /* FileManager+bee.swift in Sources */,
+				8F9AB75324950C74008056BB /* BeeExt.swift in Sources */,
+				8F9AB76624951071008056BB /* UIView+bee.swift in Sources */,
+				8F9AB75D24951029008056BB /* String+bee.swift in Sources */,
+				8F9AB75E24951029008056BB /* Any+bee.swift in Sources */,
+				8F9AB75F24951029008056BB /* URL+bee.swift in Sources */,
+				8FA1FCF624B4A3E200A70785 /* UserDefault.swift in Sources */,
+				8F9AB77624951366008056BB /* URLRouterItem.swift in Sources */,
+				8F9AB77724951366008056BB /* URLRouterMiddle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F9AB73A2495054A008056BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_50 /* PBXTargetDependency */ = {
+		8F9AB7412495054A008056BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "BeeKit::BeeKit" /* BeeKit */;
-			targetProxy = 8F3A09C123B73452002ACA50 /* PBXContainerItemProxy */;
+			target = 8F9AB73424950549008056BB /* BeeKit */;
+			targetProxy = 8F9AB7402495054A008056BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_24 /* Debug */ = {
+		8F9AB7472495054A008056BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = BeeKit.xcodeproj/BeeKit_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = BeeKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TARGET_NAME = BeeKit;
-			};
-			name = Debug;
-		};
-		OBJ_25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = BeeKit.xcodeproj/BeeKit_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = BeeKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TARGET_NAME = BeeKit;
-			};
-			name = Release;
-		};
-		OBJ_3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
+					"$(inherited)",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "${PROJECT_FILE_PATH}/${TARGET_NAME}_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				USE_HEADERMAP = NO;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		OBJ_4 /* Release */ = {
+		8F9AB7482495054A008056BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"SWIFT_PACKAGE=1",
-				);
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "${PROJECT_FILE_PATH}/${TARGET_NAME}_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				USE_HEADERMAP = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		OBJ_43 /* Debug */ = {
+		8F9AB74A2495054A008056BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DVP3U56PW8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				INFOPLIST_FILE = BeeKit.xcodeproj/BeeKitTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.yaochenfeng.BeeKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = BeeKitTests;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		OBJ_44 /* Release */ = {
+		8F9AB74B2495054A008056BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DVP3U56PW8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.yaochenfeng.BeeKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8F9AB74D2495054A008056BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVP3U56PW8;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				INFOPLIST_FILE = BeeKit.xcodeproj/BeeKitTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.yaochenfeng.BeeKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = BeeKitTests;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F9AB74E2495054A008056BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVP3U56PW8;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.yaochenfeng.BeeKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_2 /* Build configuration list for PBXProject "BeeKit" */ = {
+		8F9AB72F24950549008056BB /* Build configuration list for PBXProject "BeeKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_3 /* Debug */,
-				OBJ_4 /* Release */,
+				8F9AB7472495054A008056BB /* Debug */,
+				8F9AB7482495054A008056BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_23 /* Build configuration list for PBXNativeTarget "BeeKit" */ = {
+		8F9AB7492495054A008056BB /* Build configuration list for PBXNativeTarget "BeeKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_24 /* Debug */,
-				OBJ_25 /* Release */,
+				8F9AB74A2495054A008056BB /* Debug */,
+				8F9AB74B2495054A008056BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_42 /* Build configuration list for PBXNativeTarget "BeeKitTests" */ = {
+		8F9AB74C2495054A008056BB /* Build configuration list for PBXNativeTarget "BeeKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_43 /* Debug */,
-				OBJ_44 /* Release */,
+				8F9AB74D2495054A008056BB /* Debug */,
+				8F9AB74E2495054A008056BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = OBJ_1 /* Project object */;
+	rootObject = 8F9AB72C24950549008056BB /* Project object */;
 }

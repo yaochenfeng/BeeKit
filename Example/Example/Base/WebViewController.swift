@@ -33,10 +33,4 @@ class WebViewController: UIViewController {
             webview.load(URLRequest(url: url))
         }
     }
-
-}
-
-
-class TaobaoWeb: WebViewController {
-    
 }
