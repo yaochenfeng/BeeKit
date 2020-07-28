@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F4E3EEC24D02EF900480C67 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E3EE924D02EF900480C67 /* Logging.swift */; };
+		8F4E3EED24D02EF900480C67 /* LogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E3EEA24D02EF900480C67 /* LogHandler.swift */; };
+		8F4E3EEE24D02EF900480C67 /* Locks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E3EEB24D02EF900480C67 /* Locks.swift */; };
 		8F6BE07624A09A9000122154 /* FileManager+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BE07524A09A9000122154 /* FileManager+bee.swift */; };
 		8F6BE07824A0B01700122154 /* BeeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BE07724A0B01700122154 /* BeeConstant.swift */; };
 		8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76A24951169008056BB /* BeeKitTests.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F4E3EE924D02EF900480C67 /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		8F4E3EEA24D02EF900480C67 /* LogHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHandler.swift; sourceTree = "<group>"; };
+		8F4E3EEB24D02EF900480C67 /* Locks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locks.swift; sourceTree = "<group>"; };
 		8F6BE07524A09A9000122154 /* FileManager+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+bee.swift"; sourceTree = "<group>"; };
 		8F6BE07724A0B01700122154 /* BeeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeConstant.swift; sourceTree = "<group>"; };
 		8F81ADAE24CFCBD000F54433 /* FileCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCacheStorage.swift; sourceTree = "<group>"; };
@@ -93,6 +99,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F4E3EE824D02EF900480C67 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				8F4E3EE924D02EF900480C67 /* Logging.swift */,
+				8F4E3EEA24D02EF900480C67 /* LogHandler.swift */,
+				8F4E3EEB24D02EF900480C67 /* Locks.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
 		8F9AB72B24950549008056BB = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +142,7 @@
 				8F9AB75224950C74008056BB /* Bee.swift */,
 				8F6BE07724A0B01700122154 /* BeeConstant.swift */,
 				8F9AB75124950C74008056BB /* BeeExt.swift */,
+				8F4E3EE824D02EF900480C67 /* Logging */,
 				8FA1FCF424B4A24000A70785 /* util */,
 				8F9AB77A24951771008056BB /* objc */,
 				8F9AB76D24951365008056BB /* router */,
@@ -307,7 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4E3EEE24D02EF900480C67 /* Locks.swift in Sources */,
 				8F9AB76524951071008056BB /* UIImage+bee.swift in Sources */,
+				8F4E3EED24D02EF900480C67 /* LogHandler.swift in Sources */,
 				8F9AB76724951071008056BB /* UIViewController+bee.swift in Sources */,
 				8F9AB76924951071008056BB /* UIColor+bee.swift in Sources */,
 				8F9AB78024951771008056BB /* BeeAppDelegate.m in Sources */,
@@ -317,6 +336,7 @@
 				8F9AB75424950C74008056BB /* Bee.swift in Sources */,
 				8F9AB77324951365008056BB /* URLRouterable.swift in Sources */,
 				8F9AB77424951365008056BB /* URLRouter.swift in Sources */,
+				8F4E3EEC24D02EF900480C67 /* Logging.swift in Sources */,
 				8F6BE07624A09A9000122154 /* FileManager+bee.swift in Sources */,
 				8F9AB75324950C74008056BB /* BeeExt.swift in Sources */,
 				8F9AB76624951071008056BB /* UIView+bee.swift in Sources */,

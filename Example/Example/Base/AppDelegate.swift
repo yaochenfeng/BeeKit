@@ -9,6 +9,7 @@
 import UIKit
 @_exported import BeeKit
 
+let logger = Logger(label: "yaochenfeng.beekit.Example")
 @UIApplicationMain
 class AppDelegate: BeeAppDelegate {
 
@@ -18,7 +19,10 @@ class AppDelegate: BeeAppDelegate {
         URLRouter.isAutoCacheRouter = true
         // Override point for customization after application launch.
         URLRouter.shared.add(RouterRewriteMiddleRequest())
-
+        LoggingSystem.bootstrap { lab -> LogHandler in
+            return StreamLogHandler.standardOutput(label: lab)
+        }
+        logger.info("hello")
         return true
     }
     override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
