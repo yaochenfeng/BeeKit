@@ -50,6 +50,9 @@ public enum AppDirectories {
             return dir.directoryPath + "/" + name
         }
     }
+    func subDir(_ name: String) -> AppDirectories{
+        return AppDirectories.dir(name: name, dir: self)
+    }
 }
 public extension BeeExt where Base: FileManager {
     
