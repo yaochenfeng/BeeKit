@@ -15,7 +15,7 @@ class AppDelegate: BeeAppDelegate {
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let res = super.application(application, didFinishLaunchingWithOptions: launchOptions)
-        print(res)
+        URLRouter.isAutoCacheRouter = true
         // Override point for customization after application launch.
         URLRouter.shared.add(RouterRewriteMiddleRequest())
 

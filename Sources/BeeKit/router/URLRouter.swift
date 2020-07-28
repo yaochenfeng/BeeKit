@@ -10,6 +10,8 @@ import UIKit
 public final class URLRouter {
     /// 是否自动注册路由
     public static var isAutoLoadRouter = true
+    ///是否自动缓存
+    public static var isAutoCacheRouter = false
     public static let shared: URLRouter = {
         let shared = URLRouter()
         guard isAutoLoadRouter else {
@@ -34,7 +36,8 @@ public final class URLRouter {
     ///   - dest: 目标页面
     ///   - options: 额外参数
     public var openHandler: ((_ source:UIViewController, _ dest:UIViewController, _ options: [String:Any]?) -> Void)?
-    
+    @FileCacheStorage("\(BeeContant.version)routerClassName", defaultValue: [])
+    fileprivate var routerClassNameList: [String]
     private init(){}
 }
 
@@ -188,16 +191,14 @@ extension URLRouter {
     /// 自动加注册所有路由,自动加载路由每个版本会缓存路由类,加速处理
     fileprivate func autoLoadRouter() {
         // 加载此版本缓存
-        let filePath: AppDirectories = .file(name: "URLRouter_\(BeeContant.version).json", dir: .dir(name: BeeContant.bundleIdentifier, dir: .libraryCaches))
-        if let classList = FileManager.bee.readFile(filePath,type: [String].self),
-            classList.count > 0 {
-            // 有路由缓存使用路由缓存
+        if URLRouter.isAutoCacheRouter {
+            let classList = routerClassNameList
             for clsStr in classList {/// register  only swift class for URLRouter
                 if let cls = NSClassFromString(clsStr) {
                     _ = registerRouter(cls)
                 }
             }
-            return
+            if classList.count > 0 {return}
         }
         var classNameList = [String]()
         var count: UInt32 = 0
@@ -212,6 +213,8 @@ extension URLRouter {
                 classNameList.append(clsStr)
             }
         }
-        FileManager.bee.writeFile(filePath, content: classNameList)
+        if URLRouter.isAutoCacheRouter {
+            routerClassNameList = classNameList
+        }
     }
 }

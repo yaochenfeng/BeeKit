@@ -10,6 +10,7 @@
 		8F6BE07624A09A9000122154 /* FileManager+bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BE07524A09A9000122154 /* FileManager+bee.swift */; };
 		8F6BE07824A0B01700122154 /* BeeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6BE07724A0B01700122154 /* BeeConstant.swift */; };
 		8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB76A24951169008056BB /* BeeKitTests.swift */; };
+		8F81ADAF24CFCBD000F54433 /* FileCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81ADAE24CFCBD000F54433 /* FileCacheStorage.swift */; };
 		8F9AB73F2495054A008056BB /* BeeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9AB73524950549008056BB /* BeeKit.framework */; };
 		8F9AB75324950C74008056BB /* BeeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75124950C74008056BB /* BeeExt.swift */; };
 		8F9AB75424950C74008056BB /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB75224950C74008056BB /* Bee.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		8F6BE07524A09A9000122154 /* FileManager+bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+bee.swift"; sourceTree = "<group>"; };
 		8F6BE07724A0B01700122154 /* BeeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeConstant.swift; sourceTree = "<group>"; };
+		8F81ADAE24CFCBD000F54433 /* FileCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCacheStorage.swift; sourceTree = "<group>"; };
 		8F9AB73524950549008056BB /* BeeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9AB73E2495054A008056BB /* BeeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9AB75124950C74008056BB /* BeeExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeeExt.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				8FA1FCF524B4A3E200A70785 /* UserDefault.swift */,
+				8F81ADAE24CFCBD000F54433 /* FileCacheStorage.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				8F9AB75F24951029008056BB /* URL+bee.swift in Sources */,
 				8FA1FCF624B4A3E200A70785 /* UserDefault.swift in Sources */,
 				8F9AB77624951366008056BB /* URLRouterItem.swift in Sources */,
+				8F81ADAF24CFCBD000F54433 /* FileCacheStorage.swift in Sources */,
 				8F9AB77724951366008056BB /* URLRouterMiddle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
