@@ -16,9 +16,10 @@ public extension BeeExt where Base: UIColor {
                        alpha: 1)
     }
     /// 根据hex创建颜色
-    static func initWith(hex: String, alpha:CGFloat = 1.0) -> UIColor {
+    static func initWith(hex: String, alpha:CGFloat = 1.0, alphaFirst: Bool = true) -> UIColor {
         let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
         var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
+        var alpha: CGFloat = alpha
         switch colorString.count {
         case 3://RGB
             red = colorComponent(fromString: colorString, range: 0..<1)
@@ -28,6 +29,18 @@ public extension BeeExt where Base: UIColor {
             red = colorComponent(fromString: colorString, range: 0..<2)
             green = colorComponent(fromString: colorString, range: 2..<4)
             blue = colorComponent(fromString: colorString, range: 4..<6)
+        case 8: // AARRGGBB if alphaFirst is true, otherwise RRGGBBAA.
+            if alphaFirst {
+                alpha = colorComponent(fromString: colorString, range: 0..<2)
+                red = colorComponent(fromString: colorString, range: 2..<4)
+                green = colorComponent(fromString: colorString, range: 4..<6)
+                blue = colorComponent(fromString: colorString, range: 6..<8)
+            } else {
+                red = colorComponent(fromString: colorString, range: 0..<2)
+                green = colorComponent(fromString: colorString, range: 2..<4)
+                blue = colorComponent(fromString: colorString, range: 4..<6)
+                alpha = colorComponent(fromString: colorString, range: 6..<8)
+            }
         default:
             break
         }
