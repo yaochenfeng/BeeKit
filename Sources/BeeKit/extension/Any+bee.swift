@@ -6,6 +6,7 @@
 //
 
 public extension BeeExt where Base: Any {
+    @discardableResult
     func then(_ block: (Base) throws -> Void) rethrows -> Base {
         try block(self.base)
         return self.base

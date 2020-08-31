@@ -22,7 +22,6 @@ class AppDelegate: BeeAppDelegate {
         LoggingSystem.bootstrap { lab -> LogHandler in
             return StreamLogHandler.standardOutput(label: lab)
         }
-        logger.info("hello")
         return true
     }
     override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

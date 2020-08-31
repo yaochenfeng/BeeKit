@@ -35,6 +35,9 @@
 		8F9AB77F24951771008056BB /* BeeAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F9AB77C24951771008056BB /* BeeAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F9AB78024951771008056BB /* BeeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9AB77D24951771008056BB /* BeeAppDelegate.m */; };
 		8FA1FCF624B4A3E200A70785 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA1FCF524B4A3E200A70785 /* UserDefault.swift */; };
+		8FBF1C4424E0E472005715FF /* BKRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBF1C4324E0E472005715FF /* BKRouter.swift */; };
+		8FD3DEAF24FC9AB6001383A2 /* RouterRewrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3DEAE24FC9AB6001383A2 /* RouterRewrite.swift */; };
+		8FD3DEB124FC9FF4001383A2 /* RouterRewriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3DEB024FC9FF4001383A2 /* RouterRewriteTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		8F9AB77C24951771008056BB /* BeeAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeAppDelegate.h; sourceTree = "<group>"; };
 		8F9AB77D24951771008056BB /* BeeAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeAppDelegate.m; sourceTree = "<group>"; };
 		8FA1FCF524B4A3E200A70785 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		8FBF1C4324E0E472005715FF /* BKRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKRouter.swift; sourceTree = "<group>"; };
+		8FD3DEAE24FC9AB6001383A2 /* RouterRewrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRewrite.swift; sourceTree = "<group>"; };
+		8FD3DEB024FC9FF4001383A2 /* RouterRewriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterRewriteTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				8F9AB76A24951169008056BB /* BeeKitTests.swift */,
+				8FD3DEB024FC9FF4001383A2 /* RouterRewriteTests.swift */,
 			);
 			path = BeeKitTests;
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 				8F9AB77024951365008056BB /* URLRouterAction.swift */,
 				8F9AB77124951365008056BB /* URLRouterItem.swift */,
 				8F9AB77224951365008056BB /* URLRouterMiddle.swift */,
+				8FBF1C4324E0E472005715FF /* BKRouter.swift */,
+				8FD3DEAE24FC9AB6001383A2 /* RouterRewrite.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -327,6 +336,7 @@
 				8F4E3EEE24D02EF900480C67 /* Locks.swift in Sources */,
 				8F9AB76524951071008056BB /* UIImage+bee.swift in Sources */,
 				8F4E3EED24D02EF900480C67 /* LogHandler.swift in Sources */,
+				8FD3DEAF24FC9AB6001383A2 /* RouterRewrite.swift in Sources */,
 				8F9AB76724951071008056BB /* UIViewController+bee.swift in Sources */,
 				8F9AB76924951071008056BB /* UIColor+bee.swift in Sources */,
 				8F9AB78024951771008056BB /* BeeAppDelegate.m in Sources */,
@@ -339,6 +349,7 @@
 				8F4E3EEC24D02EF900480C67 /* Logging.swift in Sources */,
 				8F6BE07624A09A9000122154 /* FileManager+bee.swift in Sources */,
 				8F9AB75324950C74008056BB /* BeeExt.swift in Sources */,
+				8FBF1C4424E0E472005715FF /* BKRouter.swift in Sources */,
 				8F9AB76624951071008056BB /* UIView+bee.swift in Sources */,
 				8F9AB75D24951029008056BB /* String+bee.swift in Sources */,
 				8F9AB75E24951029008056BB /* Any+bee.swift in Sources */,
@@ -355,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7E569C24951DE600B2DE46 /* BeeKitTests.swift in Sources */,
+				8FD3DEB124FC9FF4001383A2 /* RouterRewriteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
