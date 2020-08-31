@@ -44,6 +44,16 @@ extension BKRouter.RouterRewrite {
         shared.rules.append(rule)
     }
     
+    /// 添加rewrite rules
+    /// - Parameter rules: [["match":"target"]]
+    public static func add(_ rules: [[String: String]]) {
+        for rule in rules {
+            if let match = rule["match"], let target = rule["target"] {
+                add(BKRouter.RewriteRuleItem(match: match, target: target))
+            }
+        }
+    }
+    
     public static func remove(matchRule: String) {
         if let idx = shared.rules.firstIndex(where: { item -> Bool in
             return item.match == matchRule
