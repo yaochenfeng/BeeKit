@@ -1,6 +1,7 @@
+# https://guides.cocoapods.org/syntax/podspec.html
 Pod::Spec.new do |s|
   s.name                      = "BeeKit"
-  s.version                   = "0.0.13"
+  s.version                   = "0.2.0"
   s.summary                   = "Bee"
   s.homepage                  = "https://github.com/yaochenfeng/BeeKit"
   s.license = {
@@ -16,8 +17,9 @@ Pod::Spec.new do |s|
     s.source                    = { :http => "https://github.com/yaochenfeng/BeeKit/releases/download/#{s.version}/BeeKit.framework.zip" }
     s.vendored_frameworks = 'Carthage/Build/iOS/*.framework'
   else
-    s.source_files              = "Sources/BeeKit/**/*.{h,m,swift}"
-    s.public_header_files = 'Sources/BeeKit/objc/Bee*.h'
+    s.source_files              = "Sources/BeeKit/{Foundation,Logging}/**/*.swift"
+    s.ios.source_files   = 'Sources/BeeKit/iOS/**/*.swift'
+    s.dependency 'RxCocoa'
   end
   s.frameworks                = "Foundation"
   s.swift_versions = ['5.0']
