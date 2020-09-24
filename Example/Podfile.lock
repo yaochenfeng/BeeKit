@@ -1,15 +1,31 @@
 PODS:
-  - BeeKit (0.0.13)
+  - BeeKit (0.2.0):
+    - RxCocoa
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - BeeKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 EXTERNAL SOURCES:
   BeeKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BeeKit: ca34745d9d35982d1a8f630a9a907d6ff9405ea0
+  BeeKit: febfc24a3ce47f040e571d6671dd10dedb1393ae
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
 PODFILE CHECKSUM: edf6a560c50c041fb7f5cc6156f9789f640bf8b7
 

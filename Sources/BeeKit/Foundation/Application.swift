@@ -6,8 +6,6 @@
 //  Copyright © 2020 yaochenfeng. All rights reserved.
 //
 
-import Foundation
-
 public class Application {
-    
+    public var version = "0.2.0"
 }

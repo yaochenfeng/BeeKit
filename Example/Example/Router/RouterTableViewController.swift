@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class RouterTableViewController: UITableViewController {
 
     override func viewDidLoad() {

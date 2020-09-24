@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+@_exported import BeeKit
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
