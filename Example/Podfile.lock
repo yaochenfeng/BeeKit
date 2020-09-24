@@ -1,0 +1,16 @@
+PODS:
+  - BeeKit (0.0.13)
+
+DEPENDENCIES:
+  - BeeKit (from `../`)
+
+EXTERNAL SOURCES:
+  BeeKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BeeKit: ca34745d9d35982d1a8f630a9a907d6ff9405ea0
+
+PODFILE CHECKSUM: edf6a560c50c041fb7f5cc6156f9789f640bf8b7
+
+COCOAPODS: 1.9.3
