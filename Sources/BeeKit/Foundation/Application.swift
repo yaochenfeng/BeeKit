@@ -8,4 +8,6 @@
 
 public class Application {
     public var version = "0.2.0"
+    var hello: String?
+    var pro: ContainerContract?
 }

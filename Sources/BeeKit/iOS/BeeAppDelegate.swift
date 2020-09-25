@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 @UIApplicationMain
 open class BeeAppDelegate: UIResponder, UIApplicationDelegate{
     public var window: UIWindow?

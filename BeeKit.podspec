@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     s.source                    = { :http => "https://github.com/yaochenfeng/BeeKit/releases/download/#{s.version}/BeeKit.framework.zip" }
     s.vendored_frameworks = 'Carthage/Build/iOS/*.framework'
   else
-    s.source_files              = "Sources/BeeKit/{Foundation,Logging}/*.swift"
+    s.source_files              = "Sources/BeeKit/{Foundation,Logging}/**/*.swift"
     s.ios.source_files   = 'Sources/BeeKit/iOS/**/*.swift'
     s.dependency 'RxCocoa'
   end
