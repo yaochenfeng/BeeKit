@@ -8,4 +8,30 @@
 
 public class Application: Container {
     public var version = "0.2.0"
+    
+    var serviceProviders = [ServiceProvider]()
+    
+    public static let shared = Application()
+    override init() {
+        super.init()
+        registerBaseBindings()
+        registerBaseServiceProviders()
+        registerCoreContainerAliases()
+    }
+}
+
+extension Application {
+    func registerBaseBindings() {
+        instance(type(of: "app"), self)
+        instance(Container.self, Container.self)
+    }
+    func registerBaseServiceProviders() {
+        
+    }
+    func registerCoreContainerAliases() {
+        
+    }
+    func register<T: ServiceProvider>(provider: T, force: Bool = false) -> T {
+        return provider
+    }
 }

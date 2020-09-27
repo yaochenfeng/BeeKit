@@ -9,13 +9,16 @@
 public protocol ApplicationContract: ContainerContract {
     /// 应用版本
     var version: String { get }
-    
-    func register(_ provider: ServiceProvider, force: Bool) -> ServiceProvider
-    func getProviders(_ provider: ServiceProvider) -> [ServiceProvider]
 }
 
 extension ApplicationContract {
     func register(_ provider: ServiceProvider, force: Bool = false) -> ServiceProvider {
         return provider
     }
+}
+extension ApplicationContract {
+    func register<T: ServiceProvider>(_ provider: T, force: Bool = false) -> T {
+        return provider
+    }
+    func terminate() {}
 }

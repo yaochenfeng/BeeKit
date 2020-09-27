@@ -14,6 +14,7 @@ open class Container: ContainerContract {
     
     /// The container's bindings.
     public var bindings = [String]()
+    init() {}
 }
 
 extension Container {
@@ -30,5 +31,8 @@ extension Container {
     /// Get the alias for an abstract if available.
     public func getAlias(_ name: String) -> String {
         return aliases[name] ?? name
+    }
+    
+    func instance(_ name: Any.Type, _ obj: AnyObject) {
     }
 }
