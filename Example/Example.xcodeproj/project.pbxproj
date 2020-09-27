@@ -23,6 +23,7 @@
 		8F6E39B423D7E5CD00A56386 /* WebviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E39B323D7E5CD00A56386 /* WebviewHandler.swift */; };
 		8F6E39BA23D7E94D00A56386 /* TabbarHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E39B923D7E94D00A56386 /* TabbarHandler.swift */; };
 		8F6EF3DD251C6A4900B5BAC6 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EF3DC251C6A4900B5BAC6 /* ExampleTests.swift */; };
+		8FFE4FE4251F01BD00BD5E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE4FE3251F01BD00BD5E45 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8F6EF3DA251C6A4900B5BAC6 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6EF3DC251C6A4900B5BAC6 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		8F6EF3DE251C6A4900B5BAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FFE4FE3251F01BD00BD5E45 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B281FDF5615A596722A969 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BA76501F946C256E4EA3F5 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD29A6EA48BE1EC4EA776F1 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 		8F44654023D6F6290029A0D4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8FFE4FE3251F01BD00BD5E45 /* AppDelegate.swift */,
 				8F44651E23D6F2730029A0D4 /* SceneDelegate.swift */,
 				8F44654223D6F6570029A0D4 /* TabBarController.swift */,
 				8F44654423D6F6700029A0D4 /* NavigationController.swift */,
@@ -357,6 +360,7 @@
 				8F6E39BA23D7E94D00A56386 /* TabbarHandler.swift in Sources */,
 				8F44654323D6F6570029A0D4 /* TabBarController.swift in Sources */,
 				8F6E39B423D7E5CD00A56386 /* WebviewHandler.swift in Sources */,
+				8FFE4FE4251F01BD00BD5E45 /* AppDelegate.swift in Sources */,
 				8F6E39B223D7E5A700A56386 /* WebViewController.swift in Sources */,
 				8F6E39AE23D7E25700A56386 /* RouterTableViewController.swift in Sources */,
 				8F44654523D6F6700029A0D4 /* NavigationController.swift in Sources */,

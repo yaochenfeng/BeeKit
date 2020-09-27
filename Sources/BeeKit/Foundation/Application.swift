@@ -6,8 +6,27 @@
 //  Copyright © 2020 yaochenfeng. All rights reserved.
 //
 
-public class Application {
+public class Application: Container {
     public var version = "0.2.0"
-    var hello: String?
-    var pro: ContainerContract?
+    
+    public static let shared = Application()
+    override init() {
+        super.init()
+        registerBaseBindings()
+        registerBaseServiceProviders()
+        registerCoreContainerAliases()
+    }
+}
+
+extension Application {
+    func registerBaseBindings() {
+        instance(type(of: "app"), self)
+        instance(Container.self, Container.self)
+    }
+    func registerBaseServiceProviders() {
+        
+    }
+    func registerCoreContainerAliases() {
+        
+    }
 }
