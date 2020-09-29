@@ -7,6 +7,9 @@
 
 import Foundation
 
-class Request {
-    var url: String = ""
+open class Request {
+    var string: String
+    init(string: String) {
+        self.string = string
+    }
 }

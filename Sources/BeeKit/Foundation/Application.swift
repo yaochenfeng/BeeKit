@@ -8,11 +8,15 @@
 
 public class Application: Container {
     public var version = "0.2.0"
+    public var hasBootstrapped: Bool = false
     
     var serviceProviders = [ServiceProvider]()
     
-    public static let shared = Application()
-    override init() {
+    public static let shared: Application = {
+        let app = Application()
+        return app
+    }()
+    required override init() {
         super.init()
         registerBaseBindings()
         registerBaseServiceProviders()
@@ -20,18 +24,34 @@ public class Application: Container {
     }
 }
 
-extension Application {
+extension Application: ApplicationContract {
+    
+    /// 基础绑定
     func registerBaseBindings() {
-        instance(type(of: "app"), self)
-        instance(Container.self, Container.self)
+        instance(self, name: "app")
+        instance(self)
+        register(BootstrapServiceProvider(app: self))
     }
+    
+    /// 基础服务
     func registerBaseServiceProviders() {
         
     }
     func registerCoreContainerAliases() {
-        
+        for (key, value) in ["app": [Self.self, ContainerContract.self, ApplicationContract.self]] {
+            for aliasName in value {
+                setAlias(key, alias: aliasName)
+            }
+        }
     }
-    func register<T: ServiceProvider>(provider: T, force: Bool = false) -> T {
-        return provider
+}
+
+
+class BootstrapServiceProvider: ServiceProvider {
+    required init(app: ApplicationContract) {
+        self.app = app
     }
+    
+    var app: ApplicationContract
+    
 }

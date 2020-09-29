@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class URLActionRequest {
+open class URLActionRequest: Request {
     public private(set) var url: URL
     public var sourceController: UIViewController?
     public var options: [String: Any]?
@@ -22,6 +22,7 @@ open class URLActionRequest {
             url = u
             sourceController = source
             options = params
+        super.init(string: u.absoluteString)
     }
     
     /// 转发
@@ -35,15 +36,11 @@ open class URLActionRequest {
 }
 
 
-open class URLActionResponse {
-    
-    /// object for url action response
-    public private(set) var obj: AnyObject?
+open class URLActionResponse: Response {
     public private(set) var redirectURL: URL?
     
     public convenience init(obj: AnyObject?) {
-        self.init()
-        self.obj = obj
+        self.init(obj ?? "")
     }
     public convenience init(url: URL) {
         self.init()

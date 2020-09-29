@@ -5,11 +5,17 @@
 //  Created by yaochenfeng on 2020/9/24.
 //
 
-import Foundation
+protocol ServiceProvider: class {
+    init(app: ApplicationContract)
+    var app: ApplicationContract { get }
+    
+    /// 注册服务
+    func register()
+    /// 启动
+    func boot()
+}
 
-open class ServiceProvider {
-    var app: ApplicationContract
-    init(_ app: ApplicationContract) {
-        self.app = app
-    }
+extension ServiceProvider {
+    func register() {}
+    func boot() {}
 }

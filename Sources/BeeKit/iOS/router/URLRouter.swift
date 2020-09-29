@@ -79,13 +79,13 @@ extension URLRouter {
         }
         let req = URLActionRequest(reqURL,source: source, params: options)
         let response = process(req)
-        guard let obj = response?.obj as? T else {
+        guard let obj = response?.content as? T else {
             return nil
         }
         return obj
     }
     
-    private func process(_ req:URLActionRequest) -> URLActionResponse? {
+    func process(_ req:URLActionRequest) -> URLActionResponse? {
         // 处理前置路由中间件
         var response = preprocess(req)
         // 处理转发路由

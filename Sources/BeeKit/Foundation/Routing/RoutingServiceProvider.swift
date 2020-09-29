@@ -6,5 +6,9 @@
 //
 
 class RoutingServiceProvider: ServiceProvider {
+    var app: ApplicationContract
     
+    required init(app: ApplicationContract) {
+        self.app = app
+    }
 }

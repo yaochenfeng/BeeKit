@@ -9,6 +9,34 @@
 import UIKit
 import WebKit
 
+protocol ServiceProvider: class {
+    init(app: ApplicationContract)
+    var app: ApplicationContract { get }
+    
+    /// 注册服务
+    func register()
+    /// 启动
+    func boot()
+}
+
+
+class WebServceProvider: ServiceProvider {
+    required init(app: ApplicationContract) {
+        self.app = app
+    }
+    
+    var app: ApplicationContract
+    
+    func register() {
+        
+    }
+    
+    func boot() {
+        
+    }
+    
+}
+
 class WebViewController: UIViewController {
     var loadURL: URL?
     var webview: WKWebView = {

@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import BeeKit
 
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        Application.shared.make("hello")
+//        Application.shared.make(ServiceProvider.self)
+//         Application.shared.make(WebViewController.self)
         // Do any additional setup after loading the view.
         updateViewControllers()
     }
@@ -34,4 +37,12 @@ class TabBarController: UITabBarController {
         setViewControllers(navs, animated: false)
     }
 
+    static var bee_router: String = Application.splashRoute
+}
+
+
+extension TabBarController: URLRouterableExact {
+    static func initWith(req request: URLActionRequest) -> UIViewController? {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
 }
