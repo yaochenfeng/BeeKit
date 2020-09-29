@@ -12,23 +12,39 @@ public protocol ApplicationContract: ContainerContract {
     
     /// 是否启动
     var hasBootstrapped: Bool {get set}
-    func bootstrapWith(array: [AnyClass])
+    func bootstrapWith(array: [BootStrapContract.Type])
+}
+public extension ApplicationContract {
+    func resolveProvider<T: ServiceProvider>(_ provider: T.Type) -> T {
+        return T(app: self)
+    }
 }
 
-extension ApplicationContract {
+public extension ApplicationContract where Self: Application {
     @discardableResult
-    func register(_ provider: ServiceProvider, force: Bool = false) -> ServiceProvider {
-        return provider
-    }
-    public func bootstrapWith(array: [AnyClass]) {
+    func register<T: ServiceProvider>(_ provider: T.Type, force: Bool = false) -> T? {
+        //已注册，非强制覆盖
+        if let registered = serviceProviders.map({ pro -> T? in
+            return pro as? T
+        }).compactMap({$0}).first, !force {
+            return registered
+        }
+        // 未注册
+        let service = resolveProvider(T.self)
+        service.register()
         
+        return nil
     }
-}
-
-extension ApplicationContract {
-    @discardableResult
-    func register<T: ServiceProvider>(_ provider: T, force: Bool = false) -> T {
-        return provider
+    func register<T: ServiceProvider>(register: T.Type) -> T {
+        return T(app: self)
+    }
+    
+    
+    func bootstrapWith(array: [BootStrapContract.Type]) {
+        hasBootstrapped = true
+        for bootstrapper in array {
+            bootstrapper.init([:]).bootstrap(app: self)
+        }
     }
     func terminate() {}
 }

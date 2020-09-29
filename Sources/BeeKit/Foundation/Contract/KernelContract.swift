@@ -16,7 +16,7 @@ public protocol KernelContract: class {
     func handle(request: Request) -> Response
     func getApp() -> ApplicationContract
     
-    var bootstrappers: [AnyClass] {get}
+    var bootstrappers: [BootStrapContract.Type] {get}
 }
 
 extension KernelContract {

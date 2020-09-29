@@ -9,16 +9,16 @@ import UIKit
 
 @UIApplicationMain
 @objc open class BeeAppDelegate: UIResponder, UIApplicationDelegate, KernelContract {
-    public var bootstrappers: [AnyClass] = []
+    public var bootstrappers: [BootStrapContract.Type] = []
     
     public var window: UIWindow?
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//        getApp().instance(self)
-        Application.shared.instance(service: KernelContract.self, obj: self)
-//            .instance(service: KernelContract.self, obj: self)
-        let kernel = getApp().resolve(KernelContract.self)
-        let response = kernel?.handle(request: splashRequest) ?? handle(request: splashRequest)
+        let app = Application.shared
+        app.instance(self)
+        app.instance(self, service: KernelContract.self)
+        let _ = getApp().resolve(KernelContract.self)
+        let response = handle(request: splashRequest)
         if let bvc = response.content as? UIViewController {
             window?.rootViewController = bvc
         }
@@ -31,6 +31,7 @@ import UIKit
         return true
     }
     open func applicationDidBecomeActive(_ application: UIApplication) {
+        
     }
 }
 

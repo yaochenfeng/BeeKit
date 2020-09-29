@@ -10,6 +10,10 @@ import Foundation
 
 /// 反射提供
 public class ReflectionProvider {
+    public static func resolve<T: AnyObject>(cls: T.Type) {
+        let mirror = Mirror(reflecting: cls)
+        mirror.superclassMirror
+    }
 //    public static func logProperty(obj: Any){
 //        let mirror = Mirror(reflecting: obj)
 //        let dict = mapDic(mirror: mirror)

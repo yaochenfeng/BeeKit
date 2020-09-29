@@ -9,17 +9,6 @@
 import UIKit
 import WebKit
 
-protocol ServiceProvider: class {
-    init(app: ApplicationContract)
-    var app: ApplicationContract { get }
-    
-    /// 注册服务
-    func register()
-    /// 启动
-    func boot()
-}
-
-
 class WebServceProvider: ServiceProvider {
     required init(app: ApplicationContract) {
         self.app = app
@@ -34,6 +23,10 @@ class WebServceProvider: ServiceProvider {
     func boot() {
         
     }
+    
+}
+
+class WebServceProvider2: WebServceProvider {
     
 }
 

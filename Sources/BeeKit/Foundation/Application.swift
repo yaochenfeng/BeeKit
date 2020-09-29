@@ -9,7 +9,6 @@
 public class Application: Container {
     public var version = "0.2.0"
     public var hasBootstrapped: Bool = false
-    
     var serviceProviders = [ServiceProvider]()
     
     public static let shared: Application = {
@@ -25,12 +24,11 @@ public class Application: Container {
 }
 
 extension Application: ApplicationContract {
-    
     /// 基础绑定
     func registerBaseBindings() {
         instance(self, name: "app")
         instance(self)
-        register(BootstrapServiceProvider(app: self))
+        register(BootstrapServiceProvider.self)
     }
     
     /// 基础服务

@@ -11,8 +11,8 @@ public protocol ContainerContract: class {
     var bindings: [String: BeanBinding] { get }
     var aliases: [String: String] { get }
     
-    func instance(_ obj: AnyObject, name: String?)
-    func instance<T>(_ obj: T, name: String?)
+    func instance(_ obj: Any, name:String?)
+    func bind<T>(_ name: T, builder:@escaping BeanBuilder, shared: Bool)
 }
 
 public extension ContainerContract {
@@ -31,16 +31,20 @@ public extension ContainerContract {
 }
 
 public extension ContainerContract {
+    func instance<T>(_ obj: Any, service: T) {
+        instance(obj, name: "\(service)")
+    }
     func isShared(_ service: String) -> Bool {
         let alias = getAlias(service)
         guard instances[service] == nil else { return true }
         return bindings[alias]?.isShared ?? false
     }
+    
     /// 根据类和协议找到对应实例 或 初始化实例
     /// - Parameter abstract: Class or Protocol
     /// - Returns: 实例
-    func resolve<T>(_ abstract: T.Type) -> T? {
-        let alias = getAlias("\(abstract)")
+    func resolve<T>(_ abstract: T.Type, name: String? = nil ) -> T? {
+        let alias = getAlias(name ?? "\(abstract)")
         if let instance = instances[alias] as? T {
             return instance
         }
@@ -51,7 +55,8 @@ public extension ContainerContract {
     }
     
     func resolved(_ service: String) -> Bool {
-        return false
+        let alias = getAlias("\(service)")
+        return instances[alias] != nil
     }
 }
 
@@ -60,21 +65,13 @@ public extension ContainerContract where Self: Container {
         aliases["\(alias)"] = key
     }
     /// Register a binding with the container.
-    func bind(_ name: String, builder:@escaping BeanBuilder, shared: Bool = false) {
-        let alias = getAlias(name)
+    func bind<T>(_ name: T, builder:@escaping BeanBuilder, shared: Bool = false) {
+        let alias = getAlias("\(name)")
         bindings[alias] = BeanBinding(alias, builder: builder)
     }
-    func instance<T>(service: T.Type, obj: Any) {
-        let alias = getAlias("\(service)")
+    func instance(_ obj: Any, name:String? = nil) {
+        
+        let alias = getAlias(name ?? String(describing: type(of: obj)))
         instances[alias] = obj as AnyObject
-    }
-    func instance<T>(_ obj: T, name: String? = nil) {
-        
-    }
-    func instance<T>(service: T.Type, obj: T) {
-        
-    }
-    func instance(service: Protocol, obj: AnyObject) {
-        
     }
 }
