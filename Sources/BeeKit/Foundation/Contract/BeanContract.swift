@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol BeanContract: class {
-    init(_ params: [String: Any])
+    init?(_ params: [String: Any])
 }

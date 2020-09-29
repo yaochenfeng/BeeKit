@@ -23,16 +23,21 @@ public extension ApplicationContract {
 public extension ApplicationContract where Self: Application {
     @discardableResult
     func register<T: ServiceProvider>(_ provider: T.Type, force: Bool = false) -> T? {
-        //已注册，非强制覆盖
+        // 检查容器是否注册过，如果已经注册过，直接返回容器
         if let registered = serviceProviders.map({ pro -> T? in
             return pro as? T
         }).compactMap({$0}).first, !force {
             return registered
         }
-        // 未注册
+        // 则通过协议解析容器
         let service = resolveProvider(T.self)
+        // 调用实例register 方法
         service.register()
-        
+        // 将Provider打上已经注册的标识
+        // 如果实例需要单例
+        if service.isShared {
+            instance(service, service: provider)
+        }
         return nil
     }
     func register<T: ServiceProvider>(register: T.Type) -> T {
@@ -43,7 +48,7 @@ public extension ApplicationContract where Self: Application {
     func bootstrapWith(array: [BootStrapContract.Type]) {
         hasBootstrapped = true
         for bootstrapper in array {
-            bootstrapper.init([:]).bootstrap(app: self)
+            bootstrapper.init([:])?.bootstrap(app: self)
         }
     }
     func terminate() {}

@@ -8,6 +8,7 @@
 public protocol ServiceProvider: class {
     init(app: ApplicationContract)
     var app: ApplicationContract { get }
+    var isShared: Bool { get }
 
     /// 注册服务
     func register()
@@ -16,6 +17,7 @@ public protocol ServiceProvider: class {
 }
 
 public extension ServiceProvider {
+    var isShared: Bool { return false }
     func register() {}
     func boot() {}
 }

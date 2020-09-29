@@ -27,7 +27,6 @@ extension Application: ApplicationContract {
     /// 基础绑定
     func registerBaseBindings() {
         instance(self, name: "app")
-        instance(self)
         register(BootstrapServiceProvider.self)
     }
     

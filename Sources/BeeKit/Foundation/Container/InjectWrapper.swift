@@ -10,8 +10,8 @@ import Foundation
 
 @propertyWrapper
 public struct InjectWrapper<T> {
-    public init() {
-    }
+    public init() {}
+    
     public var wrappedValue: T? {
         get {
             return Application.shared.resolve(T.self)

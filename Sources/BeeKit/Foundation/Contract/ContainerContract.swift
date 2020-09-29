@@ -7,7 +7,11 @@
 
 /// IOC容器协议
 public protocol ContainerContract: class {
+    /// The container's shared instances.
+    /// 容器的可被分享的实例数组
     var instances: [String: Any] { get }
+    /// The container's bindings.
+    /// 容器的绑定数组
     var bindings: [String: BeanBinding] { get }
     var aliases: [String: String] { get }
     
@@ -57,6 +61,15 @@ public extension ContainerContract {
     func resolved(_ service: String) -> Bool {
         let alias = getAlias("\(service)")
         return instances[alias] != nil
+    }
+    func build<T: BeanContract>(_ service: T.Type, parameters:[String: Any] = [:] ) -> T? {
+        let alias = getAlias(service)
+        // 没有实例化过
+        if let instance = instances[alias] as? T {
+            return instance
+        }
+        let object = service.init(parameters)
+        return object
     }
 }
 

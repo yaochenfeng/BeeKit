@@ -65,7 +65,7 @@ class TabBarController: UITabBarController {
 
 extension TabBarController: URLRouterableExact {
     static func initWith(req request: URLActionRequest) -> UIViewController? {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "splash")
     }
 }
 

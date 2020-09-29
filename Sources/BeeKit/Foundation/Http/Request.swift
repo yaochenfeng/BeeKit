@@ -13,3 +13,8 @@ open class Request {
         self.string = string
     }
 }
+extension Request: Equatable {
+    public static func == (lhs: Request, rhs: Request) -> Bool {
+        return lhs.string == rhs.string
+    }
+}

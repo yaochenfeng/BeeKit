@@ -10,9 +10,16 @@ import Foundation
 
 /// 反射提供
 public class ReflectionProvider {
-    public static func resolve<T: AnyObject>(cls: T.Type) {
+    public static func resolve<T>(cls: T) {
         let mirror = Mirror(reflecting: cls)
-        mirror.superclassMirror
+        for child in mirror.children {
+            // 如果没有labe就会被抛弃
+            if let label = child.label {
+                print("label:\(label)value=\(child.value)")
+            } else {
+                print("value=\(child.value)")
+            }
+        }
     }
 //    public static func logProperty(obj: Any){
 //        let mirror = Mirror(reflecting: obj)
