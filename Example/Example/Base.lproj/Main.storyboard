@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wO7-0n-Tck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wO7-0n-Tck">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--splash-->
         <scene sceneID="giX-k5-7si">
             <objects>
-                <viewController storyboardIdentifier="splash" title="splash" id="day-yt-4xF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splash" title="splash" id="day-yt-4xF" customClass="SplashController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="elT-vX-DoX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="189" y="433" width="36" height="30"/>
                                 <state key="normal" title="enter"/>
                                 <connections>
-                                    <segue destination="wO7-0n-Tck" kind="show" animates="NO" id="SFX-kB-NWe"/>
+                                    <action selector="toggleTabAction:" destination="day-yt-4xF" eventType="touchUpInside" id="DXv-To-g2u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -31,6 +31,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2jZ-5a-uIq"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="splash" image="square.and.arrow.up" catalog="system" id="UQ7-e2-FXQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmy-nH-dIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,6 +51,7 @@
                         <segue destination="jAa-xg-VoJ" kind="relationship" relationship="viewControllers" id="1gX-7P-nuk"/>
                         <segue destination="i1P-tP-X7W" kind="relationship" relationship="viewControllers" id="J5v-QL-jBs"/>
                         <segue destination="Fmr-iT-kbS" kind="relationship" relationship="viewControllers" id="iDD-NB-euF"/>
+                        <segue destination="day-yt-4xF" kind="relationship" relationship="viewControllers" id="50w-wg-Lxn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEO-u0-YLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -61,7 +63,7 @@
             <objects>
                 <tableViewController title="demo" id="GC6-sB-Pe6" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="awi-2R-a1r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -92,7 +94,7 @@
                 <navigationController id="Fmr-iT-kbS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="tool" image="pencil.circle" catalog="system" id="wNO-1u-Vki"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bia-DN-F7n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -108,7 +110,7 @@
             <objects>
                 <viewController id="i1P-tP-X7W" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aP8-0h-6Dg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Zrx-c5-2Pa"/>
@@ -131,7 +133,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="briefcase" catalog="system" width="64" height="50"/>
-        <image name="pencil.circle" catalog="system" width="64" height="60"/>
+        <image name="briefcase" catalog="system" width="128" height="102"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

@@ -7,13 +7,13 @@
 
 import Foundation
 
-open class Request {
+open class Request: Equatable {
     var string: String
     init(string: String) {
         self.string = string
     }
 }
-extension Request: Equatable {
+extension Request {
     public static func == (lhs: Request, rhs: Request) -> Bool {
         return lhs.string == rhs.string
     }

@@ -8,14 +8,13 @@
 import UIKit
 
 @UIApplicationMain
-@objc open class BeeAppDelegate: UIResponder, UIApplicationDelegate, KernelContract {
+@objc open class BeeAppKernel: UIResponder, UIApplicationDelegate, KernelContract {
     public var bootstrappers: [BootStrapContract.Type] = []
     
     public var window: UIWindow?
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let app = Application.shared
-        app.instance(self)
         app.instance(self, service: KernelContract.self)
         app.open(Application.splashRoute)
         return true
@@ -26,15 +25,15 @@ import UIKit
         
         return true
     }
-    open func applicationDidBecomeActive(_ application: UIApplication) {
-        
-    }
+    open func applicationDidBecomeActive(_ application: UIApplication) {}
+    
 }
 
 public extension KernelContract where Self: UIApplicationDelegate {
     var splashRequest: Request {
         return Request(string: Application.splashRoute)
     }
+    @discardableResult
     func handle(request: Request) -> Response {
         bootstrap()
         guard let url = URL(string: request.string) else {
@@ -47,11 +46,23 @@ public extension KernelContract where Self: UIApplicationDelegate {
         guard let bvc = response.content as? UIViewController else {
             return
         }
-        guard request == splashRequest else {
-            return
+        if request == splashRequest {
+            toggleRootController(bvc)
         }
-        if let keyWind = window {
-            keyWind?.rootViewController = bvc
+    }
+    /// 切换根控制器
+    /// - Parameter rootVC: destVC
+    private func toggleRootController(_ rootVC: UIViewController) {
+        guard let window = window, let keyWind = window else { return }
+        if let _ = keyWind.rootViewController {
+            UIView.transition(with: keyWind, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let oldState = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                keyWind.rootViewController = rootVC
+                UIView.setAnimationsEnabled(oldState)
+            })
+        } else {
+            keyWind.rootViewController = rootVC
         }
     }
 }
@@ -59,6 +70,7 @@ public extension KernelContract where Self: UIApplicationDelegate {
 @available(iOS, introduced: 8.0)
 public extension Application {
     static var splashRoute: String { return "app://appdelegate/root" }
+    @discardableResult
     func open(_ string: String?) -> Response {
         guard let str = string else {
             return .notFound()
@@ -71,5 +83,4 @@ public extension Application {
         kernel.terminate(request: request, response: response)
         return response
     }
-    
 }

@@ -22,7 +22,7 @@ public extension ApplicationContract {
 
 public extension ApplicationContract where Self: Application {
     @discardableResult
-    func register<T: ServiceProvider>(_ provider: T.Type, force: Bool = false) -> T? {
+    func register<T: ServiceProvider>(_ provider: T.Type, force: Bool = false) -> T {
         // 检查容器是否注册过，如果已经注册过，直接返回容器
         if let registered = serviceProviders.map({ pro -> T? in
             return pro as? T
@@ -38,12 +38,8 @@ public extension ApplicationContract where Self: Application {
         if service.isShared {
             instance(service, service: provider)
         }
-        return nil
+        return service
     }
-    func register<T: ServiceProvider>(register: T.Type) -> T {
-        return T(app: self)
-    }
-    
     
     func bootstrapWith(array: [BootStrapContract.Type]) {
         hasBootstrapped = true

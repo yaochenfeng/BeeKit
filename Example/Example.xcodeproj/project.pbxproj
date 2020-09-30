@@ -527,14 +527,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DVP3U56PW8;
+				DEVELOPMENT_TEAM = 2T4TBZZ6PG;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.4;
-				PRODUCT_BUNDLE_IDENTIFIER = yaochenfeng.beekit.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fenxiang.apps.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,14 +547,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DVP3U56PW8;
+				DEVELOPMENT_TEAM = 2T4TBZZ6PG;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.4;
-				PRODUCT_BUNDLE_IDENTIFIER = yaochenfeng.beekit.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fenxiang.apps.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

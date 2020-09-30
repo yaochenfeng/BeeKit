@@ -8,12 +8,15 @@
 import Foundation
 
 public protocol KernelContract: class {
+    
+    /// 启动类
     var bootstrappers: [BootStrapContract.Type] {get}
     
     /// Bootstrap the application
     func bootstrap()
     /// 处理请求,先经过全局中间件，再路由中间件
     /// - Parameter request: Request
+    @discardableResult
     func handle(request: Request) -> Response
     func terminate(request: Request, response: Response)
     func getApp() -> ApplicationContract
