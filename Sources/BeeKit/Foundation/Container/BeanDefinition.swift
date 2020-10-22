@@ -6,29 +6,6 @@
 //
 
 public typealias BeanBuilder = (ContainerContract) -> Any
-/// 类绑定生成类实例
-public class BeanBinding {
-    var name: String
-    let builder: BeanBuilder
-    var isShared: Bool
-    init(_ name: String, builder: @escaping BeanBuilder, isShared: Bool = false) {
-        self.name = name
-        self.builder = builder
-        self.isShared = isShared
-    }
-    func supports<T>(_ type: T.Type) -> Bool {
-        return false
-    }
-    func resolve<T>(_ container: ApplicationContract) -> T? {
-        guard let obj = builder(container) as? T else {
-            return nil
-        }
-        if isShared {//单例
-//            container.instance(obj, name: name)
-        }
-        return obj
-    }
-}
 
 /**
  * Any 可以代表任何类型的实例，包括函数类型

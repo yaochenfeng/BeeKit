@@ -44,7 +44,7 @@ public extension ApplicationContract where Self: Application {
         service.boot()
         // 如果实例需要单例
         if service.isShared {
-//            instance(service, service: provider)
+            register(provider, instance: service)
         }
         return service
     }
