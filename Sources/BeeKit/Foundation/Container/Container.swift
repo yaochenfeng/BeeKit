@@ -8,11 +8,9 @@
 open class Container: ContainerContract {
     public init() {}
     
-    public var bindings: [String : BeanBinding] = [:]
+    /// 绑定类
+    public var bindings: [String: BeanDefinition] = [:]
     
     public var instances = [String: Any]()
-    
-    /// An array of the types that have been resolved.
-    public var resolved = [AnyObject]()
     public var aliases = [String: String]()
 }

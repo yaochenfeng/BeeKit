@@ -15,7 +15,7 @@ import UIKit
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let app = Application.shared
-        app.instance(self, service: KernelContract.self)
+        app.register(KernelContract.self, instance: self)
         app.open(Application.splashRoute)
         return true
     }
@@ -69,7 +69,7 @@ public extension KernelContract where Self: UIApplicationDelegate {
 
 @available(iOS, introduced: 8.0)
 public extension Application {
-    static var splashRoute: String { return "app://appdelegate/root" }
+    static var splashRoute: String { return "app://root/splash" }
     @discardableResult
     func open(_ string: String?) -> Response {
         guard let str = string else {

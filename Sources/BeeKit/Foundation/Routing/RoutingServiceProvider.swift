@@ -7,6 +7,7 @@
 
 class RoutingServiceProvider: ServiceProvider {
     var app: ApplicationContract
+    var isShared: Bool = true
     
     required init(app: ApplicationContract) {
         self.app = app

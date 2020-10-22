@@ -11,10 +11,13 @@ import BeeKit
 
 class TabBarController: UITabBarController {
 
-    @InjectWrapper var appdelegate: BeeAppKernel?
+    @Autowired var appdelegate: BeeAppKernel?
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViewControllers()
+//        Application.shared.register(WebViewController.self, { container -> Any in
+//            return WebViewController(context: container)
+//        }, isSingleton: false)
     }
     
     func updateViewControllers(){
@@ -38,7 +41,8 @@ class TabBarController: UITabBarController {
 
 
 class DemoBootstrap: BootStrapContract {
-    required init(_ params: [String: Any]) {
+    required init(context: ContainerContract) {
+        
     }
     func bootstrap(app: ApplicationContract) {
         

@@ -5,14 +5,21 @@
 //  Created by yaochenfeng on 2020/9/24.
 //
 
-/// 应用协议
+/**
+ * 应用程序协议，控制反转
+ * Bootstrap 应用启动阶段准备工作,加载配置
+ * 准备-> 启动 -> 响应
+ */
 public protocol ApplicationContract: ContainerContract {
     /// 应用版本
     var version: String { get }
-    
     /// 是否启动
-    var hasBootstrapped: Bool {get set}
+    var isBooted: Bool {get set}
+    /// 服务
+    var serviceProviders: [ServiceProvider] { get }
     func bootstrapWith(array: [BootStrapContract.Type])
+    /// 应用启动
+    func boot()
 }
 public extension ApplicationContract {
     func resolveProvider<T: ServiceProvider>(_ provider: T.Type) -> T {
@@ -34,18 +41,27 @@ public extension ApplicationContract where Self: Application {
         // 调用实例register 方法
         service.register()
         // 将Provider打上已经注册的标识
+        service.boot()
         // 如果实例需要单例
         if service.isShared {
-            instance(service, service: provider)
+//            instance(service, service: provider)
         }
         return service
     }
     
     func bootstrapWith(array: [BootStrapContract.Type]) {
-        hasBootstrapped = true
         for bootstrapper in array {
-            bootstrapper.init([:])?.bootstrap(app: self)
+            bootstrapper.init(context: self).bootstrap(app: self)
         }
+        boot()
     }
     func terminate() {}
+    
+    func boot() {
+        guard !isBooted else { return }
+        for service in serviceProviders {
+            service.boot()
+        }
+        isBooted = true
+    }
 }

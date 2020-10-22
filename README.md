@@ -32,6 +32,9 @@ Task
 
 
 ## Usage
+### DI 依赖注入
+ContainerContract 管理实例注册以及实例初始化
+
 ### Router
 get object for url
 ```swift

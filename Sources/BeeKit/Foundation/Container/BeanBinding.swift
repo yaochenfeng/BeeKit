@@ -5,8 +5,8 @@
 //  Created by yaochenfeng on 2020/9/29.
 //
 
-public typealias BeanBuilder = (ContainerContract) -> AnyObject
-/// 对象生成类
+public typealias BeanBuilder = (ContainerContract) -> Any
+/// 类绑定生成类实例
 public class BeanBinding {
     var name: String
     let builder: BeanBuilder
@@ -16,13 +16,43 @@ public class BeanBinding {
         self.builder = builder
         self.isShared = isShared
     }
-    func resolve<T>(_ container: ContainerContract) -> T? {
+    func supports<T>(_ type: T.Type) -> Bool {
+        return false
+    }
+    func resolve<T>(_ container: ApplicationContract) -> T? {
         guard let obj = builder(container) as? T else {
             return nil
         }
-        if isShared {
-            container.instance(obj, name: name)
+        if isShared {//单例
+//            container.instance(obj, name: name)
         }
         return obj
+    }
+}
+
+/**
+ * Any 可以代表任何类型的实例，包括函数类型
+ * AnyObject 可以代表任何类类型的实例
+ */
+public class BeanDefinition {
+    var beanType: Any.Type
+    init(_ beanType: Any.Type, factory: @escaping BeanBuilder, isSingleton: Bool = false) {
+        self.beanType = beanType
+        self.factory = factory
+        self.isSingleton = isSingleton
+    }
+    //todo get Metadata
+    /// 是否单例
+    var isSingleton = false
+    
+    /// 是否延迟加载
+    var isDefer = true
+    var factory: BeanBuilder?
+    
+    func supports<T>(_ type: T.Type) -> Bool {
+        return beanType == type
+    }
+    func resolve(_ container: ContainerContract) -> Any? {
+        return factory?(container)
     }
 }

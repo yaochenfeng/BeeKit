@@ -7,84 +7,68 @@
 
 /// IOC容器协议
 public protocol ContainerContract: class {
-    /// The container's shared instances.
-    /// 容器的可被分享的实例数组
-    var instances: [String: Any] { get }
-    /// The container's bindings.
-    /// 容器的绑定数组
-    var bindings: [String: BeanBinding] { get }
-    var aliases: [String: String] { get }
+    var instances: [String: Any] { get set }
+    /// 类绑定
+    var bindings: [String: BeanDefinition] { get set }
     
-    func instance(_ obj: Any, name:String?)
-    func bind<T>(_ name: T, builder:@escaping BeanBuilder, shared: Bool)
+    /// 类对应的别名
+    var aliases: [String: String] { get  set }
 }
 
 public extension ContainerContract {
-    func getAlias(_ service: AnyClass) -> String {
-        let alias = "\(service)"
+    
+    /// 注册单例
+    @discardableResult
+    func register<T>(_ interface: T.Type, instance: T) -> Self {
+        instances[getAlias(interface)] = instance
+        return self
+    }
+    /// 注册类和实例初始化方法
+    @discardableResult
+    func register<T>(_ type: T.Type, _ factory: @escaping BeanBuilder, isSingleton: Bool = false) -> Self {
+        let beanDefine = BeanDefinition(type, factory: factory, isSingleton: isSingleton)
+        bindings[getAlias(type)] = beanDefine
+        return self
+    }
+    
+    /// 设置别名
+    /// - Parameters:
+    ///   - type: 类型
+    ///   - alias: 别名
+    func setAlias(_ key: Any, alias: String) {
+        aliases["\(key)"] = alias
+    }
+    func getAlias(_ key: Any) -> String {
+        let alias = "\(key)"
         return aliases[alias] ?? alias
     }
-    /// Get the alias for an abstract if available.
-    func getAlias(_ service: String) -> String {
-        return aliases[service] ?? service
-    }
-    func isAlias(_ service: AnyClass) -> Bool {
-        let alias = "\(service)"
-        return aliases[alias] != nil
-    }
 }
 
 public extension ContainerContract {
-    func instance<T>(_ obj: Any, service: T) {
-        instance(obj, name: "\(service)")
-    }
-    func isShared(_ service: String) -> Bool {
-        let alias = getAlias(service)
-        guard instances[service] == nil else { return true }
-        return bindings[alias]?.isShared ?? false
-    }
-    
-    /// 根据类和协议找到对应实例 或 初始化实例
-    /// - Parameter abstract: Class or Protocol
-    /// - Returns: 实例
-    func resolve<T>(_ abstract: T.Type, name: String? = nil ) -> T? {
-        let alias = getAlias(name ?? "\(abstract)")
-        if let instance = instances[alias] as? T {
-            return instance
+    /// 根据类返回实例
+    /// - Parameter type: Service class
+    @discardableResult
+    func resolve<T>(_ type: T.Type) -> T? {
+        let alas = getAlias(type)
+        if  let obj = instances[alas] as? T {
+            return obj
         }
-        guard let binding = bindings[alias] else {
+        let beanDefine =  bindings[alas]
+        if let bean = beanDefine?.resolve(self) as? T {
+            return bean
+        }
+        guard let pro = type as? BeanContract.Type, let bean = pro.init(context: self) as? T else {
             return nil
         }
-        return binding.resolve(self)
+        return bean
     }
-    
-    func resolved(_ service: String) -> Bool {
-        let alias = getAlias("\(service)")
-        return instances[alias] != nil
-    }
-    func build<T: BeanContract>(_ service: T.Type, parameters:[String: Any] = [:] ) -> T? {
-        let alias = getAlias(service)
-        // 没有实例化过
-        if let instance = instances[alias] as? T {
-            return instance
+    subscript<T>(service: T.Type) -> T? {
+        set {
+            guard let obj = newValue else {return}
+            register(T.self, instance: obj)
         }
-        let object = service.init(parameters)
-        return object
-    }
-}
-
-public extension ContainerContract where Self: Container {
-    func setAlias(_ key: String, alias: Any)  {
-        aliases["\(alias)"] = key
-    }
-    /// Register a binding with the container.
-    func bind<T>(_ name: T, builder:@escaping BeanBuilder, shared: Bool = false) {
-        let alias = getAlias("\(name)")
-        bindings[alias] = BeanBinding(alias, builder: builder)
-    }
-    func instance(_ obj: Any, name:String? = nil) {
-        
-        let alias = getAlias(name ?? String(describing: type(of: obj)))
-        instances[alias] = obj as AnyObject
+        get {
+            return resolve(T.self)
+        }
     }
 }

@@ -8,29 +8,12 @@
 
 import UIKit
 import WebKit
+import RxCocoa
+import RxSwift
+import BeeKit
 
-class WebServceProvider: ServiceProvider {
-    required init(app: ApplicationContract) {
-        self.app = app
-    }
-    
-    var app: ApplicationContract
-    
-    func register() {
-        
-    }
-    
-    func boot() {
-        
-    }
-    
-}
-
-class WebServceProvider2: WebServceProvider {
-    
-}
-
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, BeanContract {
+    let disposeBag = DisposeBag()
     var loadURL: URL?
     var webview: WKWebView = {
         let config = WKWebViewConfiguration()
@@ -38,13 +21,20 @@ class WebViewController: UIViewController {
         return web
     }()
     convenience init(_ url: URL?) {
-        self.init()
+        self.init(context: Application.shared)
         loadURL = url
     }
     convenience init(_ str: String?) {
         self.init(str?.bee.encodeURL)
     }
-
+    required init(context: ContainerContract) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -53,5 +43,6 @@ class WebViewController: UIViewController {
         if let url = loadURL {
             webview.load(URLRequest(url: url))
         }
+        webview.rx.observeWeakly(String.self, "title").bind(to: navigationItem.rx.title).disposed(by: disposeBag)
     }
 }
