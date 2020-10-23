@@ -14,12 +14,15 @@ class WebviewHandler: NSObject, URLRouterableScheme {
 
 extension WebviewHandler: URLRouterable {
     static func initWith(req request: URLActionRequest) -> UIViewController? {
-        if request.url.scheme?.contains("http") ?? false {
-            return WebViewController(request.url)
-        } else {
-            let newStr = request.url.absoluteString.replacingOccurrences(of: request.url.scheme ?? "", with: "https")
-            return WebViewController(newStr)
-        }
+//        if request.url.scheme?.contains("http") ?? false {
+//            return WebViewController(request.url)
+//        } else {
+//            let newStr = request.url.absoluteString.replacingOccurrences(of: request.url.scheme ?? "", with: "https")
+//            return WebViewController(newStr)
+//        }
+        let web = Application.shared.resolve(WebViewController.self)
+        web?.loadURL = request.url
+        return web
     }
 }
 

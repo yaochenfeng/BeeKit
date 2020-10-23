@@ -9,7 +9,7 @@ import Foundation
 
 
 @propertyWrapper
-public struct InjectWrapper<T> {
+public struct Autowired<T> {
     public init() {}
     
     public var wrappedValue: T? {

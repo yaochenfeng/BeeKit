@@ -17,7 +17,7 @@ public struct FileCacheStorage<T> {
         self.defaultValue = defaultValue
     }
     var filePath:AppDirectories {
-        return .file(name: "cache_\(key).json", dir:AppDirectories.dir(name: BeeContant.bundleIdentifier, dir: .libraryCaches).subDir("BeeKit") )
+        return .file(name: "cache_\(key).json", dir:AppDirectories.dir(name: Contant.bundleIdentifier, dir: .libraryCaches).subDir("BeeKit") )
     }
     public var wrappedValue: T {
         get {

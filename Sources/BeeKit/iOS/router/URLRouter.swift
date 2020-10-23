@@ -36,7 +36,7 @@ public final class URLRouter {
     ///   - dest: 目标页面
     ///   - options: 额外参数
     public var openHandler: ((_ source:UIViewController, _ dest:UIViewController, _ options: [String:Any]?) -> Void)?
-    @FileCacheStorage("\(BeeContant.version)routerClassName", defaultValue: [])
+    @FileCacheStorage("\(Contant.version)routerClassName", defaultValue: [])
     fileprivate var routerClassNameList: [String]
     private init(){}
 }

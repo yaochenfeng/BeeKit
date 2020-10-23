@@ -25,10 +25,9 @@ public protocol KernelContract: class {
 public extension KernelContract {
     func bootstrap() {
         let app = getApp()
-        guard !app.hasBootstrapped else {
+        guard !app.isBooted else {
             return
         }
-        app.hasBootstrapped = true
         app.bootstrapWith(array: bootstrappers)
     }
     func handle(request: Request) -> Response {

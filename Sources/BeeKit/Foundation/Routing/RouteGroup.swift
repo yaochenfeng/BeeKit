@@ -9,5 +9,7 @@ import Foundation
 
 /// 路由组
 class RouteGroup {
-    
+    var scheme = ""
+    /// 路由前缀
+    var prefix = ""
 }

@@ -8,8 +8,8 @@
 
 public class Application: Container {
     public var version = "0.2.0"
-    public var hasBootstrapped: Bool = false
-    var serviceProviders = [ServiceProvider]()
+    public var isBooted: Bool = false
+    public var serviceProviders = [ServiceProvider]()
     
     public static let shared: Application = {
         let app = Application()
@@ -24,20 +24,25 @@ public class Application: Container {
 }
 
 extension Application: ApplicationContract {
+    
+    /// 绑定基础存储路径
+    func commomInit() {
+        
+    }
     /// 基础绑定
     func registerBaseBindings() {
-        instance(self, name: "app")
-        register(BootstrapServiceProvider.self)
+        register(Application.self, instance: self)
     }
     
     /// 基础服务
     func registerBaseServiceProviders() {
         
+        register(RoutingServiceProvider.self)
     }
     func registerCoreContainerAliases() {
         for (key, value) in ["app": [Self.self, ContainerContract.self, ApplicationContract.self]] {
-            for aliasName in value {
-                setAlias(key, alias: aliasName)
+            for cls in value {
+                setAlias(cls, alias: key)
             }
         }
     }
