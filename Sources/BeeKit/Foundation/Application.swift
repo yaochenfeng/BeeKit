@@ -26,7 +26,7 @@ public class Application: Container {
 extension Application: ApplicationContract {
     
     /// 绑定基础存储路径
-    func bindPathContainer() {
+    func commomInit() {
         
     }
     /// 基础绑定
