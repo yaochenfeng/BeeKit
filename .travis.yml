@@ -12,7 +12,6 @@ before_install:
   #- carthage bootstrap
 script:
   - fastlane run run_tests
-  - carthage build --no-skip-current
   - pod lib lint
 
 before_deploy:
