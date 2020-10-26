@@ -11,7 +11,7 @@ before_install:
   # you can remove if you don't have dependencies
   #- carthage bootstrap
 script:
-  - fastlane run run_tests
+#  - fastlane run run_tests
   - pod lib lint
 
 before_deploy:
