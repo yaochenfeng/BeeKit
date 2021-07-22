@@ -165,11 +165,11 @@ extension URLRouter {
     /// 注册路由
     /// - Returns: 实现了路由的类名
     public func registerRouter(_ cls: AnyClass) -> String? {
-        guard let _ = cls as? URLRouterable.Type else {
-            return nil
-        }
         // 实现了路由协议
         let clsStr = NSStringFromClass(cls)
+        guard clsStr.contains("."), !clsStr.contains("NSZombie"), let _ = cls as? URLRouterable.Type else {
+            return nil
+        }
         if let pro = cls as? URLRouterableExact.Type {
             routerItems.append(URLRouterItemSchemeAndHostPath(pro, router: pro.bee_router))
             register(exact: pro.bee_router, handler: pro)
