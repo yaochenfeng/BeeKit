@@ -25,7 +25,7 @@ public final class URLRouter {
         // 可以做一些其他的配置
         return shared
     }()
-    
+    private var clsModules = [AnyClass]()
     /// 路由项
     private var routerItems = [URLRouterItem]()
     private var requestMiddlewares = [URLRouterMiddleRequest]()
@@ -200,21 +200,36 @@ extension URLRouter {
             }
             if classList.count > 0 {return}
         }
-        var classNameList = [String]()
-        var count: UInt32 = 0
-        guard let classListPointer = objc_copyClassList(&count) else {
+        Bundle.allFrameworks.forEach { bd in
+            if bd == .main {//主工程
+                addModule(bd.principalClass)
+            } else if let _ = bd.infoDictionary?["AUTOLOAD"] {
+                addModule(bd.principalClass)
+            }
+        }
+    }
+    fileprivate func addModule(_ principal: AnyClass?) {
+        guard let cls = principal, !clsModules.contains(where: { exit in
+            ObjectIdentifier(exit) == ObjectIdentifier(cls)
+        }), let imgName = class_getImageName(cls) else {
             return
         }
-        let classList = UnsafeBufferPointer(start: classListPointer, count: Int(count)).map { obj -> AnyObject.Type in
-            return obj
+        clsModules.append(cls)
+        var counts: UInt32 = 0
+        guard let classNames = objc_copyClassNamesForImage(imgName, &counts) else {
+            return
         }
-        for cls in classList {/// register  only swift class for URLRouter
-            if let clsStr = registerRouter(cls){
-                classNameList.append(clsStr)
+        var classNameList = [String]()
+        for i in 0 ..< Int(counts) {
+            if let clsName = String(cString: classNames[i], encoding: .utf8),
+               let cls: AnyClass = NSClassFromString(clsName)  {
+                if let clsStr = registerRouter(cls){
+                    classNameList.append(clsStr)
+                }
             }
         }
         if URLRouter.isAutoCacheRouter {
-            routerClassNameList = classNameList
+            routerClassNameList.append(contentsOf: classNameList)
         }
     }
 }

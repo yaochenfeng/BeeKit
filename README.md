@@ -32,6 +32,10 @@ Task
 
 
 ## Usage
+### autoloader 除了主工程 podspec添加
+spec.info_plist = {
+  'AUTOLOAD' => 'SOME_VALUE'
+}
 ### Router
 get object for url
 ```swift
